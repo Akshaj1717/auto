@@ -1,0 +1,6 @@
+[
+  { "id": 1, "title": "Sample headline one", "summary": "Short summary of the story.", "date": "2026-10-05", "url": "#", "featured": true },
+  { "id": 2, "title": "Sample headline two", "summary": "Short summary of the story.", "date": "2026-10-04", "url": "#", "featured": true },
+  { "id": 3, "title": "Sample headline three", "summary": "Short summary of the story.", "date": "2026-10-03", "url": "#", "featured": false },
+  { "id": 4, "title": "Sample headline four", "summary": "Short summary of the story.", "date": "2026-10-02", "url": "#", "featured": false }
+]

@@ -1,0 +1,5 @@
+[
+  { "id": 1, "builder": "Builder name", "car": "Car model", "description": "What they changed and why.", "image": "/images/builds/placeholder.svg" },
+  { "id": 2, "builder": "Builder name", "car": "Car model", "description": "What they changed and why.", "image": "/images/builds/placeholder.svg" },
+  { "id": 3, "builder": "Builder name", "car": "Car model", "description": "What they changed and why.", "image": "/images/builds/placeholder.svg" }
+]

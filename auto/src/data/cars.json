@@ -1,0 +1,18 @@
+[
+  {
+    "id": "sample-gt",
+    "name": "Sample GT",
+    "manufacturer": "Manufacturer name",
+    "headEngineer": "Engineer name",
+    "image": "/images/cars/placeholder.svg",
+    "specs": { "engine": "3.0L twin-turbo V6", "horsepower": 500, "torque": 450, "topSpeed": 190, "zeroToSixty": 3.4 }
+  },
+  {
+    "id": "sample-roadster",
+    "name": "Sample Roadster",
+    "manufacturer": "Manufacturer name",
+    "headEngineer": "Engineer name",
+    "image": "/images/cars/placeholder.svg",
+    "specs": { "engine": "2.0L inline-4", "horsepower": 180, "torque": 150, "topSpeed": 140, "zeroToSixty": 6.1 }
+  }
+]

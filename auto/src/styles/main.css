@@ -1,0 +1,37 @@
+:root { --line: #555; --bg: #fafafa; --text: #222; --muted: #777; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.box { border: 2px dashed var(--line); padding: 12px; }
+.label { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 6px; }
+
+.page { display: grid; grid-template-columns: 240px 1fr; grid-template-rows: auto auto 1fr; gap: 12px; padding: 12px; min-height: 100vh; }
+
+.logo { grid-column: 1; grid-row: 1; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 22px; text-decoration: none; }
+
+.nav { grid-column: 2; grid-row: 1; display: flex; gap: 12px; flex-wrap: wrap; }
+.nav a { border: 2px dashed var(--line); padding: 10px 18px; text-decoration: none; }
+.nav a:hover { background: #eee; }
+
+.sidebar { grid-column: 1; grid-row: 2 / 4; }
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar li { border-bottom: 1px dashed var(--line); padding: 10px 0; }
+.sidebar small { display: block; color: var(--muted); }
+
+#car-of-the-day { grid-column: 2; grid-row: 2; }
+.cotd { display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; font-size: 20px; }
+.cotd img { max-height: 260px; }
+.cotd:hover { background: #eee; }
+
+.content { grid-column: 2; grid-row: 3; display: flex; flex-direction: column; gap: 12px; }
+.content h2, .content h3 { margin-top: 0; }
+.headlines { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+.cell { border: 1px dashed var(--line); padding: 10px; }
+
+@media (max-width: 700px) {
+  .page { grid-template-columns: 1fr; }
+  .logo, .nav, .sidebar, #car-of-the-day, .content { grid-column: 1; grid-row: auto; }
+}
