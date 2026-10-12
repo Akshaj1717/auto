@@ -5,6 +5,7 @@ import { renderCarOfTheDay } from './components/carOfTheDay.js';
 import { renderHeadlines } from './components/headlines.js';
 import { renderUnderTheHood } from './components/underTheHood.js';
 import { renderBuilds } from './components/builds.js';
+import { pickCarOfTheDay } from './lib/carOfTheDay.js';
 
 
 import news from './data/news.json';
@@ -12,13 +13,8 @@ import cars from './data/cars.json';
 import builds from './data/builds.json';
 import live from './data/live.json';
 
-// Pick today's car: rotates through the list one per day.
-function getCarOfTheDay(list) {
-  const day = Math.floor(Date.now() / 86_400_000);
-  return list[day % list.length];
-}
-
-const car = getCarOfTheDay(cars);
+// A random car each day, the same for every visitor (changes at midnight New York time)
+const car = pickCarOfTheDay(cars);
 
 renderNav(document.getElementById('nav'));
 renderNewsSidebar(document.getElementById('news-sidebar'), news);

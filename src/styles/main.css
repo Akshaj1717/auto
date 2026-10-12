@@ -21,9 +21,13 @@ img { max-width: 100%; display: block; }
 .sidebar small { display: block; color: var(--muted); }
 
 #car-of-the-day { grid-column: 2; grid-row: 2; }
-.cotd { display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; font-size: 20px; }
-.cotd img { max-height: 260px; }
-.cotd:hover { background: #eee; }
+.cotd { display: flex; flex-direction: column; gap: 8px; }
+.cotd-link { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; text-decoration: none; }
+.cotd-link strong { font-size: 24px; }
+.cotd-img { width: 100%; max-height: 380px; object-fit: cover; }
+.cotd-more { color: var(--muted); }
+.cotd-link:hover .cotd-more { text-decoration: underline; }
+.credit { color: var(--muted); font-size: 12px; text-align: right; }
 
 .content { grid-column: 2; grid-row: 3; display: flex; flex-direction: column; gap: 12px; }
 .content h2, .content h3 { margin-top: 0; }

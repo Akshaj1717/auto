@@ -1,18 +1,272 @@
 [
   {
-    "id": "sample-gt",
-    "name": "Sample GT",
-    "manufacturer": "Manufacturer name",
-    "headEngineer": "Engineer name",
-    "image": "images/cars/placeholder.svg",
-    "specs": { "engine": "3.0L twin-turbo V6", "horsepower": 500, "torque": 450, "topSpeed": 190, "zeroToSixty": 3.4 }
+    "id": "mclaren-f1",
+    "name": "McLaren F1",
+    "year": 1992,
+    "manufacturer": "McLaren Cars",
+    "headEngineer": "Gordon Murray",
+    "wiki": "McLaren F1",
+    "blurb": "Three seats, a gold-lined engine bay and the fastest production car of the 1990s.",
+    "specs": {
+      "engine": "6.1L BMW S70/2 V12",
+      "horsepower": 618,
+      "torque": 479,
+      "topSpeed": 240,
+      "zeroToSixty": 3.2,
+      "drivetrain": "RWD",
+      "transmission": "6-speed manual"
+    }
   },
   {
-    "id": "sample-roadster",
-    "name": "Sample Roadster",
-    "manufacturer": "Manufacturer name",
-    "headEngineer": "Engineer name",
-    "image": "images/cars/placeholder.svg",
-    "specs": { "engine": "2.0L inline-4", "horsepower": 180, "torque": 150, "topSpeed": 140, "zeroToSixty": 6.1 }
+    "id": "ferrari-f40",
+    "name": "Ferrari F40",
+    "year": 1987,
+    "manufacturer": "Ferrari",
+    "headEngineer": "Nicola Materazzi",
+    "wiki": "Ferrari F40",
+    "blurb": "The last Ferrari approved by Enzo himself: twin turbos, no driver aids.",
+    "specs": {
+      "engine": "2.9L twin-turbo V8",
+      "horsepower": 471,
+      "torque": 426,
+      "topSpeed": 201,
+      "zeroToSixty": 3.8,
+      "drivetrain": "RWD",
+      "transmission": "5-speed manual"
+    }
+  },
+  {
+    "id": "lamborghini-miura",
+    "name": "Lamborghini Miura P400",
+    "year": 1966,
+    "manufacturer": "Lamborghini",
+    "headEngineer": "Gian Paolo Dallara",
+    "wiki": "Lamborghini Miura",
+    "blurb": "The car that popularized the mid-engine supercar layout.",
+    "specs": {
+      "engine": "3.9L V12",
+      "horsepower": 345,
+      "torque": 278,
+      "topSpeed": 171,
+      "zeroToSixty": 6.7,
+      "drivetrain": "RWD",
+      "transmission": "5-speed manual"
+    }
+  },
+  {
+    "id": "lamborghini-countach",
+    "name": "Lamborghini Countach LP400",
+    "year": 1974,
+    "manufacturer": "Lamborghini",
+    "headEngineer": "Paolo Stanzani",
+    "wiki": "Lamborghini Countach",
+    "blurb": "Scissor doors and a wedge shape that defined the poster car.",
+    "specs": {
+      "engine": "3.9L V12",
+      "horsepower": 370,
+      "torque": 268,
+      "topSpeed": 179,
+      "zeroToSixty": 5.6,
+      "drivetrain": "RWD",
+      "transmission": "5-speed manual"
+    }
+  },
+  {
+    "id": "mercedes-300sl",
+    "name": "Mercedes-Benz 300 SL Gullwing",
+    "year": 1954,
+    "manufacturer": "Mercedes-Benz",
+    "headEngineer": "Rudolf Uhlenhaut",
+    "wiki": "Mercedes-Benz 300 SL",
+    "blurb": "Gullwing doors and one of the first fuel-injected production cars.",
+    "specs": {
+      "engine": "3.0L fuel-injected inline-6",
+      "horsepower": 215,
+      "torque": 202,
+      "topSpeed": 161,
+      "zeroToSixty": 8.8,
+      "drivetrain": "RWD",
+      "transmission": "4-speed manual"
+    }
+  },
+  {
+    "id": "jaguar-e-type",
+    "name": "Jaguar E-Type Series 1",
+    "year": 1961,
+    "manufacturer": "Jaguar",
+    "headEngineer": "William Heynes (body by Malcolm Sayer)",
+    "wiki": "Jaguar E-Type",
+    "blurb": "Often called the most beautiful car ever made.",
+    "specs": {
+      "engine": "3.8L XK inline-6",
+      "horsepower": 265,
+      "torque": 260,
+      "topSpeed": 150,
+      "zeroToSixty": 6.9,
+      "drivetrain": "RWD",
+      "transmission": "4-speed manual"
+    }
+  },
+  {
+    "id": "shelby-cobra-427",
+    "name": "Shelby Cobra 427",
+    "year": 1965,
+    "manufacturer": "AC Cars / Shelby American",
+    "headEngineer": "Carroll Shelby",
+    "wiki": "AC Cobra",
+    "blurb": "A British roadster with a huge American V8 under the hood.",
+    "specs": {
+      "engine": "7.0L Ford V8",
+      "horsepower": 425,
+      "torque": 480,
+      "topSpeed": 164,
+      "zeroToSixty": 4.2,
+      "drivetrain": "RWD",
+      "transmission": "4-speed manual"
+    }
+  },
+  {
+    "id": "mazda-mx5-na",
+    "name": "Mazda MX-5 Miata (NA)",
+    "year": 1989,
+    "manufacturer": "Mazda",
+    "headEngineer": "Toshihiko Hirai",
+    "wiki": "Mazda MX-5 (NA)",
+    "blurb": "Light, simple and fun: the best-selling two-seat roadster ever.",
+    "specs": {
+      "engine": "1.6L inline-4",
+      "horsepower": 116,
+      "torque": 100,
+      "topSpeed": 116,
+      "zeroToSixty": 8.6,
+      "drivetrain": "RWD",
+      "transmission": "5-speed manual"
+    }
+  },
+  {
+    "id": "honda-nsx",
+    "name": "Honda NSX",
+    "year": 1990,
+    "manufacturer": "Honda",
+    "headEngineer": "Shigeru Uehara",
+    "wiki": "Honda NSX (first generation)",
+    "blurb": "An aluminum supercar you could drive every day, tuned with help from Ayrton Senna.",
+    "specs": {
+      "engine": "3.0L VTEC V6",
+      "horsepower": 270,
+      "torque": 210,
+      "topSpeed": 168,
+      "zeroToSixty": 5.7,
+      "drivetrain": "RWD",
+      "transmission": "5-speed manual"
+    }
+  },
+  {
+    "id": "nissan-skyline-r34",
+    "name": "Nissan Skyline GT-R (R34)",
+    "year": 1999,
+    "manufacturer": "Nissan",
+    "headEngineer": "Kozo Watanabe",
+    "wiki": "Nissan Skyline GT-R",
+    "blurb": "Godzilla: the RB26 twin-turbo and all-wheel drive tuners still chase.",
+    "specs": {
+      "engine": "2.6L RB26DETT twin-turbo inline-6",
+      "horsepower": 276,
+      "torque": 289,
+      "topSpeed": 155,
+      "zeroToSixty": 4.9,
+      "drivetrain": "AWD",
+      "transmission": "6-speed manual"
+    }
+  },
+  {
+    "id": "toyota-supra-a80",
+    "name": "Toyota Supra Turbo (A80)",
+    "year": 1993,
+    "manufacturer": "Toyota",
+    "headEngineer": "Isao Tsuzuki",
+    "wiki": "Toyota Supra",
+    "blurb": "The 2JZ engine made it a tuning legend that handles huge power.",
+    "specs": {
+      "engine": "3.0L 2JZ-GTE twin-turbo inline-6",
+      "horsepower": 320,
+      "torque": 315,
+      "topSpeed": 155,
+      "zeroToSixty": 4.6,
+      "drivetrain": "RWD",
+      "transmission": "6-speed manual"
+    }
+  },
+  {
+    "id": "porsche-959",
+    "name": "Porsche 959",
+    "year": 1986,
+    "manufacturer": "Porsche",
+    "headEngineer": "Helmuth Bott",
+    "wiki": "Porsche 959",
+    "blurb": "A Group B rally project turned into the most advanced road car of its time.",
+    "specs": {
+      "engine": "2.85L twin-turbo flat-6",
+      "horsepower": 444,
+      "torque": 369,
+      "topSpeed": 197,
+      "zeroToSixty": 3.6,
+      "drivetrain": "AWD",
+      "transmission": "6-speed manual"
+    }
+  },
+  {
+    "id": "lancia-stratos",
+    "name": "Lancia Stratos HF Stradale",
+    "year": 1973,
+    "manufacturer": "Lancia",
+    "headEngineer": "Gian Paolo Dallara (design by Marcello Gandini)",
+    "wiki": "Lancia Stratos",
+    "blurb": "Built to win rallies, with a Ferrari Dino V6 behind the seats.",
+    "specs": {
+      "engine": "2.4L Ferrari Dino V6",
+      "horsepower": 190,
+      "torque": 166,
+      "topSpeed": 143,
+      "zeroToSixty": 6.8,
+      "drivetrain": "RWD",
+      "transmission": "5-speed manual"
+    }
+  },
+  {
+    "id": "bmw-m3-e30",
+    "name": "BMW M3 (E30)",
+    "year": 1986,
+    "manufacturer": "BMW M",
+    "headEngineer": "Paul Rosche (engine)",
+    "wiki": "BMW M3 (E30)",
+    "blurb": "A homologation special that became one of the most successful touring cars ever.",
+    "specs": {
+      "engine": "2.3L S14 inline-4",
+      "horsepower": 192,
+      "torque": 170,
+      "topSpeed": 146,
+      "zeroToSixty": 6.7,
+      "drivetrain": "RWD",
+      "transmission": "5-speed manual"
+    }
+  },
+  {
+    "id": "bugatti-veyron",
+    "name": "Bugatti Veyron 16.4",
+    "year": 2005,
+    "manufacturer": "Bugatti",
+    "headEngineer": "Wolfgang Schreiber",
+    "wiki": "Bugatti Veyron",
+    "blurb": "The first production car to pass 1,000 metric horsepower.",
+    "specs": {
+      "engine": "8.0L quad-turbo W16",
+      "horsepower": 987,
+      "torque": 922,
+      "topSpeed": 253,
+      "zeroToSixty": 2.5,
+      "drivetrain": "AWD",
+      "transmission": "7-speed dual-clutch"
+    }
   }
 ]
