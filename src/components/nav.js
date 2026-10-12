@@ -1,8 +1,8 @@
 const LINKS = [
-  { label: 'News', href: '#news' },
-  { label: 'Sports', href: '#sports' },
-  { label: 'Letter', href: '#letter' },
-  { label: 'Explore', href: '#explore' },
+  { label: 'News', href: './#news' },
+  { label: 'Sports', href: './sports.html' },
+  { label: 'Letter', href: './#letter' },
+  { label: 'Explore', href: './#explore' },
 ];
 
 export function renderNav(el) {
