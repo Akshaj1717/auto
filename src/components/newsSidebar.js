@@ -1,6 +1,4 @@
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c =>
-  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const safeUrl = u => (/^https?:\/\//.test(u) || u === '#') ? u : '#';
+import { esc, safeUrl } from '../lib/html.js';
 const when = iso => new Date(iso).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
 
 export function renderNewsSidebar(el, { events = [], news = [] }) {
