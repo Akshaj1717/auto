@@ -1,1 +1,345 @@
-{ "updated": null, "events": [], "news": [], "sports": [] }
+{
+  "updated": "2026-10-12T02:49:51.888Z",
+  "events": [
+    {
+      "title": "United States Grand Prix",
+      "series": "F1",
+      "start": "2026-10-25T19:00:00.000Z",
+      "end": "2026-10-25T21:00:00.000Z"
+    },
+    {
+      "title": "Mexico City Grand Prix",
+      "series": "F1",
+      "start": "2026-11-01T20:00:00.000Z",
+      "end": "2026-11-01T22:00:00.000Z"
+    },
+    {
+      "title": "São Paulo Grand Prix",
+      "series": "F1",
+      "start": "2026-11-08T17:00:00.000Z",
+      "end": "2026-11-08T19:00:00.000Z"
+    },
+    {
+      "title": "Las Vegas Grand Prix",
+      "series": "F1",
+      "start": "2026-11-22T06:00:00.000Z",
+      "end": "2026-11-22T08:00:00.000Z"
+    },
+    {
+      "title": "Qatar Grand Prix",
+      "series": "F1",
+      "start": "2026-11-29T16:00:00.000Z",
+      "end": "2026-11-29T18:00:00.000Z"
+    },
+    {
+      "title": "Abu Dhabi Grand Prix",
+      "series": "F1",
+      "start": "2026-12-06T13:00:00.000Z",
+      "end": "2026-12-06T15:00:00.000Z"
+    }
+  ],
+  "news": [
+    {
+      "title": "Christopher Bell reacts to photo finish: “We’re not teammates running to the line\"",
+      "url": "https://www.motorsport.com/nascar-cup/news/christopher-bell-reacts-to-photo-finish-were-not-teammates-running-to-the-line/10864513/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-12T00:54:48.000Z"
+    },
+    {
+      "title": "Denny Hamlin loses more ground to Kyle Larson: \"We've got to execute better\"",
+      "url": "https://www.motorsport.com/nascar-cup/news/denny-hamlin-loses-more-ground-to-kyle-larson-weve-got-to-execute-better/10864511/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-12T00:36:56.000Z"
+    },
+    {
+      "title": "Kyle Larson takes firm command of NASCAR Cup Chase with four to go",
+      "url": "https://www.motorsport.com/nascar-cup/news/kyle-larson-takes-command-of-nascar-chase-with-four-to-go/10864508/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-12T00:31:47.000Z"
+    },
+    {
+      "title": "Wellness partnerships target F1 teams and their increasingly engaged fans",
+      "url": "https://www.motorsport.com/f1/news/wellness-partnerships-target-f1-teams-and-their-increasingly-engaged-fans/10864501/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-12T00:00:03.000Z"
+    },
+    {
+      "title": "Michael McDowell wrecks Ricky Stenhouse in heated post-race clash",
+      "url": "https://www.motorsport.com/nascar-cup/news/michael-mcdowell-wrecks-ricky-stenhouse-in-heated-post-race-clash/10864504/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-11T23:36:51.000Z"
+    },
+    {
+      "title": "Complete NASCAR Cup points standings after 2026 Charlotte II",
+      "url": "https://www.motorsport.com/nascar-cup/news/complete-nascar-cup-points-standings-after-2026-charlotte-ii/10864506/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-11T23:34:28.000Z"
+    },
+    {
+      "title": "Fans can't get enough of Max Verstappen's floral race boots after Singapore win",
+      "url": "https://www.motorsport.com/f1/news/fans-cant-get-enough-of-max-verstappens-floral-race-boots-after-singapore-win/10864491/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-11T23:15:02.000Z"
+    },
+    {
+      "title": "On This Day: Crash and disqualification decides title in controversial F3000 finale | Brief",
+      "url": "https://www.racefans.net/2026/10/12/on-this-day-1996-f3000-hockenheim-2/",
+      "source": "RaceFans",
+      "date": "2026-10-11T23:01:00.000Z"
+    },
+    {
+      "title": "Official race results: 2026 NASCAR Cup Charlotte II",
+      "url": "https://www.motorsport.com/nascar-cup/news/official-race-results-2026-nascar-cup-charlotte-ii/10864497/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-11T22:49:17.000Z"
+    },
+    {
+      "title": "Chase Briscoe beats Christopher Bell by 0.029s in stunning NASCAR Cup photo finish",
+      "url": "https://www.motorsport.com/nascar-cup/news/chase-briscoe-wins-photo-finish-christopher-bell-nascar-cup-charlotte-/10864481/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-11T22:37:55.000Z"
+    }
+  ],
+  "sports": [
+    {
+      "title": "Christopher Bell reacts to photo finish: “We’re not teammates running to the line\"",
+      "url": "https://www.motorsport.com/nascar-cup/news/christopher-bell-reacts-to-photo-finish-were-not-teammates-running-to-the-line/10864513/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-12T00:54:48.000Z"
+    },
+    {
+      "title": "Denny Hamlin loses more ground to Kyle Larson: \"We've got to execute better\"",
+      "url": "https://www.motorsport.com/nascar-cup/news/denny-hamlin-loses-more-ground-to-kyle-larson-weve-got-to-execute-better/10864511/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-12T00:36:56.000Z"
+    },
+    {
+      "title": "Kyle Larson takes firm command of NASCAR Cup Chase with four to go",
+      "url": "https://www.motorsport.com/nascar-cup/news/kyle-larson-takes-command-of-nascar-chase-with-four-to-go/10864508/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-12T00:31:47.000Z"
+    },
+    {
+      "title": "Wellness partnerships target F1 teams and their increasingly engaged fans",
+      "url": "https://www.motorsport.com/f1/news/wellness-partnerships-target-f1-teams-and-their-increasingly-engaged-fans/10864501/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-12T00:00:03.000Z"
+    },
+    {
+      "title": "Michael McDowell wrecks Ricky Stenhouse in heated post-race clash",
+      "url": "https://www.motorsport.com/nascar-cup/news/michael-mcdowell-wrecks-ricky-stenhouse-in-heated-post-race-clash/10864504/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-11T23:36:51.000Z"
+    },
+    {
+      "title": "Complete NASCAR Cup points standings after 2026 Charlotte II",
+      "url": "https://www.motorsport.com/nascar-cup/news/complete-nascar-cup-points-standings-after-2026-charlotte-ii/10864506/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-11T23:34:28.000Z"
+    },
+    {
+      "title": "Fans can't get enough of Max Verstappen's floral race boots after Singapore win",
+      "url": "https://www.motorsport.com/f1/news/fans-cant-get-enough-of-max-verstappens-floral-race-boots-after-singapore-win/10864491/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-11T23:15:02.000Z"
+    },
+    {
+      "title": "On This Day: Crash and disqualification decides title in controversial F3000 finale | Brief",
+      "url": "https://www.racefans.net/2026/10/12/on-this-day-1996-f3000-hockenheim-2/",
+      "source": "RaceFans",
+      "date": "2026-10-11T23:01:00.000Z"
+    },
+    {
+      "title": "Official race results: 2026 NASCAR Cup Charlotte II",
+      "url": "https://www.motorsport.com/nascar-cup/news/official-race-results-2026-nascar-cup-charlotte-ii/10864497/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "source": "Motorsport.com",
+      "date": "2026-10-11T22:49:17.000Z"
+    },
+    {
+      "title": "Race Analysis – Max wins Singapore, the radio loses",
+      "url": "http://www.grandprix.com/races/singapore-gp-2026-race-analysis.html",
+      "source": "Grandprix.com",
+      "date": "2026-10-11T22:36:00.000Z"
+    },
+    {
+      "title": "Hamilton takes blame for Singapore strategy mistake",
+      "url": "http://www.grandprix.com/news/hamilton-takes-blame-for-singapore-strategy-mistake.html",
+      "source": "Grandprix.com",
+      "date": "2026-10-11T21:59:00.000Z"
+    },
+    {
+      "title": "Norris apologizes to McLaren after Piastri collision",
+      "url": "http://www.grandprix.com/news/norris-apologizes-to-mclaren-after-piastri-collision.html",
+      "source": "Grandprix.com",
+      "date": "2026-10-11T21:58:00.000Z"
+    },
+    {
+      "title": "FIA explains no-action decision in Hamilton-Norris fight",
+      "url": "http://www.grandprix.com/news/fia-explains-no-action-decision-in-hamilton-norris-fight.html",
+      "source": "Grandprix.com",
+      "date": "2026-10-11T21:57:00.000Z"
+    },
+    {
+      "title": "Sunday Photos",
+      "url": "http://www.grandprix.com/races/singapore-gp-2026-sunday-photos.html",
+      "source": "Grandprix.com",
+      "date": "2026-10-11T18:41:00.000Z"
+    },
+    {
+      "title": "How Antonelli can clinch the 2026 title in Austin",
+      "url": "http://www.grandprix.com/news/how-antonelli-can-clinch-the-2026-title-in-austin.html",
+      "source": "Grandprix.com",
+      "date": "2026-10-11T18:18:00.000Z"
+    },
+    {
+      "title": "Leclerc says Ferrari needs more upgrades despite Singapore podium",
+      "url": "http://www.grandprix.com/news/leclerc-says-ferrari-needs-more-upgrades-despite-singapore-podium.html",
+      "source": "Grandprix.com",
+      "date": "2026-10-11T18:17:00.000Z"
+    },
+    {
+      "title": "Antonelli sees progress as Mercedes targets Austin improvement",
+      "url": "http://www.grandprix.com/news/antonelli-sees-progress-as-mercedes-targets-austin-improvement.html",
+      "source": "Grandprix.com",
+      "date": "2026-10-11T18:16:00.000Z"
+    },
+    {
+      "title": "Verstappen jokes about coded messages as Red Bull phases in Lambiase’s successor",
+      "url": "https://www.autosport.com/f1/news/max-verstappen-jokes-about-coded-messages-as-red-bull-plans-first-races-for-gianpiero-lambiases-suc/10864455/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
+      "source": "Autosport",
+      "date": "2026-10-11T17:30:02.000Z"
+    },
+    {
+      "title": "Ferrari explains Hamilton’s failed Singapore GP gamble",
+      "url": "https://www.autosport.com/f1/news/ferrari-explains-hamiltons-failed-singapore-gp-gamble/10864421/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
+      "source": "Autosport",
+      "date": "2026-10-11T16:23:39.000Z"
+    },
+    {
+      "title": "Norris incorrectly believed Hamilton “would have to let me past” after turn one move | Formula 1",
+      "url": "https://www.racefans.net/2026/10/11/norris-incorrectly-believed-hamilton-would-have-to-let-me-past-after-turn-one-move/",
+      "source": "RaceFans",
+      "date": "2026-10-11T16:21:37.000Z"
+    },
+    {
+      "title": "2026 Singapore Grand Prix interactive data: lap charts, times and tyres | 2026 Singapore Grand Prix interactive data",
+      "url": "https://www.racefans.net/2026/10/11/2026-singapore-grand-prix-interactive-data-lap-charts-times-and-tyres/",
+      "source": "RaceFans",
+      "date": "2026-10-11T15:46:41.000Z"
+    },
+    {
+      "title": "How can Antonelli become F1 world champion at US GP?",
+      "url": "https://www.autosport.com/f1/news/how-can-antonelli-become-f1-world-champion-at-us-gp/10864377/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
+      "source": "Autosport",
+      "date": "2026-10-11T15:19:09.000Z"
+    },
+    {
+      "title": "Hamilton takes blame for poor Singapore GP strategy call",
+      "url": "https://www.autosport.com/f1/news/lewis-hamilton-takes-blame-for-poor-singapore-gp-strategy/10864343/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
+      "source": "Autosport",
+      "date": "2026-10-11T14:24:02.000Z"
+    },
+    {
+      "title": "How Antonelli can clinch the F1 world championship at the next race in Austin | Formula 1",
+      "url": "https://www.racefans.net/2026/10/11/how-antonelli-can-clinch-the-f1-world-championship-at-the-next-race-in-austin/",
+      "source": "RaceFans",
+      "date": "2026-10-11T14:15:03.000Z"
+    },
+    {
+      "title": "Hamilton apologises to Ferrari after failing to pit when they told him to | Formula 1",
+      "url": "https://www.racefans.net/2026/10/11/hamilton-apologises-to-ferrari-after-missing-pit-entry-when-told-to-come-in/",
+      "source": "RaceFans",
+      "date": "2026-10-11T14:06:51.000Z"
+    },
+    {
+      "title": "Vote for your 2026 Singapore Grand Prix Driver of the Weekend | Formula 1",
+      "url": "https://www.racefans.net/2026/10/11/vote-for-your-2026-singapore-grand-prix-driver-of-the-weekend/",
+      "source": "RaceFans",
+      "date": "2026-10-11T13:58:06.000Z"
+    },
+    {
+      "title": "2026 Singapore Grand Prix race result and championship points | Formula 1",
+      "url": "https://www.racefans.net/2026/10/11/2026-singapore-grand-prix-race-result-and-championship-points/",
+      "source": "RaceFans",
+      "date": "2026-10-11T13:53:52.000Z"
+    },
+    {
+      "title": "F1 Singapore GP: Verstappen takes comfortable victory from Leclerc and Antonelli",
+      "url": "https://www.autosport.com/f1/news/f1-singapore-gp-report/10864312/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
+      "source": "Autosport",
+      "date": "2026-10-11T13:53:45.000Z"
+    },
+    {
+      "title": "Verstappen cruises to Singapore Grand Prix victory as Ferrari threat fades | 2026 Singapore Grand Prix report",
+      "url": "https://www.racefans.net/2026/10/11/verstappen-cruises-to-singapore-grand-prix-victory-as-ferrari-threat-fades/",
+      "source": "RaceFans",
+      "date": "2026-10-11T13:53:05.000Z"
+    },
+    {
+      "title": "Marco Bezzecchi with conflicting feelings: Indonesian GP feels ‘more like a loss than a win’",
+      "url": "https://www.motorsport.com/motogp/news/marco-bezzecchi-with-conflicting-feelings-indonesian-gp-feels-more-like-a-loss-than-a-win/10864259/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-11T11:08:33.000Z"
+    },
+    {
+      "title": "Marc Marquez: Indonesian GP results a “dream” at my “worst circuit”",
+      "url": "https://www.motorsport.com/motogp/news/marc-marquez-dream-result-indonesian-gp-worst-track/10864221/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-11T10:17:02.000Z"
+    },
+    {
+      "title": "Fermin Aldeguer set for surgery after fracturing hand at Mandalika",
+      "url": "https://www.motorsport.com/motogp/news/fermin-aldeguer-set-for-surgery-after-fracturing-hand-at-mandalika/10864224/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-11T10:05:57.000Z"
+    },
+    {
+      "title": "'I don't know how I did that,' says Raul Fernandez after ride to Indonesian GP podium with broken finger",
+      "url": "https://www.motorsport.com/motogp/news/i-dont-know-how-i-did-that-says-raul-fernandez-after-ride-to-indonesian-gp-podium-with-broken-finger/10864210/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-11T09:42:53.000Z"
+    },
+    {
+      "title": "Pedro Acosta: MotoGP tyre pressure rules make us look like “donkeys”",
+      "url": "https://www.motorsport.com/motogp/news/pedro-acosta-motogp-tyre-pressure-rules-make-us-look-like-donkeys/10864204/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-11T09:23:46.000Z"
+    },
+    {
+      "title": "MotoGP Indonesian GP: Marco Bezzecchi leads Aprilia 1-2-3-4; Jorge Martin reclaims points lead",
+      "url": "https://www.motorsport.com/motogp/news/motogp-indonesian-gp-marco-bezzecchi-leads-aprilia-1-2-3-4-jorge-martin-reclaims-points-lead/10864170/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-11T07:54:20.000Z"
+    },
+    {
+      "title": "FIA admits fairness was compromised in Singapore GP sprint qualifying “mess”",
+      "url": "https://www.autosport.com/f1/news/fia-admits-fairness-was-compromised-in-singapore-f1-sprint-qualifying-mess/10864155/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
+      "source": "Autosport",
+      "date": "2026-10-11T07:02:49.000Z"
+    },
+    {
+      "title": "MotoGP to fine riders €5,000 for failing to attend promotional events",
+      "url": "https://www.motorsport.com/motogp/news/motogp-rider-fines-not-attending-promotional-events/10864127/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-11T06:14:54.000Z"
+    },
+    {
+      "title": "Marc Marquez’s protege Max Quiles wraps up 2026 Moto3 title in Indonesia",
+      "url": "https://www.motorsport.com/moto3/news/marc-marquez-protege-max-quiles-wraps-up-2026-moto3-title-in-indonesia/10864119/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-11T04:45:37.000Z"
+    },
+    {
+      "title": "Why McLaren considers Norris-Piastri Singapore clash so “serious”",
+      "url": "https://www.autosport.com/f1/news/whats-so-serious-for-mclaren-about-the-norris-piastri-singapore-collision/10864087/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
+      "source": "Autosport",
+      "date": "2026-10-10T19:54:03.000Z"
+    },
+    {
+      "title": "What Verstappen will change after Red Bull’s poor F1 starts in Malaysia and Singapore",
+      "url": "https://www.autosport.com/f1/news/max-verstappen-hints-at-change-after-red-bulls-poor-f1-starts-in-malaysia-and-singapore/10864060/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
+      "source": "Autosport",
+      "date": "2026-10-10T18:35:02.000Z"
+    }
+  ]
+}

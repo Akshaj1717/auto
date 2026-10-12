@@ -1,6 +1,152 @@
 [
-  { "id": 1, "title": "Sample headline one", "summary": "Short summary of the story.", "date": "2026-10-05", "url": "#", "featured": true },
-  { "id": 2, "title": "Sample headline two", "summary": "Short summary of the story.", "date": "2026-10-04", "url": "#", "featured": true },
-  { "id": 3, "title": "Sample headline three", "summary": "Short summary of the story.", "date": "2026-10-03", "url": "#", "featured": false },
-  { "id": 4, "title": "Sample headline four", "summary": "Short summary of the story.", "date": "2026-10-02", "url": "#", "featured": false }
+  {
+    "id": 1,
+    "title": "DTM Hockenheim: Engel wins race 2 as Preining secures championship",
+    "summary": "Winward Mercedes driver Maro Engel secured victory in the final race of the 2026 DTM season as Thomas Preining secured his second championship by finishing thir",
+    "url": "https://www.autosport.com/dtm/news/dtm-race-hockenheim-2-engel-wins-but-preining-is-dtm-champion-2026/10864461/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-9.motorsport.com/images/amp/J0r41JqY/s6/dtm-rennen-hockenheim-2-engel-siegt-aber-preining-ist-dtm-champion-2026-26101105-2.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T17:57:04.000Z",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Verstappen jokes about coded messages as Red Bull phases in Lambiase’s successor",
+    "summary": "There were still two races on the current Formula 1 calendar missing from Max Verstappen's list of victories: the Madring and the Marina Bay Street Circuit. Giv",
+    "url": "https://www.autosport.com/f1/news/max-verstappen-jokes-about-coded-messages-as-red-bull-plans-first-races-for-gianpiero-lambiases-suc/10864455/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-5.motorsport.com/images/amp/2Qed4eP2/s6/max-verstappen-red-bull-racing.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T17:30:02.000Z",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "BTCC Brands Hatch: Cammish handed victory after Collard penalty",
+    "summary": "Dan Cammish inherited victory in a disrupted final British Touring Car Championship race of the season at Brands Hatch after on-the-road winner Ricky Collard wa",
+    "url": "https://www.autosport.com/btcc/news/btcc-brands-hatch-collard-faces-anxious-wait-for-first-win/10864451/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-3.motorsport.com/images/amp/6DGgoM4Y/s6/ingram-start-011a5664-jpg-jpg.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T17:25:34.000Z",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Ferrari explains Hamilton’s failed Singapore GP gamble",
+    "summary": "As Ferrari team principal Fred Vasseur faced the media following Formula 1’s Singapore Grand Prix, the hot topic was Lewis Hamilton.\nMost of the questions revol",
+    "url": "https://www.autosport.com/f1/news/ferrari-explains-hamiltons-failed-singapore-gp-gamble/10864421/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-4.motorsport.com/images/amp/2eZxnMlY/s6/lewis-hamilton-ferrari-2.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T16:23:39.000Z",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "How can Antonelli become F1 world champion at US GP?",
+    "summary": "It has been very clear from early on that Kimi Antonelli will become Formula 1 world champion in 2026 after an impressively dominant year for the Mercedes drive",
+    "url": "https://www.autosport.com/f1/news/how-can-antonelli-become-f1-world-champion-at-us-gp/10864377/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-6.motorsport.com/images/amp/6n7boQg0/s6/andrea-kimi-antonelli-mercedes-2.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T15:19:09.000Z",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "BTCC Brands Hatch: Ingram doubles up to secure runner-up spot in championship",
+    "summary": "Tom Ingram made it two wins out of two on British Touring Car Championship season finale day on the Brands Hatch Grand Prix Circuit.\nThe 2022 and 2025 champion ",
+    "url": "https://www.autosport.com/btcc/news/btcc-brands-hatch-ingram-doubles-up-to-secure-runner-up-spot-in-championship/10864363/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-2.motorsport.com/images/amp/2y7QwKK6/s6/ingram-0q3a8903.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T14:43:33.000Z",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "Hamilton takes blame for poor Singapore GP strategy call",
+    "summary": "Lewis Hamilton has taken responsibility for his strategy in Formula 1’s Singapore Grand Prix, after a decision not to pit under a virtual safety car cost him de",
+    "url": "https://www.autosport.com/f1/news/lewis-hamilton-takes-blame-for-poor-singapore-gp-strategy/10864343/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-7.motorsport.com/images/amp/6b8Zode2/s6/lewis-hamilton-ferrari-2.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T14:24:02.000Z",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "title": "F1 Singapore GP: Verstappen takes comfortable victory from Leclerc and Antonelli",
+    "summary": "Max Verstappen won Formula 1’s Singapore Grand Prix for the very first time on Sunday, leading Charles Leclerc and Kimi Antonelli under the chequered flag.\nVers",
+    "url": "https://www.autosport.com/f1/news/f1-singapore-gp-report/10864312/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-1.motorsport.com/images/amp/2GdKqjzY/s6/max-verstappen-red-bull-racing-2.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T13:53:45.000Z",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "title": "BTCC Brands Hatch: Ingram wins after wonder move on Moffat",
+    "summary": "Outgoing British Touring Car champion Tom Ingram pulled off a beautiful move to take victory in the first race of the final round at Brands Hatch.\nOnly Ingram’s",
+    "url": "https://www.autosport.com/btcc/news/btcc-brands-hatch-ingram-wins-after-wonder-move-on-moffat/10864274/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-3.motorsport.com/images/amp/YP74qKe2/s6/ingram-0t9a3982-3.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T11:29:17.000Z",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "title": "Bezzecchi with conflicting feelings: Indonesian GP feels ‘more like a loss than a win’",
+    "summary": "Marco Bezzecchi admitted that the Indonesian Grand Prix weekend felt ‘more like a loss than a win’, even after bouncing from a sprint crash to dominate Sunday’s",
+    "url": "https://www.autosport.com/motogp/news/marco-bezzecchi-with-conflicting-feelings-indonesian-gp-feels-more-like-a-loss-than-a-win/10864270/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-1.motorsport.com/images/amp/6AlvbWwY/s6/marco-bezzecchi-aprilia-racing.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T11:15:26.000Z",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "title": "Top five roles on Motorsport Jobs this week",
+    "summary": "1. United Autosports - Marketing Executive Marketing Executive - Wakefield\nUnited Autosports has a vacancy for a Marketing Executive.\nYou will be developing and",
+    "url": "https://www.autosport.com/general/news/top-five-roles-on-motorsport-jobs-this-week-10864197/10864197/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-1.motorsport.com/images/amp/YBenXdB2/s6/motorsport-jobs-of-the-week.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T09:04:43.000Z",
+    "featured": false
+  },
+  {
+    "id": 12,
+    "title": "Sutton extends BTCC deal for five more years",
+    "summary": "Five-time British Touring Car Championship title winner Ash Sutton is to race on in the series until at least the end of the 2031 season.\nThe Alliance Racing-ru",
+    "url": "https://www.autosport.com/btcc/news/sutton-extends-btcc-deal-for-five-more-years/10864036/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-7.motorsport.com/images/amp/YpbAxeN0/s6/ashley-sutton-napa-racing-uk.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T09:00:03.000Z",
+    "featured": false
+  },
+  {
+    "id": 13,
+    "title": "Super Formula Fuji: Iwasa wins as Ohta misses chance to seal title",
+    "summary": "Kakunoshin Ohta’s hopes of an early Super Formula title went up in smoke in Sunday’s second Fuji race amid contact with Igor Fraga, while Ayumu Iwasa ended his ",
+    "url": "https://www.autosport.com/super-formula/news/super-formula-fuji-ayumu-iwasa-wins-as-kakunoshin-ohta-misses-chance-to-seal-title/10864180/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-9.motorsport.com/images/amp/6VyKBrlY/s6/ayumu-iwasa-team-mugen-autobac.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T08:16:54.000Z",
+    "featured": false
+  },
+  {
+    "id": 14,
+    "title": "MotoGP Indonesian GP: Bezzecchi leads Aprilia 1-2-3-4; Martin reclaims points lead from Marquez",
+    "summary": "Marco Bezzecchi outduelled Raul Fernandez to claim his first MotoGP win in over four months at the Indonesian Grand Prix, as his team-mate Jorge Martin retook t",
+    "url": "https://www.autosport.com/motogp/news/motogp-indonesian-gp-bezzecchi-leads-aprilia-1-2-3-4-martin-reclaims-points-lead-from-marquez/10864172/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-5.motorsport.com/images/amp/25dLQqE0/s6/marco-bezzecchi-aprilia-racing-3.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T07:57:00.000Z",
+    "featured": false
+  },
+  {
+    "id": 15,
+    "title": "Marquez protege Quiles wraps up 2026 Moto3 title in Indonesia",
+    "summary": "Maximo Quiles sealed the 2026 Moto3 title with five rounds to spare following a dominant victory in the Indonesian Grand Prix.\nThe CF Moto Aspar rider arrived i",
+    "url": "https://www.autosport.com/moto3/news/marc-marquezs-protege-max-quiles-wraps-up-2026-moto3-title-in-indonesia/10864152/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=uk",
+    "image": "https://cdn-8.motorsport.com/images/amp/0Ld5AWV0/s6/maximo-quiles-aspar-team.jpg",
+    "source": "Autosport",
+    "date": "2026-10-11T07:48:48.000Z",
+    "featured": false
+  }
 ]
