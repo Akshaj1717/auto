@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *' 
 
 permissions:
   contents: read
@@ -21,6 +23,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
+      - run: node scripts/fetch-news.js
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
