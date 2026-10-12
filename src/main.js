@@ -6,9 +6,11 @@ import { renderHeadlines } from './components/headlines.js';
 import { renderUnderTheHood } from './components/underTheHood.js';
 import { renderBuilds } from './components/builds.js';
 
+
 import news from './data/news.json';
 import cars from './data/cars.json';
 import builds from './data/builds.json';
+import live from './data/live.json';
 
 // Pick today's car: rotates through the list one per day.
 function getCarOfTheDay(list) {
@@ -24,3 +26,7 @@ renderCarOfTheDay(document.getElementById('car-of-the-day'), car);
 renderHeadlines(document.getElementById('headlines'), news.filter(n => n.featured).slice(0, 2));
 renderUnderTheHood(document.getElementById('under-the-hood'), car);
 renderBuilds(document.getElementById('builds'), builds);
+renderNewsSidebar(document.getElementById('news-sidebar'), {
+  events: live.events,
+  news: live.news.length ? live.news : news,   // falls back to your manual news.json
+});
