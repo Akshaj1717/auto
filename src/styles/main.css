@@ -56,7 +56,13 @@ img { max-width: 100%; display: block; }
 .standings-table th, .standings-table td { text-align: left; padding: 4px 6px; border-bottom: 1px dashed var(--line); }
 .standings-table td:first-child, .standings-table td:last-child { white-space: nowrap; }
 .standings-table td:last-child, .standings-table th:last-child { text-align: right; }
-.standings-card:not(.expanded) tr.extra { display: none; }
+/* Full standings popup */
+.standings-dialog { width: min(720px, calc(100vw - 32px)); max-height: 85vh; padding: 0; border: 2px dashed var(--line); background: var(--bg); color: var(--text); }
+.standings-dialog::backdrop { background: rgba(0, 0, 0, .45); }
+.standings-dialog-body { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 16px; }
+.standings-dialog-body header { display: flex; gap: 12px; align-items: baseline; padding-right: 32px; }
+.standings-dialog-body h3 { margin: 0; }
+.standings-close { position: absolute; top: 10px; right: 10px; border: none; background: none; font-size: 18px; cursor: pointer; color: inherit; }
 
 @media (max-width: 700px) {
   .page { grid-template-columns: 1fr; }

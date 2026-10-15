@@ -100,27 +100,43 @@ export function findTables(html) {
   return tables.sort((a, b) => html.indexOf(a) - html.indexOf(b));
 }
 
+// Each row = list of cells { text, th }. th = header-style cell, which Wikipedia uses for "Pos".
 const rowsOf = table => (table.match(/<tr\b[\s\S]*?<\/tr>/gi) || [])
-  .map(tr => (tr.match(/<(th|td)\b[^>]*>[\s\S]*?<\/\1>/gi) || []).map(c => cellText(c.replace(/^<[^>]+>|<\/t[hd]>$/gi, ''))));
+  .map(tr => (tr.match(/<(th|td)\b[^>]*>[\s\S]*?<\/\1>/gi) || []).map(c => ({
+    text: cellText(c.replace(/^<[^>]+>|<\/t[hd]>$/gi, '')),
+    th: /^<th/i.test(c),
+  })));
+
+// Race-result codes that appear in the round columns, never as a driver/team name
+const RESULT_CODE = /^(ret|dnf|dns|dsq|dq|nc|wd|ex|exc|dnq|dnp|dnpq|inj|c|ns|nt|tbd|–|-)$/i;
+const isName = s => /\p{L}/u.test(s) && !RESULT_CODE.test(s);
 
 // Standings table = header starts with "Pos" and ends with "Points"/"Pts"
 export function readStandingsTable(table) {
   const rows = rowsOf(table);
-  const header = rows[0] ?? [];
+  const header = (rows[0] ?? []).map(c => c.text);
   if (!/^pos/i.test(header[0] ?? '') || !/^(pts|points)/i.test(header.at(-1) ?? '')) return null;
   const teamCol = header.findIndex((h, i) => i > 1 && /^(team|entrant|car)/i.test(h));
+  const body = rows.slice(1);
+  // If positions are header-style cells (usual on Wikipedia), only trust those as positions.
+  const posIsTh = body.some(r => r[0]?.th && /^\d+$/.test(r[0].text));
+
   const out = [];
-  for (const r of rows.slice(1)) {
-    // Rows that continue an entry (merged "rowspan" cells) don't start with a position.
-    // In endurance racing a crew shares one position, so add those drivers' names to it.
-    if (!/^\d+$/.test(r[0] ?? '') || r.length < 3) {
+  for (const r of body) {
+    const first = r[0]?.text ?? '';
+    const isPositionRow = /^\d+$/.test(first) && (!posIsTh || r[0].th) && r.length >= 3
+      && isName(r[1]?.text ?? '') && +first >= (out.at(-1)?.pos ?? 0);
+
+    if (!isPositionRow) {
+      // A row that continues the entry above (merged cells). In endurance racing a crew
+      // shares one position, so add the other drivers' names; ignore rows of results.
       const prev = out.at(-1);
-      if (prev && /^[^\d]+\s[^\d]+$/.test(r[0] ?? '') && !prev.name.includes(r[0])) prev.name += `, ${r[0]}`;
+      if (prev && /^[^\d]+\s[^\d]+$/.test(first) && isName(first) && !prev.name.includes(first)) prev.name += `, ${first}`;
       continue;
     }
-    const points = parseFloat((r.at(-1) || '').replace(/[^\d.]/g, ''));
+    const points = parseFloat((r.at(-1)?.text || '').replace(/[^\d.]/g, ''));
     out.push({
-      pos: +r[0], name: r[1], ...(teamCol > 0 && r[teamCol] ? { team: r[teamCol] } : {}),
+      pos: +first, name: r[1].text, ...(teamCol > 0 && r[teamCol]?.text ? { team: r[teamCol].text } : {}),
       points: isNaN(points) ? 0 : points,
     });
   }
