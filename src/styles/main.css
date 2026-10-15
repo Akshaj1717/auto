@@ -44,6 +44,20 @@ img { max-width: 100%; display: block; }
 .story { display: flex; gap: 12px; align-items: flex-start; }
 .story img { width: 140px; height: 90px; object-fit: cover; flex-shrink: 0; }
 
+/* Standings: one box per series, top 5 shown until expanded */
+.standings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; align-items: start; }
+.standings-card { display: flex; flex-direction: column; gap: 8px; }
+.standings-card header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.standings-card h3 { margin: 0; }
+.standings-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.standings-tabs button, .standings-toggle { border: 1px dashed var(--line); background: none; padding: 4px 10px; cursor: pointer; font: inherit; }
+.standings-tabs button.active { background: var(--text); color: var(--bg); }
+.standings-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.standings-table th, .standings-table td { text-align: left; padding: 4px 6px; border-bottom: 1px dashed var(--line); }
+.standings-table td:first-child, .standings-table td:last-child { white-space: nowrap; }
+.standings-table td:last-child, .standings-table th:last-child { text-align: right; }
+.standings-card:not(.expanded) tr.extra { display: none; }
+
 @media (max-width: 700px) {
   .page { grid-template-columns: 1fr; }
   .logo, .nav, .sidebar, #car-of-the-day, .content { grid-column: 1; grid-row: auto; }

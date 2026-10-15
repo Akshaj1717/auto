@@ -1,0 +1,1084 @@
+{
+  "updated": "2026-10-15T02:03:02.864Z",
+  "series": [
+    {
+      "id": "f1",
+      "name": "Formula 1",
+      "season": 2026,
+      "round": 17,
+      "source": "Jolpica F1 API",
+      "sourceUrl": "https://www.formula1.com/en/results",
+      "tables": [
+        {
+          "title": "Drivers",
+          "rows": [
+            {
+              "pos": 1,
+              "name": "Andrea Kimi Antonelli",
+              "team": "Mercedes",
+              "points": 340,
+              "wins": 8
+            },
+            {
+              "pos": 2,
+              "name": "George Russell",
+              "team": "Mercedes",
+              "points": 238,
+              "wins": 3
+            },
+            {
+              "pos": 3,
+              "name": "Lewis Hamilton",
+              "team": "Ferrari",
+              "points": 229,
+              "wins": 1
+            },
+            {
+              "pos": 4,
+              "name": "Max Verstappen",
+              "team": "Red Bull",
+              "points": 221,
+              "wins": 2
+            },
+            {
+              "pos": 5,
+              "name": "Charles Leclerc",
+              "team": "Ferrari",
+              "points": 215,
+              "wins": 1
+            },
+            {
+              "pos": 6,
+              "name": "Lando Norris",
+              "team": "McLaren",
+              "points": 201,
+              "wins": 2
+            },
+            {
+              "pos": 7,
+              "name": "Oscar Piastri",
+              "team": "McLaren",
+              "points": 138,
+              "wins": 0
+            },
+            {
+              "pos": 8,
+              "name": "Isack Hadjar",
+              "team": "Red Bull",
+              "points": 97,
+              "wins": 0
+            },
+            {
+              "pos": 9,
+              "name": "Liam Lawson",
+              "team": "RB F1 Team / Red Bull",
+              "points": 75,
+              "wins": 0
+            },
+            {
+              "pos": 10,
+              "name": "Pierre Gasly",
+              "team": "Alpine F1 Team",
+              "points": 41,
+              "wins": 0
+            },
+            {
+              "pos": 11,
+              "name": "Arvid Lindblad",
+              "team": "RB F1 Team",
+              "points": 38,
+              "wins": 0
+            },
+            {
+              "pos": 12,
+              "name": "Franco Colapinto",
+              "team": "Alpine F1 Team",
+              "points": 27,
+              "wins": 0
+            },
+            {
+              "pos": 13,
+              "name": "Oliver Bearman",
+              "team": "Haas F1 Team",
+              "points": 23,
+              "wins": 0
+            },
+            {
+              "pos": 14,
+              "name": "Nico Hülkenberg",
+              "team": "Audi",
+              "points": 13,
+              "wins": 0
+            },
+            {
+              "pos": 15,
+              "name": "Gabriel Bortoleto",
+              "team": "Audi",
+              "points": 10,
+              "wins": 0
+            },
+            {
+              "pos": 16,
+              "name": "Esteban Ocon",
+              "team": "Haas F1 Team",
+              "points": 7,
+              "wins": 0
+            },
+            {
+              "pos": 17,
+              "name": "Fernando Alonso",
+              "team": "Aston Martin",
+              "points": 7,
+              "wins": 0
+            },
+            {
+              "pos": 18,
+              "name": "Carlos Sainz",
+              "team": "Williams",
+              "points": 7,
+              "wins": 0
+            },
+            {
+              "pos": 19,
+              "name": "Alexander Albon",
+              "team": "Williams",
+              "points": 5,
+              "wins": 0
+            },
+            {
+              "pos": 20,
+              "name": "Yuki Tsunoda",
+              "team": "RB F1 Team",
+              "points": 1,
+              "wins": 0
+            },
+            {
+              "pos": 21,
+              "name": "Lance Stroll",
+              "team": "Aston Martin",
+              "points": 0,
+              "wins": 0
+            },
+            {
+              "pos": 22,
+              "name": "Valtteri Bottas",
+              "team": "Cadillac F1 Team",
+              "points": 0,
+              "wins": 0
+            },
+            {
+              "pos": 23,
+              "name": "Sergio Pérez",
+              "team": "Cadillac F1 Team",
+              "points": 0,
+              "wins": 0
+            }
+          ]
+        },
+        {
+          "title": "Constructors",
+          "rows": [
+            {
+              "pos": 1,
+              "name": "Mercedes",
+              "points": 578,
+              "wins": 11
+            },
+            {
+              "pos": 2,
+              "name": "Ferrari",
+              "points": 444,
+              "wins": 2
+            },
+            {
+              "pos": 3,
+              "name": "McLaren",
+              "points": 339,
+              "wins": 2
+            },
+            {
+              "pos": 4,
+              "name": "Red Bull",
+              "points": 332,
+              "wins": 2
+            },
+            {
+              "pos": 5,
+              "name": "RB F1 Team",
+              "points": 100,
+              "wins": 0
+            },
+            {
+              "pos": 6,
+              "name": "Alpine F1 Team",
+              "points": 68,
+              "wins": 0
+            },
+            {
+              "pos": 7,
+              "name": "Haas F1 Team",
+              "points": 30,
+              "wins": 0
+            },
+            {
+              "pos": 8,
+              "name": "Audi",
+              "points": 23,
+              "wins": 0
+            },
+            {
+              "pos": 9,
+              "name": "Williams",
+              "points": 12,
+              "wins": 0
+            },
+            {
+              "pos": 10,
+              "name": "Aston Martin",
+              "points": 7,
+              "wins": 0
+            },
+            {
+              "pos": 11,
+              "name": "Cadillac F1 Team",
+              "points": 0,
+              "wins": 0
+            }
+          ]
+        }
+      ],
+      "updated": "2026-10-15T02:03:02.084Z"
+    },
+    {
+      "id": "motogp",
+      "name": "MotoGP",
+      "season": 2026,
+      "source": "MotoGP.com",
+      "sourceUrl": "https://www.motogp.com/en/world-standing",
+      "tables": [
+        {
+          "title": "Riders",
+          "rows": [
+            {
+              "pos": 1,
+              "name": "Jorge Martin",
+              "team": "Aprilia Racing",
+              "points": 355,
+              "wins": 1
+            },
+            {
+              "pos": 2,
+              "name": "Marc Marquez",
+              "team": "Ducati Lenovo Team",
+              "points": 353,
+              "wins": 6
+            },
+            {
+              "pos": 3,
+              "name": "Marco Bezzecchi",
+              "team": "Aprilia Racing",
+              "points": 309,
+              "wins": 5
+            },
+            {
+              "pos": 4,
+              "name": "Ai Ogura",
+              "team": "SuperFile Trackhouse MotoGP Team",
+              "points": 259,
+              "wins": 1
+            },
+            {
+              "pos": 5,
+              "name": "Pedro Acosta",
+              "team": "Red Bull KTM Factory Racing",
+              "points": 258,
+              "wins": 1
+            },
+            {
+              "pos": 6,
+              "name": "Fabio Di Giannantonio",
+              "team": "Pertamina Enduro VR46 Racing Team",
+              "points": 245,
+              "wins": 1
+            },
+            {
+              "pos": 7,
+              "name": "Raul Fernandez",
+              "team": "SuperFile Trackhouse MotoGP Team",
+              "points": 236,
+              "wins": 1
+            },
+            {
+              "pos": 8,
+              "name": "Alex Marquez",
+              "team": "BK8 Gresini Racing MotoGP",
+              "points": 172,
+              "wins": 1
+            },
+            {
+              "pos": 9,
+              "name": "Francesco Bagnaia",
+              "team": "Ducati Lenovo Team",
+              "points": 166,
+              "wins": 0
+            },
+            {
+              "pos": 10,
+              "name": "Fermin Aldeguer",
+              "team": "BK8 Gresini Racing MotoGP",
+              "points": 125,
+              "wins": 0
+            },
+            {
+              "pos": 11,
+              "name": "Enea Bastianini",
+              "team": "Red Bull KTM Tech3",
+              "points": 122,
+              "wins": 0
+            },
+            {
+              "pos": 12,
+              "name": "Luca Marini",
+              "team": "Honda HRC Castrol",
+              "points": 108,
+              "wins": 0
+            },
+            {
+              "pos": 13,
+              "name": "Brad Binder",
+              "team": "Red Bull KTM Factory Racing",
+              "points": 104,
+              "wins": 0
+            },
+            {
+              "pos": 14,
+              "name": "Fabio Quartararo",
+              "team": "Monster Energy Yamaha MotoGP Team",
+              "points": 74,
+              "wins": 0
+            },
+            {
+              "pos": 15,
+              "name": "Diogo Moreira",
+              "team": "Pro Honda LCR",
+              "points": 74,
+              "wins": 0
+            },
+            {
+              "pos": 16,
+              "name": "Franco Morbidelli",
+              "team": "Pertamina Enduro VR46 Racing Team",
+              "points": 59,
+              "wins": 0
+            },
+            {
+              "pos": 17,
+              "name": "Johann Zarco",
+              "team": "Castrol Honda LCR",
+              "points": 51,
+              "wins": 0
+            },
+            {
+              "pos": 18,
+              "name": "Joan Mir",
+              "team": "Honda HRC Castrol",
+              "points": 33,
+              "wins": 0
+            },
+            {
+              "pos": 19,
+              "name": "Jack Miller",
+              "team": "Prima Pramac Yamaha MotoGP",
+              "points": 28,
+              "wins": 0
+            },
+            {
+              "pos": 20,
+              "name": "Alex Rins",
+              "team": "Monster Energy Yamaha MotoGP Team",
+              "points": 25,
+              "wins": 0
+            },
+            {
+              "pos": 21,
+              "name": "Toprak Razgatlioglu",
+              "team": "Prima Pramac Yamaha MotoGP",
+              "points": 18,
+              "wins": 0
+            },
+            {
+              "pos": 22,
+              "name": "Maverick Viñales",
+              "team": "Red Bull KTM Tech3",
+              "points": 12,
+              "wins": 0
+            },
+            {
+              "pos": 23,
+              "name": "Iker Lecuona",
+              "team": "BK8 Gresini Racing MotoGP",
+              "points": 9,
+              "wins": 0
+            },
+            {
+              "pos": 24,
+              "name": "Augusto Fernandez",
+              "team": "Yamaha Factory Racing",
+              "points": 6,
+              "wins": 0
+            },
+            {
+              "pos": 25,
+              "name": "Pol Espargaro",
+              "team": "Red Bull KTM Tech3",
+              "points": 5,
+              "wins": 0
+            },
+            {
+              "pos": 26,
+              "name": "Somkiat Chantra",
+              "team": "Honda HRC Castrol",
+              "points": 3,
+              "wins": 0
+            },
+            {
+              "pos": 27,
+              "name": "Takaaki Nakagami",
+              "team": "Honda HRC Castrol",
+              "points": 3,
+              "wins": 0
+            },
+            {
+              "pos": 28,
+              "name": "Cal Crutchlow",
+              "team": "Castrol Honda LCR",
+              "points": 0,
+              "wins": 0
+            },
+            {
+              "pos": 29,
+              "name": "Jonas Folger",
+              "team": "Red Bull KTM Tech3",
+              "points": 0,
+              "wins": 0
+            },
+            {
+              "pos": 30,
+              "name": "Lorenzo Savadori",
+              "team": "SuperFile Trackhouse MotoGP Team",
+              "points": 0,
+              "wins": 0
+            },
+            {
+              "pos": 31,
+              "name": "Michele Pirro",
+              "team": "BK8 Gresini Racing MotoGP",
+              "points": 0,
+              "wins": 0
+            },
+            {
+              "pos": 32,
+              "name": "Aleix Espargaro",
+              "team": "Honda HRC Castrol",
+              "points": 0,
+              "wins": 0
+            }
+          ]
+        }
+      ],
+      "updated": "2026-10-15T02:03:02.864Z"
+    },
+    {
+      "id": "wec",
+      "name": "WEC",
+      "season": 2026,
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIA_World_Endurance_Championship",
+      "tables": [
+        {
+          "title": "Hypercar Drivers",
+          "rows": [
+            {
+              "pos": 1,
+              "name": "Sébastien Buemi",
+              "team": "Toyota Racing",
+              "points": 89
+            },
+            {
+              "pos": 1,
+              "name": "Brendon Hartley",
+              "team": "Toyota Racing",
+              "points": 89
+            },
+            {
+              "pos": 1,
+              "name": "Ryō Hirakawa",
+              "team": "Toyota Racing",
+              "points": 89
+            },
+            {
+              "pos": 2,
+              "name": "Mike Conway",
+              "team": "Toyota Racing",
+              "points": 79
+            },
+            {
+              "pos": 2,
+              "name": "Kamui Kobayashi",
+              "team": "Toyota Racing",
+              "points": 79
+            },
+            {
+              "pos": 2,
+              "name": "Nyck de Vries",
+              "team": "Toyota Racing",
+              "points": 79
+            },
+            {
+              "pos": 3,
+              "name": "Robin Frijns",
+              "team": "BMW M Team WRT",
+              "points": 75
+            },
+            {
+              "pos": 3,
+              "name": "René Rast",
+              "team": "BMW M Team WRT",
+              "points": 75
+            },
+            {
+              "pos": 4,
+              "name": "Kevin Magnussen",
+              "team": "BMW M Team WRT",
+              "points": 69
+            },
+            {
+              "pos": 4,
+              "name": "Raffaele Marciello",
+              "team": "BMW M Team WRT",
+              "points": 69
+            },
+            {
+              "pos": 5,
+              "name": "Sheldon van der Linde",
+              "team": "BMW M Team WRT",
+              "points": 65
+            },
+            {
+              "pos": 6,
+              "name": "Dries Vanthoor",
+              "team": "BMW M Team WRT",
+              "points": 63
+            },
+            {
+              "pos": 7,
+              "name": "James Calado",
+              "team": "Ferrari AF Corse",
+              "points": 59
+            },
+            {
+              "pos": 7,
+              "name": "Antonio Giovinazzi",
+              "team": "Ferrari AF Corse",
+              "points": 59
+            },
+            {
+              "pos": 7,
+              "name": "Alessandro Pier Guidi",
+              "team": "Ferrari AF Corse",
+              "points": 59
+            },
+            {
+              "pos": 8,
+              "name": "Ferdinand Habsburg",
+              "team": "Alpine Endurance Team",
+              "points": 56
+            },
+            {
+              "pos": 8,
+              "name": "Charles Milesi",
+              "team": "Alpine Endurance Team",
+              "points": 56
+            },
+            {
+              "pos": 9,
+              "name": "Antonio Fuoco",
+              "team": "Ferrari AF Corse",
+              "points": 54
+            },
+            {
+              "pos": 9,
+              "name": "Miguel Molina",
+              "team": "Ferrari AF Corse",
+              "points": 54
+            },
+            {
+              "pos": 9,
+              "name": "Nicklas Nielsen",
+              "team": "Ferrari AF Corse",
+              "points": 54
+            },
+            {
+              "pos": 10,
+              "name": "Norman Nato",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 50
+            },
+            {
+              "pos": 10,
+              "name": "Will Stevens",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 50
+            },
+            {
+              "pos": 11,
+              "name": "Earl Bamber",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 44
+            },
+            {
+              "pos": 11,
+              "name": "Sébastien Bourdais",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 44
+            },
+            {
+              "pos": 12,
+              "name": "António Félix da Costa",
+              "team": "Alpine Endurance Team",
+              "points": 44
+            },
+            {
+              "pos": 13,
+              "name": "Tom Gamble",
+              "team": "Aston Martin THOR Team",
+              "points": 42
+            },
+            {
+              "pos": 13,
+              "name": "Harry Tincknell",
+              "team": "Aston Martin THOR Team",
+              "points": 42
+            },
+            {
+              "pos": 14,
+              "name": "Jack Aitken",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 40
+            },
+            {
+              "pos": 15,
+              "name": "Victor Martins",
+              "team": "Alpine Endurance Team",
+              "points": 32
+            },
+            {
+              "pos": 15,
+              "name": "Jules Gounon",
+              "team": "Alpine Endurance Team",
+              "points": 32
+            },
+            {
+              "pos": 16,
+              "name": "Phil Hanson",
+              "team": "AF Corse",
+              "points": 31
+            },
+            {
+              "pos": 16,
+              "name": "Robert Kubica",
+              "team": "AF Corse",
+              "points": 31
+            },
+            {
+              "pos": 16,
+              "name": "Yifei Ye",
+              "team": "AF Corse",
+              "points": 31
+            },
+            {
+              "pos": 17,
+              "name": "Louis Delétraz",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 26
+            },
+            {
+              "pos": 18,
+              "name": "Frédéric Makowiecki",
+              "team": "Alpine Endurance Team",
+              "points": 14
+            },
+            {
+              "pos": 19,
+              "name": "Loïc Duval",
+              "team": "Peugeot TotalEnergies",
+              "points": 12
+            },
+            {
+              "pos": 19,
+              "name": "Malthe Jakobsen",
+              "team": "Peugeot TotalEnergies",
+              "points": 12
+            },
+            {
+              "pos": 19,
+              "name": "Théo Pourchaire",
+              "team": "Peugeot TotalEnergies",
+              "points": 12
+            },
+            {
+              "pos": 20,
+              "name": "Pipo Derani",
+              "team": "Genesis Magma Racing",
+              "points": 10
+            },
+            {
+              "pos": 20,
+              "name": "Mathys Jaubert",
+              "team": "Genesis Magma Racing",
+              "points": 10
+            },
+            {
+              "pos": 20,
+              "name": "André Lotterer",
+              "team": "Genesis Magma Racing",
+              "points": 10
+            },
+            {
+              "pos": 21,
+              "name": "Ross Gunn",
+              "team": "Aston Martin THOR Team",
+              "points": 8
+            },
+            {
+              "pos": 22,
+              "name": "Nick Cassidy",
+              "team": "Peugeot TotalEnergies",
+              "points": 6
+            },
+            {
+              "pos": 22,
+              "name": "Paul di Resta",
+              "team": "Peugeot TotalEnergies",
+              "points": 6
+            },
+            {
+              "pos": 22,
+              "name": "Stoffel Vandoorne",
+              "team": "Peugeot TotalEnergies",
+              "points": 6
+            },
+            {
+              "pos": 23,
+              "name": "Alex Riberas",
+              "team": "Aston Martin THOR Team",
+              "points": 4
+            },
+            {
+              "pos": 23,
+              "name": "Marco Sørensen",
+              "team": "Aston Martin THOR Team",
+              "points": 4
+            },
+            {
+              "pos": 24,
+              "name": "Ricky Taylor",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 2
+            },
+            {
+              "pos": 25,
+              "name": "Paul-Loup Chatin",
+              "team": "Genesis Magma Racing",
+              "points": 0
+            },
+            {
+              "pos": 25,
+              "name": "Mathieu Jaminet",
+              "team": "Genesis Magma Racing",
+              "points": 0
+            },
+            {
+              "pos": 25,
+              "name": "Daniel Juncadella",
+              "team": "Genesis Magma Racing",
+              "points": 0
+            },
+            {
+              "pos": 26,
+              "name": "Roman De Angelis",
+              "team": "Aston Martin THOR Team",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "title": "Hypercar Manufacturers",
+          "rows": [
+            {
+              "pos": 1,
+              "name": "Toyota",
+              "points": 169
+            },
+            {
+              "pos": 3,
+              "name": "9",
+              "points": 0
+            },
+            {
+              "pos": 2,
+              "name": "BMW",
+              "points": 146
+            },
+            {
+              "pos": 7,
+              "name": "2",
+              "points": 0
+            },
+            {
+              "pos": 3,
+              "name": "Ferrari",
+              "points": 115
+            },
+            {
+              "pos": 6,
+              "name": "Ret",
+              "points": 0
+            },
+            {
+              "pos": 4,
+              "name": "Alpine",
+              "points": 96
+            },
+            {
+              "pos": 10,
+              "name": "11",
+              "points": 0
+            },
+            {
+              "pos": 5,
+              "name": "Cadillac",
+              "points": 96
+            },
+            {
+              "pos": 12,
+              "name": "Ret",
+              "points": 0
+            },
+            {
+              "pos": 6,
+              "name": "Aston Martin",
+              "points": 54
+            },
+            {
+              "pos": 13,
+              "name": "Ret",
+              "points": 0
+            },
+            {
+              "pos": 7,
+              "name": "Peugeot",
+              "points": 24
+            },
+            {
+              "pos": 15,
+              "name": "Ret",
+              "points": 0
+            },
+            {
+              "pos": 8,
+              "name": "Genesis",
+              "points": 12
+            },
+            {
+              "pos": 16,
+              "name": "12",
+              "points": 0
+            }
+          ]
+        }
+      ],
+      "updated": "2026-10-15T02:03:01.886Z"
+    },
+    {
+      "id": "indycar",
+      "name": "IndyCar",
+      "season": 2026,
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_IndyCar_Series",
+      "tables": [
+        {
+          "title": "Drivers",
+          "rows": [
+            {
+              "pos": 1,
+              "name": "Álex Palou",
+              "points": 631
+            },
+            {
+              "pos": 2,
+              "name": "Kyle Kirkwood",
+              "points": 545
+            },
+            {
+              "pos": 3,
+              "name": "Christian Lundgaard",
+              "points": 535
+            },
+            {
+              "pos": 4,
+              "name": "Pato O'Ward",
+              "points": 522
+            },
+            {
+              "pos": 5,
+              "name": "David Malukas",
+              "points": 514
+            },
+            {
+              "pos": 6,
+              "name": "Scott McLaughlin",
+              "points": 483
+            },
+            {
+              "pos": 7,
+              "name": "Marcus Ericsson",
+              "points": 429
+            },
+            {
+              "pos": 8,
+              "name": "Josef Newgarden",
+              "points": 423
+            },
+            {
+              "pos": 9,
+              "name": "Felix Rosenqvist",
+              "points": 412
+            },
+            {
+              "pos": 10,
+              "name": "Rinus VeeKay",
+              "points": 378
+            },
+            {
+              "pos": 11,
+              "name": "Will Power",
+              "points": 368
+            },
+            {
+              "pos": 12,
+              "name": "Scott Dixon",
+              "points": 331
+            },
+            {
+              "pos": 13,
+              "name": "Kyffin Simpson",
+              "points": 327
+            },
+            {
+              "pos": 14,
+              "name": "Marcus Armstrong",
+              "points": 320
+            },
+            {
+              "pos": 15,
+              "name": "Alexander Rossi",
+              "points": 307
+            },
+            {
+              "pos": 16,
+              "name": "Graham Rahal",
+              "points": 302
+            },
+            {
+              "pos": 17,
+              "name": "Santino Ferrucci",
+              "points": 280
+            },
+            {
+              "pos": 18,
+              "name": "Louis Foster",
+              "points": 267
+            },
+            {
+              "pos": 19,
+              "name": "Romain Grosjean",
+              "points": 259
+            },
+            {
+              "pos": 20,
+              "name": "Nolan Siegel",
+              "points": 259
+            },
+            {
+              "pos": 21,
+              "name": "Christian Rasmussen",
+              "points": 245
+            },
+            {
+              "pos": 22,
+              "name": "Dennis Hauger RY",
+              "points": 228
+            },
+            {
+              "pos": 23,
+              "name": "Mick Schumacher R",
+              "points": 213
+            },
+            {
+              "pos": 24,
+              "name": "Caio Collet R",
+              "points": 203
+            },
+            {
+              "pos": 25,
+              "name": "Sting Ray Robb",
+              "points": 182
+            },
+            {
+              "pos": 26,
+              "name": "Conor Daly",
+              "points": 24
+            },
+            {
+              "pos": 27,
+              "name": "Takuma Sato",
+              "points": 20
+            },
+            {
+              "pos": 28,
+              "name": "Jack Harvey",
+              "points": 8
+            },
+            {
+              "pos": 29,
+              "name": "Jacob Abel",
+              "points": 6
+            },
+            {
+              "pos": 30,
+              "name": "Hélio Castroneves",
+              "points": 5
+            },
+            {
+              "pos": 31,
+              "name": "Ed Carpenter",
+              "points": 5
+            },
+            {
+              "pos": 32,
+              "name": "Ryan Hunter-Reay",
+              "points": 5
+            },
+            {
+              "pos": 33,
+              "name": "Katherine Legge",
+              "points": 5
+            }
+          ]
+        }
+      ],
+      "updated": "2026-10-15T02:03:01.911Z"
+    }
+  ]
+}

@@ -111,14 +111,18 @@ export function cleanValue(v) {
     .replace(/<ref[^>]*\/>/gi, '')
     .replace(/<ref[\s\S]*?<\/ref>/gi, '')
     .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/\{\{\s*convert\s*\|\s*([^|}]+?)\s*\|\s*([^|}]+?)\s*(?:\|[^{}]*)?\}\}/gi,
-      (_, n, u) => `${n} ${UNITS[u] ?? u}`)
     .replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, '$1');
   // unwrap remaining templates from the inside out
   for (let i = 0; i < 10 && /\{\{/.test(s); i++) {
     s = s.replace(/\{\{([^{}]*)\}\}/g, (_, inner) => {
       const [name, ...args] = inner.split('|').map(x => x.trim());
       const values = args.filter(a => !/^\w+\s*=/.test(a));
+      // {{convert|1220|kg}}, {{cvt|...}}, and ranges like {{convert|1220|-|1300|kg}}
+      if (/^(convert|cvt)$/i.test(name)) {
+        const [n, second, n2, unit] = values;
+        if (/^(-|–|to|and)$/.test(second ?? '')) return `${n}–${n2} ${UNITS[unit] ?? unit ?? ''}`.trim();
+        return `${n} ${UNITS[second] ?? second ?? ''}`.trim();
+      }
       if (LIST_TEMPLATES.test(name)) return values.join('\n');
       if (KEEP_TEMPLATES.test(name)) return values.join(' ');
       return '';
