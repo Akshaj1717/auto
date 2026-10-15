@@ -16,9 +16,9 @@ const FEEDS = [
 // Paste each series' .ics URL into its slot. Empty slots are skipped.
 const CALENDARS = [
   { series: 'F1', url: 'https://smartcalendars.ai/cal/0871a229ef25c0974967bee010cee350a01731fc5c70c1243881e8228b2a0321.ics' },
-  { series: 'WEC', url: '' },
+  { series: 'WEC', url: 'calendars/wec.ics' },
+  { series: 'MotoGP', url: 'calendars/motogp.ics' },
   { series: 'NASCAR', url: '' },
-  { series: 'MotoGP', url: '' },
 ].filter(c => c.url);
 
 const MAX_ARTICLES = 40;
