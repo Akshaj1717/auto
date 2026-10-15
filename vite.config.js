@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: fileURLToPath(new URL('./index.html', import.meta.url)),
         sports: fileURLToPath(new URL('./sports.html', import.meta.url)),
+        news: fileURLToPath(new URL('./news.html', import.meta.url)),
       },
     },
   },
