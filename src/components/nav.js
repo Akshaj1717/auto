@@ -2,7 +2,7 @@ const LINKS = [
   { label: 'News', href: './news.html' },
   { label: 'Sports', href: './sports.html' },
   { label: 'Letter', href: './#letter' },
-  { label: 'Explore', href: './#explore' },
+  { label: 'Explore', href: './explore.html' },
 ];
 
 export function renderNav(el) {

@@ -64,6 +64,35 @@ img { max-width: 100%; display: block; }
 .standings-dialog-body h3 { margin: 0; }
 .standings-close { position: absolute; top: 10px; right: 10px; border: none; background: none; font-size: 18px; cursor: pointer; color: inherit; }
 
+/* Explore: search any car */
+.explore { display: flex; flex-direction: column; gap: 10px; }
+.explore h2 { margin: 0; }
+.explore-form { display: flex; gap: 8px; }
+.explore-form input { flex: 1; font: inherit; padding: 10px 12px; border: 2px dashed var(--line); background: var(--bg); color: var(--text); }
+.explore-form button { font: inherit; padding: 10px 18px; border: 2px dashed var(--line); background: none; cursor: pointer; color: inherit; }
+.explore-results { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.explore-results button { display: flex; gap: 12px; align-items: center; width: 100%; text-align: left; font: inherit; color: inherit; background: none; border: 1px dashed var(--line); padding: 6px; cursor: pointer; }
+.explore-results button:hover { background: #eee; }
+.explore-results img, .explore-noimg { width: 96px; height: 64px; object-fit: cover; flex-shrink: 0; background: #e5e5e5; }
+.explore-results small { display: block; color: var(--muted); }
+#explore-car:empty { display: none; }
+.explore-car { display: flex; flex-direction: column; gap: 12px; }
+.explore-hero { display: flex; flex-direction: column; gap: 6px; }
+.explore-hero figure { margin: 0; }
+.explore-hero img { width: 100%; max-height: 480px; object-fit: contain; }
+.explore-hero h2 { margin: 6px 0 0; font-size: 30px; }
+.explore-summary { font-size: 17px; line-height: 1.55; margin: 0; }
+.explore-car h3 { margin-top: 0; }
+.explore-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.explore-gallery figure { margin: 0; }
+.explore-gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.explore-sections details { border-bottom: 1px dashed var(--line); padding: 8px 0; }
+.explore-sections details.level-3 { margin-left: 16px; }
+.explore-sections details.level-4 { margin-left: 32px; }
+.explore-sections summary { cursor: pointer; font-weight: 600; }
+.explore-sections p { line-height: 1.6; }
+.explore-attribution { text-align: left; }
+
 @media (max-width: 700px) {
   .page { grid-template-columns: 1fr; }
   .logo, .nav, .sidebar, #car-of-the-day, .content { grid-column: 1; grid-row: auto; }

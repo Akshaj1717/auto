@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore · Auto</title>
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="box logo" href="./">AUTO</a>
+    <nav class="box nav" id="nav"></nav>
+    <aside class="box sidebar" id="news-sidebar"></aside>
+    <main class="content sports-content">
+      <section class="box explore">
+        <h2>Explore</h2>
+        <form id="explore-form" class="explore-form" role="search">
+          <input id="explore-input" type="search" placeholder="Search any car, e.g. F40, Miata, 911 GT3" autocomplete="off" aria-label="Search for a car" />
+          <button type="submit">Search</button>
+        </form>
+        <div id="explore-results"></div>
+      </section>
+      <div id="explore-car"></div>
+    </main>
+  </div>
+  <script type="module" src="/src/explore.js"></script>
+</body>
+</html>
