@@ -1,4 +1,4 @@
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 
 const FEEDS = [
   { source: 'Formula 1', url: 'https://www.formula1.com/en/latest/all.xml' },
@@ -12,13 +12,18 @@ const FEEDS = [
   { source: 'Joe Saward', url: 'https://joesaward.wordpress.com/feed' },
   { source: 'Adam Cooper', url: 'https://adamcooperf1.com/feed' },
 ];
+
+// Paste each series' .ics URL into its slot. Empty slots are skipped.
 const CALENDARS = [
   { series: 'F1', url: 'https://smartcalendars.ai/cal/0871a229ef25c0974967bee010cee350a01731fc5c70c1243881e8228b2a0321.ics' },
-];
-const MAX_SIDEBAR_NEWS = 10;
-const MAX_SPORTS = 40;
+  { series: 'WEC', url: '' },
+  { series: 'NASCAR', url: '' },
+  { series: 'MotoGP', url: '' },
+].filter(c => c.url);
+
+const MAX_ARTICLES = 40;
 const MAX_PER_SOURCE = 8;
-const MAX_EVENTS = 8;
+const MAX_EVENTS_PER_SERIES = 3;
 const OUT = new URL('../src/data/live.json', import.meta.url);
 
 async function get(url) {
@@ -44,34 +49,29 @@ const tag = (block, name) => {
   return m ? decode(m[1]) : '';
 };
 
-// Handles RSS (<item>) and Atom (<entry>)
-// Feeds put the article photo in different places; check the common ones
-function findImage(b, html) {
-  const attr = re => (b.match(re) || [])[1];
-  const url =
-    attr(/<enclosure[^>]*url="([^"]+)"[^>]*type="image/) ||
-    attr(/<enclosure[^>]*type="image[^"]*"[^>]*url="([^"]+)"/) ||
-    attr(/<media:content[^>]*url="([^"]+)"/) ||
-    attr(/<media:thumbnail[^>]*url="([^"]+)"/) ||
-    attr(/<enclosure[^>]*url="([^"]+\.(?:jpe?g|png|webp)[^"]*)"/i) ||
-    (html.match(/<img[^>]*src="([^"]+)"/) || [])[1];
-  return url && /^https?:\/\//.test(decode(url)) ? decode(url) : null;
+function findImage(block) {
+  const m =
+    block.match(/<media:content[^>]*url="([^"]+)"/) ||
+    block.match(/<media:thumbnail[^>]*url="([^"]+)"/) ||
+    block.match(/<enclosure[^>]*url="([^"]+)"[^>]*type="image[^"]*"/) ||
+    block.match(/<enclosure[^>]*type="image[^"]*"[^>]*url="([^"]+)"/) ||
+    decode(block).match(/<img[^>]+src=["']([^"']+)["']/);
+  if (!m) return '';
+  return decode(m[1]).replace(/^http:\/\//, 'https://');
 }
 
-const plainText = (html, max = 180) => {
-  const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-  return text.length > max ? text.slice(0, max).replace(/\s+\S*$/, '') + '…' : text;
-};
-
+// Handles RSS (<item>) and Atom (<entry>)
 function parseFeed(xml, source) {
   const blocks = xml.match(/<(item|entry)[\s>][\s\S]*?<\/\1>/g) || [];
   return blocks.map(b => {
     const url = tag(b, 'link') || (b.match(/<link[^>]*href="([^"]+)"/) || [])[1] || '';
     const d = new Date(tag(b, 'pubDate') || tag(b, 'dc:date') || tag(b, 'published') || tag(b, 'updated'));
-    const html = tag(b, 'description') || tag(b, 'summary') || tag(b, 'content:encoded') || tag(b, 'content');
     return {
-      title: tag(b, 'title'), url: decode(url), source, date: isNaN(d) ? null : d.toISOString(),
-      image: findImage(b, html), summary: plainText(html),
+      title: tag(b, 'title'),
+      url: decode(url),
+      image: findImage(b),
+      source,
+      date: isNaN(d) ? null : d.toISOString(),
     };
   }).filter(n => n.title && /^https?:\/\//.test(n.url));
 }
@@ -95,12 +95,13 @@ function parseIcs(text, series) {
 
 const articles = [];
 const events = [];
+const okSeries = new Set();
 
 await Promise.all([
   ...FEEDS.map(async f => {
     try {
       const items = parseFeed(await get(f.url), f.source);
-      console.log(`${f.source}: ${items.length} items`);
+      console.log(`${f.source}: ${items.length} items, ${items.filter(i => i.image).length} with images`);
       articles.push(...items);
     } catch (e) { console.warn(`${f.source} FAILED:`, e.message); }
   }),
@@ -108,36 +109,37 @@ await Promise.all([
     try {
       const items = parseIcs(await get(c.url), c.series);
       console.log(`${c.series} calendar: ${items.length} events`);
-      events.push(...items);
+      if (items.length) { okSeries.add(c.series); events.push(...items); }
     } catch (e) { console.warn(`${c.series} calendar FAILED:`, e.message); }
   }),
 ]);
 
-// newest first, drop duplicate links
+const now = Date.now();
+
+// articles: newest first, drop duplicate links, cap per source
 const seen = new Set();
+const perSource = {};
 const sorted = articles
   .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
   .filter(a => !seen.has(a.url) && seen.add(a.url));
-
-const perSource = {};
-const sports = sorted
+const topArticles = sorted
   .filter(a => (perSource[a.source] = (perSource[a.source] || 0) + 1) <= MAX_PER_SOURCE)
-  .slice(0, MAX_SPORTS);
+  .slice(0, MAX_ARTICLES);
 
-const news = sorted.slice(0, MAX_SIDEBAR_NEWS);
-
-// The two newest stories with photos go in the big headline spots under Car of the Day
-const featured = sorted.filter(a => a.image).slice(0, 2);
-
-const now = Date.now();
-const upcoming = events
+// events: next few per series; if a series failed this run, keep its previous events
+let prev = {};
+try { prev = JSON.parse(await readFile(OUT, 'utf8')); } catch {}
+const perSeries = {};
+const fresh = events
   .filter(e => new Date(e.end) > now)
   .sort((a, b) => new Date(a.start) - new Date(b.start))
-  .slice(0, MAX_EVENTS);
+  .filter(e => (perSeries[e.series] = (perSeries[e.series] || 0) + 1) <= MAX_EVENTS_PER_SERIES);
+const carried = (prev.events || []).filter(e => !okSeries.has(e.series) && new Date(e.end) > now);
+const upcoming = [...fresh, ...carried].sort((a, b) => new Date(a.start) - new Date(b.start));
 
-if (!sports.length && !upcoming.length) {
+if (!topArticles.length && !upcoming.length) {
   console.warn('Nothing fetched; leaving live.json untouched.');
 } else {
-  await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), events: upcoming, featured, news, sports }, null, 2));
-  console.log(`Wrote ${sports.length} sports items, ${news.length} sidebar items, ${upcoming.length} events.`);
+  await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), events: upcoming, articles: topArticles }, null, 2));
+  console.log(`Wrote ${topArticles.length} articles and ${upcoming.length} events.`);
 }
