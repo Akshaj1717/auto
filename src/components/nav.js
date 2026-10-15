@@ -1,8 +1,6 @@
 const LINKS = [
   { label: 'News', href: './news.html' },
   { label: 'Sports', href: './sports.html' },
-  { label: 'News', href: './#news' },
-  { label: 'Sports', href: './sports.html' },
   { label: 'Letter', href: './#letter' },
   { label: 'Explore', href: './#explore' },
 ];
