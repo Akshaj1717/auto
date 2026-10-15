@@ -45,12 +45,34 @@ const tag = (block, name) => {
 };
 
 // Handles RSS (<item>) and Atom (<entry>)
+// Feeds put the article photo in different places; check the common ones
+function findImage(b, html) {
+  const attr = re => (b.match(re) || [])[1];
+  const url =
+    attr(/<enclosure[^>]*url="([^"]+)"[^>]*type="image/) ||
+    attr(/<enclosure[^>]*type="image[^"]*"[^>]*url="([^"]+)"/) ||
+    attr(/<media:content[^>]*url="([^"]+)"/) ||
+    attr(/<media:thumbnail[^>]*url="([^"]+)"/) ||
+    attr(/<enclosure[^>]*url="([^"]+\.(?:jpe?g|png|webp)[^"]*)"/i) ||
+    (html.match(/<img[^>]*src="([^"]+)"/) || [])[1];
+  return url && /^https?:\/\//.test(decode(url)) ? decode(url) : null;
+}
+
+const plainText = (html, max = 180) => {
+  const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.length > max ? text.slice(0, max).replace(/\s+\S*$/, '') + '…' : text;
+};
+
 function parseFeed(xml, source) {
   const blocks = xml.match(/<(item|entry)[\s>][\s\S]*?<\/\1>/g) || [];
   return blocks.map(b => {
     const url = tag(b, 'link') || (b.match(/<link[^>]*href="([^"]+)"/) || [])[1] || '';
     const d = new Date(tag(b, 'pubDate') || tag(b, 'dc:date') || tag(b, 'published') || tag(b, 'updated'));
-    return { title: tag(b, 'title'), url: decode(url), source, date: isNaN(d) ? null : d.toISOString() };
+    const html = tag(b, 'description') || tag(b, 'summary') || tag(b, 'content:encoded') || tag(b, 'content');
+    return {
+      title: tag(b, 'title'), url: decode(url), source, date: isNaN(d) ? null : d.toISOString(),
+      image: findImage(b, html), summary: plainText(html),
+    };
   }).filter(n => n.title && /^https?:\/\//.test(n.url));
 }
 
@@ -104,6 +126,9 @@ const sports = sorted
 
 const news = sorted.slice(0, MAX_SIDEBAR_NEWS);
 
+// The two newest stories with photos go in the big headline spots under Car of the Day
+const featured = sorted.filter(a => a.image).slice(0, 2);
+
 const now = Date.now();
 const upcoming = events
   .filter(e => new Date(e.end) > now)
@@ -113,6 +138,6 @@ const upcoming = events
 if (!sports.length && !upcoming.length) {
   console.warn('Nothing fetched; leaving live.json untouched.');
 } else {
-  await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), events: upcoming, news, sports }, null, 2));
+  await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), events: upcoming, featured, news, sports }, null, 2));
   console.log(`Wrote ${sports.length} sports items, ${news.length} sidebar items, ${upcoming.length} events.`);
 }

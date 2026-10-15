@@ -12,6 +12,11 @@ permissions:
   pages: write
   id-token: write
 
+# A newer run cancels an older one instead of failing with "in progress deployment"
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

@@ -1,9 +1,11 @@
+import { esc, safeUrl } from '../lib/html.js';
+
 export function renderHeadlines(el, items) {
   el.innerHTML = items.map(n => `
-    <article class="box">
-      ${n.image ? `<img src="${n.image}" alt="" loading="lazy" />` : ''}
-      <span class="label">${n.source}</span>
-      <h3><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a></h3>
-      <p>${n.summary}</p>
+    <article class="box headline">
+      ${n.image ? `<img src="${esc(safeUrl(n.image))}" alt="" loading="lazy" />` : ''}
+      <span class="label">${esc(n.source)}${n.date ? ' · ' + esc(new Date(n.date).toLocaleDateString()) : ''}</span>
+      <h3><a href="${esc(safeUrl(n.url))}" target="_blank" rel="noopener">${esc(n.title)}</a></h3>
+      ${n.summary ? `<p>${esc(n.summary)}</p>` : ''}
     </article>`).join('');
 }

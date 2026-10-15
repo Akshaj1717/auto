@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-14",
+  "name": "Mitsubishi Starion",
+  "blurb": "The Mitsubishi Starion is a sports car which was manufactured and marketed by Mitsubishi from 1982 until 1989 — with badge engineered variants marketed in North America as the Conquest, under the Chrysler, Dodge, and Plymouth brands. It is a two-door coupé with a fastback design and seating for four passengers.",
+  "url": "https://en.wikipedia.org/wiki/Mitsubishi_Starion",
+  "photo": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/1988_Mitsubishi_Starion_Turbo_2.0_Front_%281%29.jpg/1280px-1988_Mitsubishi_Starion_Turbo_2.0_Front_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "credit": "Vauxford",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:1988_Mitsubishi_Starion_Turbo_2.0_Front_(1).jpg"
+  },
+  "specs": [
+    [
+      "Manufacturer",
+      "Mitsubishi Motors"
+    ],
+    [
+      "Production",
+      "1982–1989"
+    ],
+    [
+      "Designer",
+      "Ryu Kaibuchi, Takashi Kono, Masaki Iwamoto, Hidetoshi Aoki"
+    ],
+    [
+      "Class",
+      "Sports car"
+    ],
+    [
+      "Engine",
+      "2.0 L G63B I4, 2.0 L G63B turbo I4, 2.6 L G54B turbo I4"
+    ],
+    [
+      "Transmission",
+      "5-speed manual, 4-speed automatic"
+    ],
+    [
+      "Curb weight",
+      "(narrowbody), (widebody)"
+    ]
+  ],
+  "source": "Wikipedia"
+}

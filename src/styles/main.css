@@ -24,7 +24,8 @@ img { max-width: 100%; display: block; }
 .cotd { display: flex; flex-direction: column; gap: 8px; }
 .cotd-link { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; text-decoration: none; }
 .cotd-link strong { font-size: 24px; }
-.cotd-img { width: 100%; max-height: 380px; object-fit: cover; }
+/* contain = show the whole photo, never crop it */
+.cotd-img { width: 100%; height: auto; max-height: 440px; object-fit: contain; }
 .cotd-more { color: var(--muted); }
 .cotd-link:hover .cotd-more { text-decoration: underline; }
 .credit { color: var(--muted); font-size: 12px; text-align: right; }
