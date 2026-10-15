@@ -22,10 +22,7 @@ const car = autoCar.date === todayET() ? autoCar : normalizeCurated(pickCarOfThe
 const featured = live.featured?.length ? live.featured : news.filter(n => n.featured).slice(0, 2);
 
 renderNav(document.getElementById('nav'));
-renderNewsSidebar(document.getElementById('news-sidebar'), {
-  events: live.events,
-  news: live.news.length ? live.news : news,   // falls back to your manual news.json
-});
+renderNewsSidebar(document.getElementById('news-sidebar'), live.events);
 renderCarOfTheDay(document.getElementById('car-of-the-day'), car);
 renderHeadlines(document.getElementById('headlines'), featured);
 renderUnderTheHood(document.getElementById('under-the-hood'), car);
