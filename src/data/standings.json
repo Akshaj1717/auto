@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T02:14:06.359Z",
+  "updated": "2026-10-15T02:29:07.182Z",
   "series": [
     {
       "id": "f1",
@@ -247,7 +247,7 @@
           ]
         }
       ],
-      "updated": "2026-10-15T02:14:05.018Z"
+      "updated": "2026-10-15T02:29:07.043Z"
     },
     {
       "id": "motogp",
@@ -486,7 +486,7 @@
           ]
         }
       ],
-      "updated": "2026-10-15T02:14:06.359Z"
+      "updated": "2026-10-15T02:29:07.146Z"
     },
     {
       "id": "wec",
@@ -856,9 +856,434 @@
               "points": 12
             }
           ]
+        },
+        {
+          "title": "LMGT3 Drivers",
+          "rows": [
+            {
+              "pos": 1,
+              "name": "Jonny Edgar",
+              "team": "TF Sport",
+              "points": 86
+            },
+            {
+              "pos": 2,
+              "name": "Nicky Catsburg",
+              "team": "TF Sport",
+              "points": 82
+            },
+            {
+              "pos": 3,
+              "name": "Ben Keating",
+              "team": "TF Sport",
+              "points": 64
+            },
+            {
+              "pos": 4,
+              "name": "Mattia Drudi",
+              "team": "Heart of Racing Team",
+              "points": 62
+            },
+            {
+              "pos": 4,
+              "name": "Ian James",
+              "team": "Heart of Racing Team",
+              "points": 62
+            },
+            {
+              "pos": 4,
+              "name": "Zacharie Robichon",
+              "team": "Heart of Racing Team",
+              "points": 62
+            },
+            {
+              "pos": 5,
+              "name": "Peter Dempsey",
+              "team": "Racing Team Turkey by TF",
+              "points": 58
+            },
+            {
+              "pos": 5,
+              "name": "Charlie Eastwood",
+              "team": "Racing Team Turkey by TF",
+              "points": 58
+            },
+            {
+              "pos": 5,
+              "name": "Salih Yoluç",
+              "team": "Racing Team Turkey by TF",
+              "points": 58
+            },
+            {
+              "pos": 6,
+              "name": "Timur Boguslavskiy",
+              "team": "Manthey DK Engineering",
+              "points": 54
+            },
+            {
+              "pos": 6,
+              "name": "James Cottingham",
+              "team": "Manthey DK Engineering",
+              "points": 54
+            },
+            {
+              "pos": 6,
+              "name": "Ayhancan Güven",
+              "team": "Manthey DK Engineering",
+              "points": 54
+            },
+            {
+              "pos": 7,
+              "name": "François Hériau",
+              "team": "Vista AF Corse",
+              "points": 54
+            },
+            {
+              "pos": 7,
+              "name": "Simon Mann",
+              "team": "Vista AF Corse",
+              "points": 54
+            },
+            {
+              "pos": 7,
+              "name": "Alessio Rovera",
+              "team": "Vista AF Corse",
+              "points": 54
+            },
+            {
+              "pos": 8,
+              "name": "Dan Harper",
+              "team": "Team WRT",
+              "points": 51
+            },
+            {
+              "pos": 8,
+              "name": "Anthony McIntosh",
+              "team": "Team WRT",
+              "points": 51
+            },
+            {
+              "pos": 8,
+              "name": "Parker Thompson",
+              "team": "Team WRT",
+              "points": 51
+            },
+            {
+              "pos": 9,
+              "name": "Richard Lietz",
+              "team": "The Bend Manthey",
+              "points": 49
+            },
+            {
+              "pos": 9,
+              "name": "Riccardo Pera",
+              "team": "The Bend Manthey",
+              "points": 49
+            },
+            {
+              "pos": 9,
+              "name": "Yasser Shahin",
+              "team": "The Bend Manthey",
+              "points": 49
+            },
+            {
+              "pos": 10,
+              "name": "Jonny Adam",
+              "team": "Heart of Racing Team",
+              "points": 49
+            },
+            {
+              "pos": 10,
+              "name": "Gray Newell",
+              "team": "Heart of Racing Team",
+              "points": 49
+            },
+            {
+              "pos": 11,
+              "name": "Augusto Farfus",
+              "team": "Team WRT",
+              "points": 47
+            },
+            {
+              "pos": 11,
+              "name": "Sean Gelael",
+              "team": "Team WRT",
+              "points": 47
+            },
+            {
+              "pos": 11,
+              "name": "Darren Leung",
+              "team": "Team WRT",
+              "points": 47
+            },
+            {
+              "pos": 12,
+              "name": "Eduardo Barrichello",
+              "team": "Heart of Racing Team",
+              "points": 46
+            },
+            {
+              "pos": 13,
+              "name": "Antares Au",
+              "team": "Garage 59",
+              "points": 38
+            },
+            {
+              "pos": 13,
+              "name": "Tom Fleming",
+              "team": "Garage 59",
+              "points": 38
+            },
+            {
+              "pos": 13,
+              "name": "Marvin Kirchhöfer",
+              "team": "Garage 59",
+              "points": 38
+            },
+            {
+              "pos": 14,
+              "name": "Hadrien David",
+              "team": "Akkodis ASP Team",
+              "points": 38
+            },
+            {
+              "pos": 14,
+              "name": "Tom Van Rompuy",
+              "team": "Akkodis ASP Team",
+              "points": 38
+            },
+            {
+              "pos": 15,
+              "name": "José María López",
+              "team": "Akkodis ASP Team",
+              "points": 38
+            },
+            {
+              "pos": 15,
+              "name": "Clemens Schmid",
+              "team": "Akkodis ASP Team",
+              "points": 38
+            },
+            {
+              "pos": 15,
+              "name": "Petru Umbrărescu",
+              "team": "Akkodis ASP Team",
+              "points": 38
+            },
+            {
+              "pos": 16,
+              "name": "Jack Hawksworth",
+              "team": "Akkodis ASP Team",
+              "points": 36
+            },
+            {
+              "pos": 17,
+              "name": "Blake McDonald",
+              "team": "TF Sport",
+              "points": 22
+            },
+            {
+              "pos": 18,
+              "name": "Finn Gehrsitz",
+              "team": "Garage 59",
+              "points": 22
+            },
+            {
+              "pos": 18,
+              "name": "Benjamin Goethe",
+              "team": "Garage 59",
+              "points": 22
+            },
+            {
+              "pos": 18,
+              "name": "Alexander West",
+              "team": "Garage 59",
+              "points": 22
+            },
+            {
+              "pos": 19,
+              "name": "Rui Andrade",
+              "team": "Iron Lynx",
+              "points": 17
+            },
+            {
+              "pos": 19,
+              "name": "Martin Berry",
+              "team": "Iron Lynx",
+              "points": 17
+            },
+            {
+              "pos": 19,
+              "name": "Maxime Martin",
+              "team": "Iron Lynx",
+              "points": 17
+            },
+            {
+              "pos": 20,
+              "name": "Stefano Gattuso",
+              "team": "Proton Competition",
+              "points": 16
+            },
+            {
+              "pos": 20,
+              "name": "Giammarco Levorato",
+              "team": "Proton Competition",
+              "points": 16
+            },
+            {
+              "pos": 20,
+              "name": "Logan Sargeant",
+              "team": "Proton Competition",
+              "points": 16
+            },
+            {
+              "pos": 21,
+              "name": "Eric Powell",
+              "team": "Proton Competition",
+              "points": 14
+            },
+            {
+              "pos": 21,
+              "name": "Sebastian Priaulx",
+              "team": "Proton Competition",
+              "points": 14
+            },
+            {
+              "pos": 21,
+              "name": "Ben Tuck",
+              "team": "Proton Competition",
+              "points": 14
+            },
+            {
+              "pos": 23,
+              "name": "Matteo Cressoni",
+              "team": "Iron Lynx",
+              "points": 6
+            },
+            {
+              "pos": 23,
+              "name": "Lin Hodenius",
+              "team": "Iron Lynx",
+              "points": 6
+            },
+            {
+              "pos": 23,
+              "name": "Johannes Zelger",
+              "team": "Iron Lynx",
+              "points": 6
+            },
+            {
+              "pos": 24,
+              "name": "Nicolás Varrone",
+              "team": "TF Sport",
+              "points": 4
+            },
+            {
+              "pos": 25,
+              "name": "Kobe Pauwels",
+              "team": "Heart of Racing Team",
+              "points": 3
+            },
+            {
+              "pos": 26,
+              "name": "Esteban Masson",
+              "team": "Akkodis ASP Team",
+              "points": 2
+            }
+          ]
+        },
+        {
+          "title": "LMGT3 Teams",
+          "rows": [
+            {
+              "pos": 1,
+              "name": "TF Sport 33",
+              "points": 86
+            },
+            {
+              "pos": 2,
+              "name": "Heart of Racing Team 27",
+              "points": 62
+            },
+            {
+              "pos": 3,
+              "name": "Racing Team Turkey by TF 34",
+              "points": 58
+            },
+            {
+              "pos": 4,
+              "name": "Manthey DK Engineering 91",
+              "points": 54
+            },
+            {
+              "pos": 5,
+              "name": "Vista AF Corse 21",
+              "points": 54
+            },
+            {
+              "pos": 6,
+              "name": "Team WRT 69",
+              "points": 51
+            },
+            {
+              "pos": 7,
+              "name": "The Bend Manthey 92",
+              "points": 49
+            },
+            {
+              "pos": 8,
+              "name": "Heart of Racing Team 23",
+              "points": 49
+            },
+            {
+              "pos": 9,
+              "name": "Team WRT 32",
+              "points": 47
+            },
+            {
+              "pos": 10,
+              "name": "Garage 59 10",
+              "points": 38
+            },
+            {
+              "pos": 11,
+              "name": "Akkodis ASP Team 78",
+              "points": 38
+            },
+            {
+              "pos": 12,
+              "name": "Akkodis ASP Team 87",
+              "points": 38
+            },
+            {
+              "pos": 13,
+              "name": "Garage 59 58",
+              "points": 22
+            },
+            {
+              "pos": 14,
+              "name": "Iron Lynx 61",
+              "points": 17
+            },
+            {
+              "pos": 15,
+              "name": "Proton Competition 88",
+              "points": 16
+            },
+            {
+              "pos": 16,
+              "name": "Proton Competition 77",
+              "points": 14
+            },
+            {
+              "pos": 16,
+              "name": "Iron Lynx 79",
+              "points": 6
+            }
+          ]
         }
       ],
-      "updated": "2026-10-15T02:14:05.198Z"
+      "updated": "2026-10-15T02:29:07.167Z"
     },
     {
       "id": "indycar",
@@ -1038,7 +1463,7 @@
           ]
         }
       ],
-      "updated": "2026-10-15T02:14:05.212Z"
+      "updated": "2026-10-15T02:29:07.182Z"
     }
   ]
 }
