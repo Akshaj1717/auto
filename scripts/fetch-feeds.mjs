@@ -27,6 +27,7 @@ const MAX_EVENTS_PER_SERIES = 3;
 const OUT = new URL('../src/data/live.json', import.meta.url);
 
 async function get(url) {
+  if (!/^https?:\/\//.test(url)) return readFile(url, 'utf8'); // local file
   const res = await fetch(url, {
     headers: { 'User-Agent': 'auto-site-feed-fetcher/1.0' },
     signal: AbortSignal.timeout(15000),
