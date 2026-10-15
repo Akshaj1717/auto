@@ -1,5 +1,9 @@
 name: Deploy to GitHub Pages
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 on:
   push:
     branches: [main]
