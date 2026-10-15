@@ -18,14 +18,13 @@ import autoCar from './data/car-of-the-day.json';
 // If it's missing or from an earlier day, use a random car from cars.json instead.
 const car = autoCar.date === todayET() ? autoCar : normalizeCurated(pickCarOfTheDay(cars));
 
-// Big headlines: the two newest feed stories with photos (scripts/fetch-feeds.mjs)
-const featured = live.featured?.length ? live.featured : news.filter(n => n.featured).slice(0, 2);
+// Big headlines: two feed stories with photos that change every 12 hours (scripts/fetch-feeds.mjs).
+// The sample news.json is only used if the feeds haven't been fetched yet (run `npm run fetch`).
+const fromFeeds = live.featured?.length ? live.featured : (live.articles ?? []).filter(a => a.image).slice(0, 2);
+const featured = fromFeeds.length ? fromFeeds : news.filter(n => n.featured).slice(0, 2);
 
 renderNav(document.getElementById('nav'));
-renderNewsSidebar(document.getElementById('news-sidebar'), {
-  events: live.events,
-  news: live.news.length ? live.news : news,   // falls back to your manual news.json
-});
+renderNewsSidebar(document.getElementById('news-sidebar'), live.events);
 renderCarOfTheDay(document.getElementById('car-of-the-day'), car);
 renderHeadlines(document.getElementById('headlines'), featured);
 renderUnderTheHood(document.getElementById('under-the-hood'), car);

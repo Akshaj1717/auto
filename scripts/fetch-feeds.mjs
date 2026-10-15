@@ -60,6 +60,13 @@ function findImage(block) {
   return decode(m[1]).replace(/^http:\/\//, 'https://');
 }
 
+// Short plain-text summary from the feed's description
+function summaryOf(block) {
+  const html = tag(block, 'description') || tag(block, 'summary') || tag(block, 'content:encoded') || tag(block, 'content');
+  const text = decode(html).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').replace(/\s+([.,!?;:])/g, '$1').trim();
+  return text.length > 180 ? text.slice(0, 180).replace(/\s+\S*$/, '') + '…' : text;
+}
+
 // Handles RSS (<item>) and Atom (<entry>)
 function parseFeed(xml, source) {
   const blocks = xml.match(/<(item|entry)[\s>][\s\S]*?<\/\1>/g) || [];
@@ -70,10 +77,35 @@ function parseFeed(xml, source) {
       title: tag(b, 'title'),
       url: decode(url),
       image: findImage(b),
+      summary: summaryOf(b),
       source,
       date: isNaN(d) ? null : d.toISOString(),
     };
   }).filter(n => n.title && /^https?:\/\//.test(n.url));
+}
+
+// ---------- Headlines under Car of the Day: change every 12 hours ----------
+// The site rebuilds every 30 minutes, but these two stories only change at
+// 12:00 AM and 12:00 PM New York time. They are the two newest stories with photos
+// published *before* the current 12-hour window started, so every rebuild in the
+// same window picks the same two.
+export function currentWindowStart(now = new Date()) {
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York', hour: 'numeric', minute: 'numeric', second: 'numeric', hourCycle: 'h23',
+  }).formatToParts(now).map(p => [p.type, +p.value]));
+  const sinceStart = ((parts.hour % 12) * 3600 + parts.minute * 60 + parts.second) * 1000;
+  return new Date(Math.floor((now.getTime() - sinceStart) / 1000) * 1000);
+}
+
+export function pickFeatured(sortedArticles, windowStart, count = 2) {
+  const withPhoto = sortedArticles.filter(a => a.image && a.date);
+  const before = withPhoto.filter(a => new Date(a.date) < windowStart);
+  const pool = before.length >= count ? before : withPhoto; // fallback if feeds are very short
+  // prefer different sources for the two spots
+  const picks = [];
+  for (const a of pool) if (picks.length < count && !picks.some(p => p.source === a.source)) picks.push(a);
+  for (const a of pool) if (picks.length < count && !picks.includes(a)) picks.push(a);
+  return picks;
 }
 
 function icsDate(v) {
@@ -137,9 +169,19 @@ const fresh = events
 const carried = (prev.events || []).filter(e => !okSeries.has(e.series) && new Date(e.end) > now);
 const upcoming = [...fresh, ...carried].sort((a, b) => new Date(a.start) - new Date(b.start));
 
+const windowStart = currentWindowStart();
+const featured = pickFeatured(sorted, windowStart);
+
 if (!topArticles.length && !upcoming.length) {
   console.warn('Nothing fetched; leaving live.json untouched.');
 } else {
-  await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), events: upcoming, articles: topArticles }, null, 2));
+  await writeFile(OUT, JSON.stringify({
+    updated: new Date().toISOString(),
+    featuredSince: windowStart.toISOString(),
+    featured,
+    events: upcoming,
+    articles: topArticles,
+  }, null, 2));
   console.log(`Wrote ${topArticles.length} articles and ${upcoming.length} events.`);
+  console.log(`Headlines since ${windowStart.toISOString()}: ${featured.map(f => `"${f.title}" (${f.source})`).join(', ') || 'none'}`);
 }
