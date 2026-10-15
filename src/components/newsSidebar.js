@@ -1,11 +1,15 @@
-import { esc, safeUrl } from '../lib/html.js';
+import { esc } from '../lib/html.js';
+
+const SERIES = ['F1', 'WEC', 'NASCAR', 'MotoGP'];
 const when = iso => new Date(iso).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
 
-export function renderNewsSidebar(el, { events = [], news = [] }) {
-  const upcoming = events.filter(e => new Date(e.end) > new Date()).slice(0, 5);
+export function renderNewsSidebar(el, events = []) {
+  const now = new Date();
+  const upcoming = events.filter(e => SERIES.includes(e.series) && new Date(e.end) > now);
   el.innerHTML = `
-    <h2 class="label">Motorsport News</h2>
-    <ul>
-      ${news.map(n => `<li><a href="${n.url}">${n.title}</a><small>${n.date}</small></li>`).join('')}
-    </ul>`;
+    <h2 class="label">Upcoming events</h2>
+    ${upcoming.length ? `
+      <ul>
+        ${upcoming.map(e => `<li>${esc(e.title)}<small>${esc(e.series)} · ${esc(when(e.start))}</small></li>`).join('')}
+      </ul>` : '<p>No upcoming events.</p>'}`;
 }
