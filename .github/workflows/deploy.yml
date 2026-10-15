@@ -28,6 +28,17 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate WEC and MotoGP calendars
+        run: |
+          pip install motorsport-calendar
+          mkdir -p calendars
+          YEAR=$(date +%Y)
+          motocal generate-wec "$YEAR" calendars/wec.ics || echo "WEC generation failed"
+          motocal generate-motogp "$YEAR" calendars/motogp.ics || echo "MotoGP generation failed"
+      - run: node scripts/fetch-feeds.mjs
       - run: npm run fetch
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
