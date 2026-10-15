@@ -36,6 +36,12 @@ img { max-width: 100%; display: block; }
 .headlines img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: 8px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
 .cell { border: 1px dashed var(--line); padding: 10px; }
+.weekend { border-bottom: 1px dashed var(--line); padding: 10px 0; }
+.weekend summary { cursor: pointer; }
+.weekend summary small { display: block; }
+.sessions { margin-top: 6px !important; }
+.sessions li { padding: 4px 0 4px 10px; border-bottom: none; }
+.sessions .past { opacity: .5; }
 
 .sports-content { grid-row: 2 / 4; }
 .headline-list { list-style: none; padding: 0; margin: 0; }
