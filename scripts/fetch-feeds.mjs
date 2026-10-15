@@ -97,14 +97,39 @@ export function currentWindowStart(now = new Date()) {
   return new Date(Math.floor((now.getTime() - sinceStart) / 1000) * 1000);
 }
 
+// ---------- Spotting the same story in more than one feed ----------
+// The same article can show up in several feeds (e.g. Motorsport.com "all news" and
+// "WEC") with slightly different links. These keys catch that.
+const linkKey = u => {
+  try { const x = new URL(u); return (x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/+$/, '')).toLowerCase(); }
+  catch { return u; }
+};
+const titleKey = t => t.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, ' ').trim();
+const imageKey = u => (u ? linkKey(u) : '');
+// Website the story is from, so "Motorsport.com" and "Motorsport.com WEC" count as one source
+export const siteOf = a => { try { return new URL(a.url).hostname.replace(/^www\./, ''); } catch { return a.source; } };
+
+export function sameStory(a, b) {
+  return linkKey(a.url) === linkKey(b.url)
+    || titleKey(a.title) === titleKey(b.title)
+    || (a.image && imageKey(a.image) === imageKey(b.image));
+}
+
+// Keeps the first (newest) copy of each story
+export function dedupe(list) {
+  const out = [];
+  for (const a of list) if (!out.some(b => sameStory(a, b))) out.push(a);
+  return out;
+}
+
 export function pickFeatured(sortedArticles, windowStart, count = 2) {
-  const withPhoto = sortedArticles.filter(a => a.image && a.date);
+  const withPhoto = dedupe(sortedArticles.filter(a => a.image && a.date));
   const before = withPhoto.filter(a => new Date(a.date) < windowStart);
   const pool = before.length >= count ? before : withPhoto; // fallback if feeds are very short
-  // prefer different sources for the two spots
+  // never the same story twice; prefer two different websites
   const picks = [];
-  for (const a of pool) if (picks.length < count && !picks.some(p => p.source === a.source)) picks.push(a);
-  for (const a of pool) if (picks.length < count && !picks.includes(a)) picks.push(a);
+  for (const a of pool) if (picks.length < count && !picks.some(p => siteOf(p) === siteOf(a))) picks.push(a);
+  for (const a of pool) if (picks.length < count && !picks.some(p => sameStory(p, a))) picks.push(a);
   return picks;
 }
 
@@ -148,12 +173,9 @@ await Promise.all([
 
 const now = Date.now();
 
-// articles: newest first, drop duplicate links, cap per source
-const seen = new Set();
+// articles: newest first, drop the same story from other feeds, cap per source
 const perSource = {};
-const sorted = articles
-  .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
-  .filter(a => !seen.has(a.url) && seen.add(a.url));
+const sorted = dedupe(articles.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0)));
 const topArticles = sorted
   .filter(a => (perSource[a.source] = (perSource[a.source] || 0) + 1) <= MAX_PER_SOURCE)
   .slice(0, MAX_ARTICLES);
