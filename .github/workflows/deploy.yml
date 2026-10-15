@@ -31,11 +31,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Generate WEC and MotoGP calendars
+      - name: Generate F1, WEC and MotoGP calendars
         run: |
           pip install motorsport-calendar
           mkdir -p calendars
           YEAR=$(date +%Y)
+          motocal generate-f1 "$YEAR" calendars/f1.ics || echo "F1 generation failed"
           motocal generate-wec "$YEAR" calendars/wec.ics || echo "WEC generation failed"
           motocal generate-motogp "$YEAR" calendars/motogp.ics || echo "MotoGP generation failed"
       - run: node scripts/fetch-feeds.mjs
