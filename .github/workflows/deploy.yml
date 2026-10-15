@@ -1,9 +1,5 @@
 name: Deploy to GitHub Pages
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 on:
   push:
     branches: [main]
@@ -19,7 +15,7 @@ permissions:
 # A newer run cancels an older one instead of failing with "in progress deployment"
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
