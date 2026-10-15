@@ -15,10 +15,14 @@ const OUT = new URL('../src/data/standings.json', import.meta.url);
 const UA = 'auto-site-standings/1.0 (https://github.com/Akshaj1717/auto)';
 const YEAR = new Date().getFullYear();
 
+// heading = the Wikipedia section title above the table; header = its 2nd column
 const WIKI_SERIES = [
   { id: 'wec', name: 'WEC', page: y => `${y} FIA World Endurance Championship`, tables: [
-    { title: 'Hypercar Drivers', header: /driver/i },
-    { title: 'Hypercar Manufacturers', header: /manufacturer/i },
+    { title: 'Hypercar Drivers', heading: /hypercar.*driver/i, header: /driver/i },
+    { title: 'Hypercar Manufacturers', heading: /hypercar.*manufacturer/i, header: /manufacturer/i },
+    { title: 'Hypercar Teams', heading: /hypercar.*team/i, header: /team|car|entrant/i },
+    { title: 'LMGT3 Drivers', heading: /lmgt3.*driver/i, header: /driver/i },
+    { title: 'LMGT3 Teams', heading: /lmgt3.*team/i, header: /team|car|entrant/i },
   ] },
   { id: 'indycar', name: 'IndyCar', page: y => `${y} IndyCar Series`, tables: [
     { title: 'Drivers', header: /driver/i },
@@ -84,6 +88,13 @@ export const cellText = html => decodeEntities(html
   .replace(/<[^>]+>/g, ''))
   .replace(/\s+/g, ' ').replace(/(,\s*)+$/, '').replace(/^\s*,\s*/, '').trim();
 
+// Text of the closest section heading (h2–h4) before a table, e.g. "FIA Endurance Trophy for LMGT3 Drivers"
+export function headingAbove(html, table) {
+  const before = html.slice(0, html.indexOf(table));
+  const all = [...before.matchAll(/<h[2-4]\b[^>]*>([\s\S]*?)<\/h[2-4]>/gi)];
+  return all.length ? cellText(all.at(-1)[1]) : '';
+}
+
 // Returns every <table class="wikitable"> (including tables nested in layout tables)
 export function findTables(html) {
   const tables = [];
@@ -117,6 +128,9 @@ export function readStandingsTable(table) {
   const header = (rows[0] ?? []).map(c => c.text);
   if (!/^pos/i.test(header[0] ?? '') || !/^(pts|points)/i.test(header.at(-1) ?? '')) return null;
   const teamCol = header.findIndex((h, i) => i > 1 && /^(team|entrant|car)/i.test(h));
+    // Teams tables list the car number first ("#83") and the team after it; name the row by the team
+  const byCarNumber = /^(car|no\.?|#)/i.test(header[1] ?? '') && teamCol > 1;
+  const nameCol = byCarNumber ? teamCol : 1;
   const body = rows.slice(1);
   // If positions are header-style cells (usual on Wikipedia), only trust those as positions.
   const posIsTh = body.some(r => r[0]?.th && /^\d+$/.test(r[0].text));
@@ -125,7 +139,7 @@ export function readStandingsTable(table) {
   for (const r of body) {
     const first = r[0]?.text ?? '';
     const isPositionRow = /^\d+$/.test(first) && (!posIsTh || r[0].th) && r.length >= 3
-      && isName(r[1]?.text ?? '') && +first >= (out.at(-1)?.pos ?? 0);
+      && isName(r[nameCol]?.text ?? '') && +first >= (out.at(-1)?.pos ?? 0);
 
     if (!isPositionRow) {
       // A row that continues the entry above (merged cells). In endurance racing a crew
@@ -135,10 +149,10 @@ export function readStandingsTable(table) {
       continue;
     }
     const points = parseFloat((r.at(-1)?.text || '').replace(/[^\d.]/g, ''));
-    out.push({
-      pos: +first, name: r[1].text, ...(teamCol > 0 && r[teamCol]?.text ? { team: r[teamCol].text } : {}),
-      points: isNaN(points) ? 0 : points,
-    });
+        out.push(byCarNumber
+      ? { pos: +first, name: `${r[nameCol].text} ${r[1].text}`.trim(), points: isNaN(points) ? 0 : points }
+      : { pos: +first, name: r[1].text, ...(teamCol > 0 && r[teamCol]?.text ? { team: r[teamCol].text } : {}),
+          points: isNaN(points) ? 0 : points });
   }
   return { header, rows: out };
 }
@@ -154,10 +168,14 @@ async function wikiSeries(cfg) {
     } catch { continue; }
     if (!html) continue;
 
-    const parsed = findTables(html).map(readStandingsTable).filter(t => t?.rows.length);
+        const parsed = findTables(html)
+      .map(t => ({ ...readStandingsTable(t), heading: headingAbove(html, t) }))
+      .filter(t => t.rows?.length);
     const tables = [];
     for (const want of cfg.tables) {
-      const t = parsed.find(p => want.header.test(p.header[1] ?? '') && !tables.some(x => x._src === p));
+      const t = parsed.find(p => want.header.test(p.header[1] ?? '')
+        && (!want.heading || want.heading.test(p.heading))
+        && !tables.some(x => x._src === p));
       if (t) tables.push({ title: want.title, rows: t.rows, _src: t });
     }
     if (!tables.length) continue;
