@@ -1,6 +1,7 @@
 // Talks to Wikipedia from the visitor's browser (Wikipedia allows this with origin=*).
 // Used by the Explore page: search for a car, then load everything about it.
 import { readInfobox, cleanValue } from './infobox.js';
+import { cylindersFrom, yearFrom } from './cardle.js';
 
 const API = 'https://en.wikipedia.org/w/api.php';
 const REST = 'https://en.wikipedia.org/api/rest_v1';
@@ -123,4 +124,24 @@ export async function loadCar(title) {
     specs: specsFrom(wikitext),
     sections: sectionsFrom(extract).slice(1), // section 0 repeats the summary
   };
+}
+
+// ---------- Facts for the "Guess the Car" game ----------
+// Year of production and cylinder count, read from the car's info panel
+
+const factsCache = new Map();
+export function getCarFacts(title) {
+  if (!factsCache.has(title)) {
+    factsCache.set(title, api({ action: 'parse', page: title, redirects: '1', prop: 'wikitext', section: '0' })
+      .then(d => {
+        const box = readInfobox(d.parse?.wikitext ?? '');
+        const text = k => cleanValue(box[k] ?? '', 1000);
+        return {
+          year: yearFrom(text('production'), text('model_years')),
+          cylinders: cylindersFrom(text('engine') || text('motor')),
+        };
+      })
+      .catch(() => ({ year: null, cylinders: null })));
+  }
+  return factsCache.get(title);
 }

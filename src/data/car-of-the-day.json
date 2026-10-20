@@ -1,42 +1,30 @@
 {
-  "date": "2026-10-14",
-  "name": "Mitsubishi Starion",
-  "blurb": "The Mitsubishi Starion is a sports car which was manufactured and marketed by Mitsubishi from 1982 until 1989 — with badge engineered variants marketed in North America as the Conquest, under the Chrysler, Dodge, and Plymouth brands. It is a two-door coupé with a fastback design and seating for four passengers.",
-  "url": "https://en.wikipedia.org/wiki/Mitsubishi_Starion",
+  "date": "2026-10-19",
+  "name": "Opel GT",
+  "blurb": "The Opel GT is a front-engine, rear-drive two-seat sports car manufactured and marketed by Opel in two generations separated by a 34-year hiatus.",
+  "url": "https://en.wikipedia.org/wiki/Opel_GT",
   "photo": {
-    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/1988_Mitsubishi_Starion_Turbo_2.0_Front_%281%29.jpg/1280px-1988_Mitsubishi_Starion_Turbo_2.0_Front_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "credit": "Vauxford",
-    "license": "CC BY-SA 4.0",
-    "page": "https://commons.wikimedia.org/wiki/File:1988_Mitsubishi_Starion_Turbo_2.0_Front_(1).jpg"
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Opel_GT%2C_Bj._1973_am_16.07.2006.jpg/1280px-Opel_GT%2C_Bj._1973_am_16.07.2006.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "credit": "Lothar Spurzem (Spurzem at de.wikipedia)",
+    "license": "CC BY-SA 2.0 de",
+    "page": "https://commons.wikimedia.org/wiki/File:Opel_GT,_Bj._1973_am_16.07.2006.jpg"
   },
   "specs": [
     [
       "Manufacturer",
-      "Mitsubishi Motors"
+      "Opel"
     ],
     [
       "Production",
-      "1982–1989"
-    ],
-    [
-      "Designer",
-      "Ryu Kaibuchi, Takashi Kono, Masaki Iwamoto, Hidetoshi Aoki"
+      "1968–1973, 2007–2009"
     ],
     [
       "Class",
-      "Sports car"
+      "Coupe (1968-1973), Roadster (2007-2009)"
     ],
     [
-      "Engine",
-      "2.0 L G63B I4, 2.0 L G63B turbo I4, 2.6 L G54B turbo I4"
-    ],
-    [
-      "Transmission",
-      "5-speed manual, 4-speed automatic"
-    ],
-    [
-      "Curb weight",
-      "1260 kg (narrowbody), 1340 kg (widebody)"
+      "Layout",
+      "Front mid-engined, rear-wheel drive"
     ]
   ],
   "source": "Wikipedia"

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T02:29:07.182Z",
+  "updated": "2026-10-20T01:35:13.948Z",
   "series": [
     {
       "id": "f1",
@@ -247,7 +247,7 @@
           ]
         }
       ],
-      "updated": "2026-10-15T02:29:07.043Z"
+      "updated": "2026-10-20T01:35:13.040Z"
     },
     {
       "id": "motogp",
@@ -486,7 +486,7 @@
           ]
         }
       ],
-      "updated": "2026-10-15T02:29:07.146Z"
+      "updated": "2026-10-20T01:35:13.948Z"
     },
     {
       "id": "wec",
@@ -502,199 +502,199 @@
               "pos": 1,
               "name": "Sébastien Buemi",
               "team": "Toyota Racing",
-              "points": 89
+              "points": 114
             },
             {
               "pos": 1,
               "name": "Brendon Hartley",
               "team": "Toyota Racing",
-              "points": 89
+              "points": 114
             },
             {
               "pos": 1,
               "name": "Ryō Hirakawa",
               "team": "Toyota Racing",
-              "points": 89
+              "points": 114
             },
             {
               "pos": 2,
               "name": "Mike Conway",
               "team": "Toyota Racing",
-              "points": 79
+              "points": 97
             },
             {
               "pos": 2,
               "name": "Kamui Kobayashi",
               "team": "Toyota Racing",
-              "points": 79
+              "points": 97
             },
             {
               "pos": 2,
               "name": "Nyck de Vries",
               "team": "Toyota Racing",
-              "points": 79
+              "points": 97
             },
             {
               "pos": 3,
+              "name": "Kevin Magnussen",
+              "team": "BMW M Team WRT",
+              "points": 75
+            },
+            {
+              "pos": 3,
+              "name": "Raffaele Marciello",
+              "team": "BMW M Team WRT",
+              "points": 75
+            },
+            {
+              "pos": 4,
               "name": "Robin Frijns",
               "team": "BMW M Team WRT",
               "points": 75
             },
             {
-              "pos": 3,
+              "pos": 4,
               "name": "René Rast",
               "team": "BMW M Team WRT",
               "points": 75
             },
             {
-              "pos": 4,
-              "name": "Kevin Magnussen",
-              "team": "BMW M Team WRT",
-              "points": 69
-            },
-            {
-              "pos": 4,
-              "name": "Raffaele Marciello",
-              "team": "BMW M Team WRT",
-              "points": 69
-            },
-            {
               "pos": 5,
+              "name": "Dries Vanthoor",
+              "team": "BMW M Team WRT",
+              "points": 69
+            },
+            {
+              "pos": 6,
+              "name": "Antonio Fuoco",
+              "team": "Ferrari AF Corse",
+              "points": 69
+            },
+            {
+              "pos": 6,
+              "name": "Miguel Molina",
+              "team": "Ferrari AF Corse",
+              "points": 69
+            },
+            {
+              "pos": 6,
+              "name": "Nicklas Nielsen",
+              "team": "Ferrari AF Corse",
+              "points": 69
+            },
+            {
+              "pos": 7,
               "name": "Sheldon van der Linde",
               "team": "BMW M Team WRT",
               "points": 65
             },
             {
-              "pos": 6,
-              "name": "Dries Vanthoor",
-              "team": "BMW M Team WRT",
-              "points": 63
-            },
-            {
-              "pos": 7,
+              "pos": 8,
               "name": "James Calado",
               "team": "Ferrari AF Corse",
               "points": 59
             },
             {
-              "pos": 7,
+              "pos": 8,
               "name": "Antonio Giovinazzi",
               "team": "Ferrari AF Corse",
               "points": 59
             },
             {
-              "pos": 7,
+              "pos": 8,
               "name": "Alessandro Pier Guidi",
               "team": "Ferrari AF Corse",
               "points": 59
             },
             {
-              "pos": 8,
-              "name": "Ferdinand Habsburg",
-              "team": "Alpine Endurance Team",
-              "points": 56
-            },
-            {
-              "pos": 8,
-              "name": "Charles Milesi",
-              "team": "Alpine Endurance Team",
-              "points": 56
-            },
-            {
               "pos": 9,
-              "name": "Antonio Fuoco",
-              "team": "Ferrari AF Corse",
-              "points": 54
-            },
-            {
-              "pos": 9,
-              "name": "Miguel Molina",
-              "team": "Ferrari AF Corse",
-              "points": 54
-            },
-            {
-              "pos": 9,
-              "name": "Nicklas Nielsen",
-              "team": "Ferrari AF Corse",
-              "points": 54
-            },
-            {
-              "pos": 10,
               "name": "Norman Nato",
               "team": "Cadillac Hertz Team Jota",
-              "points": 50
+              "points": 58
+            },
+            {
+              "pos": 9,
+              "name": "Will Stevens",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 58
             },
             {
               "pos": 10,
-              "name": "Will Stevens",
-              "team": "Cadillac Hertz Team Jota",
-              "points": 50
+              "name": "Ferdinand Habsburg",
+              "team": "Alpine Endurance Team",
+              "points": 57
+            },
+            {
+              "pos": 10,
+              "name": "Charles Milesi",
+              "team": "Alpine Endurance Team",
+              "points": 57
             },
             {
               "pos": 11,
               "name": "Earl Bamber",
               "team": "Cadillac Hertz Team Jota",
-              "points": 44
+              "points": 56
             },
             {
               "pos": 11,
               "name": "Sébastien Bourdais",
               "team": "Cadillac Hertz Team Jota",
-              "points": 44
+              "points": 56
             },
             {
               "pos": 12,
+              "name": "Jack Aitken",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 52
+            },
+            {
+              "pos": 13,
               "name": "António Félix da Costa",
               "team": "Alpine Endurance Team",
               "points": 44
             },
             {
-              "pos": 13,
+              "pos": 14,
               "name": "Tom Gamble",
               "team": "Aston Martin THOR Team",
               "points": 42
             },
             {
-              "pos": 13,
+              "pos": 14,
               "name": "Harry Tincknell",
               "team": "Aston Martin THOR Team",
               "points": 42
             },
             {
-              "pos": 14,
-              "name": "Jack Aitken",
-              "team": "Cadillac Hertz Team Jota",
-              "points": 40
-            },
-            {
               "pos": 15,
-              "name": "Victor Martins",
-              "team": "Alpine Endurance Team",
-              "points": 32
-            },
-            {
-              "pos": 15,
-              "name": "Jules Gounon",
-              "team": "Alpine Endurance Team",
-              "points": 32
-            },
-            {
-              "pos": 16,
               "name": "Phil Hanson",
               "team": "AF Corse",
-              "points": 31
+              "points": 41
             },
             {
-              "pos": 16,
+              "pos": 15,
               "name": "Robert Kubica",
               "team": "AF Corse",
-              "points": 31
+              "points": 41
+            },
+            {
+              "pos": 15,
+              "name": "Yifei Ye",
+              "team": "AF Corse",
+              "points": 41
             },
             {
               "pos": 16,
-              "name": "Yifei Ye",
-              "team": "AF Corse",
-              "points": 31
+              "name": "Victor Martins",
+              "team": "Alpine Endurance Team",
+              "points": 36
+            },
+            {
+              "pos": 16,
+              "name": "Jules Gounon",
+              "team": "Alpine Endurance Team",
+              "points": 36
             },
             {
               "pos": 17,
@@ -730,82 +730,94 @@
               "pos": 20,
               "name": "Pipo Derani",
               "team": "Genesis Magma Racing",
-              "points": 10
+              "points": 11
             },
             {
               "pos": 20,
               "name": "Mathys Jaubert",
               "team": "Genesis Magma Racing",
-              "points": 10
+              "points": 11
             },
             {
               "pos": 20,
               "name": "André Lotterer",
               "team": "Genesis Magma Racing",
-              "points": 10
+              "points": 11
             },
             {
               "pos": 21,
+              "name": "Alex Lynn",
+              "team": "Cadillac Hertz Team Jota",
+              "points": 8
+            },
+            {
+              "pos": 22,
               "name": "Ross Gunn",
               "team": "Aston Martin THOR Team",
               "points": 8
             },
             {
-              "pos": 22,
+              "pos": 23,
               "name": "Nick Cassidy",
               "team": "Peugeot TotalEnergies",
               "points": 6
             },
             {
-              "pos": 22,
+              "pos": 23,
               "name": "Paul di Resta",
               "team": "Peugeot TotalEnergies",
               "points": 6
             },
             {
-              "pos": 22,
+              "pos": 24,
               "name": "Stoffel Vandoorne",
               "team": "Peugeot TotalEnergies",
               "points": 6
             },
             {
-              "pos": 23,
+              "pos": 25,
               "name": "Alex Riberas",
               "team": "Aston Martin THOR Team",
               "points": 4
             },
             {
-              "pos": 23,
+              "pos": 25,
               "name": "Marco Sørensen",
               "team": "Aston Martin THOR Team",
               "points": 4
             },
             {
-              "pos": 24,
+              "pos": 26,
               "name": "Ricky Taylor",
               "team": "Cadillac Hertz Team Jota",
               "points": 2
             },
             {
-              "pos": 25,
+              "pos": 27,
               "name": "Paul-Loup Chatin",
               "team": "Genesis Magma Racing",
               "points": 0
             },
             {
-              "pos": 25,
+              "pos": 27,
               "name": "Mathieu Jaminet",
               "team": "Genesis Magma Racing",
               "points": 0
             },
             {
-              "pos": 25,
+              "pos": 27,
               "name": "Daniel Juncadella",
               "team": "Genesis Magma Racing",
               "points": 0
             },
             {
-              "pos": 26,
+              "pos": 28,
+              "name": "Alex Quinn",
+              "team": "Peugeot TotalEnergies",
+              "points": 0
+            },
+            {
+              "pos": 29,
               "name": "Roman De Angelis",
               "team": "Aston Martin THOR Team",
               "points": 0
@@ -818,32 +830,32 @@
             {
               "pos": 1,
               "name": "Toyota",
-              "points": 169
+              "points": 212
             },
             {
               "pos": 2,
               "name": "BMW",
-              "points": 146
+              "points": 154
             },
             {
               "pos": 3,
               "name": "Ferrari",
-              "points": 115
+              "points": 130
             },
             {
               "pos": 4,
-              "name": "Alpine",
-              "points": 96
+              "name": "Cadillac",
+              "points": 118
             },
             {
               "pos": 5,
-              "name": "Cadillac",
-              "points": 96
+              "name": "Alpine",
+              "points": 104
             },
             {
               "pos": 6,
               "name": "Aston Martin",
-              "points": 54
+              "points": 58
             },
             {
               "pos": 7,
@@ -853,7 +865,7 @@
             {
               "pos": 8,
               "name": "Genesis",
-              "points": 12
+              "points": 14
             }
           ]
         },
@@ -864,193 +876,193 @@
               "pos": 1,
               "name": "Jonny Edgar",
               "team": "TF Sport",
-              "points": 86
+              "points": 92
             },
             {
               "pos": 2,
               "name": "Nicky Catsburg",
               "team": "TF Sport",
-              "points": 82
+              "points": 88
             },
             {
               "pos": 3,
-              "name": "Ben Keating",
-              "team": "TF Sport",
-              "points": 64
+              "name": "Richard Lietz",
+              "team": "The Bend Manthey",
+              "points": 74
+            },
+            {
+              "pos": 3,
+              "name": "Riccardo Pera",
+              "team": "The Bend Manthey",
+              "points": 74
+            },
+            {
+              "pos": 3,
+              "name": "Yasser Shahin",
+              "team": "The Bend Manthey",
+              "points": 74
             },
             {
               "pos": 4,
-              "name": "Mattia Drudi",
-              "team": "Heart of Racing Team",
-              "points": 62
-            },
-            {
-              "pos": 4,
-              "name": "Ian James",
-              "team": "Heart of Racing Team",
-              "points": 62
-            },
-            {
-              "pos": 4,
-              "name": "Zacharie Robichon",
-              "team": "Heart of Racing Team",
-              "points": 62
-            },
-            {
-              "pos": 5,
               "name": "Peter Dempsey",
               "team": "Racing Team Turkey by TF",
-              "points": 58
+              "points": 70
             },
             {
-              "pos": 5,
+              "pos": 4,
               "name": "Charlie Eastwood",
               "team": "Racing Team Turkey by TF",
-              "points": 58
+              "points": 70
+            },
+            {
+              "pos": 4,
+              "name": "Salih Yoluç",
+              "team": "Racing Team Turkey by TF",
+              "points": 70
             },
             {
               "pos": 5,
-              "name": "Salih Yoluç",
-              "team": "Racing Team Turkey by TF",
-              "points": 58
+              "name": "Ben Keating",
+              "team": "TF Sport",
+              "points": 70
             },
             {
               "pos": 6,
-              "name": "Timur Boguslavskiy",
-              "team": "Manthey DK Engineering",
-              "points": 54
+              "name": "Dan Harper",
+              "team": "Team WRT",
+              "points": 66
             },
             {
               "pos": 6,
-              "name": "James Cottingham",
-              "team": "Manthey DK Engineering",
-              "points": 54
+              "name": "Anthony McIntosh",
+              "team": "Team WRT",
+              "points": 66
             },
             {
               "pos": 6,
-              "name": "Ayhancan Güven",
-              "team": "Manthey DK Engineering",
-              "points": 54
+              "name": "Parker Thompson",
+              "team": "Team WRT",
+              "points": 66
             },
             {
               "pos": 7,
               "name": "François Hériau",
               "team": "Vista AF Corse",
-              "points": 54
+              "points": 64
             },
             {
               "pos": 7,
               "name": "Simon Mann",
               "team": "Vista AF Corse",
-              "points": 54
+              "points": 64
             },
             {
               "pos": 7,
               "name": "Alessio Rovera",
               "team": "Vista AF Corse",
+              "points": 64
+            },
+            {
+              "pos": 8,
+              "name": "Mattia Drudi",
+              "team": "Heart of Racing Team",
+              "points": 62
+            },
+            {
+              "pos": 8,
+              "name": "Ian James",
+              "team": "Heart of Racing Team",
+              "points": 62
+            },
+            {
+              "pos": 8,
+              "name": "Zacharie Robichon",
+              "team": "Heart of Racing Team",
+              "points": 62
+            },
+            {
+              "pos": 9,
+              "name": "Antares Au",
+              "team": "Garage 59",
+              "points": 57
+            },
+            {
+              "pos": 9,
+              "name": "Tom Fleming",
+              "team": "Garage 59",
+              "points": 57
+            },
+            {
+              "pos": 9,
+              "name": "Marvin Kirchhöfer",
+              "team": "Garage 59",
+              "points": 57
+            },
+            {
+              "pos": 10,
+              "name": "Timur Boguslavskiy",
+              "team": "Manthey DK Engineering",
               "points": 54
             },
             {
-              "pos": 8,
-              "name": "Dan Harper",
-              "team": "Team WRT",
-              "points": 51
-            },
-            {
-              "pos": 8,
-              "name": "Anthony McIntosh",
-              "team": "Team WRT",
-              "points": 51
-            },
-            {
-              "pos": 8,
-              "name": "Parker Thompson",
-              "team": "Team WRT",
-              "points": 51
-            },
-            {
-              "pos": 9,
-              "name": "Richard Lietz",
-              "team": "The Bend Manthey",
-              "points": 49
-            },
-            {
-              "pos": 9,
-              "name": "Riccardo Pera",
-              "team": "The Bend Manthey",
-              "points": 49
-            },
-            {
-              "pos": 9,
-              "name": "Yasser Shahin",
-              "team": "The Bend Manthey",
-              "points": 49
+              "pos": 10,
+              "name": "James Cottingham",
+              "team": "Manthey DK Engineering",
+              "points": 54
             },
             {
               "pos": 10,
+              "name": "Ayhancan Güven",
+              "team": "Manthey DK Engineering",
+              "points": 54
+            },
+            {
+              "pos": 11,
               "name": "Jonny Adam",
               "team": "Heart of Racing Team",
-              "points": 49
+              "points": 50
             },
             {
-              "pos": 10,
+              "pos": 11,
               "name": "Gray Newell",
               "team": "Heart of Racing Team",
-              "points": 49
-            },
-            {
-              "pos": 11,
-              "name": "Augusto Farfus",
-              "team": "Team WRT",
-              "points": 47
-            },
-            {
-              "pos": 11,
-              "name": "Sean Gelael",
-              "team": "Team WRT",
-              "points": 47
-            },
-            {
-              "pos": 11,
-              "name": "Darren Leung",
-              "team": "Team WRT",
-              "points": 47
+              "points": 50
             },
             {
               "pos": 12,
+              "name": "Augusto Farfus",
+              "team": "Team WRT",
+              "points": 48
+            },
+            {
+              "pos": 12,
+              "name": "Sean Gelael",
+              "team": "Team WRT",
+              "points": 48
+            },
+            {
+              "pos": 12,
+              "name": "Darren Leung",
+              "team": "Team WRT",
+              "points": 48
+            },
+            {
+              "pos": 13,
               "name": "Eduardo Barrichello",
               "team": "Heart of Racing Team",
-              "points": 46
-            },
-            {
-              "pos": 13,
-              "name": "Antares Au",
-              "team": "Garage 59",
-              "points": 38
-            },
-            {
-              "pos": 13,
-              "name": "Tom Fleming",
-              "team": "Garage 59",
-              "points": 38
-            },
-            {
-              "pos": 13,
-              "name": "Marvin Kirchhöfer",
-              "team": "Garage 59",
-              "points": 38
+              "points": 48
             },
             {
               "pos": 14,
               "name": "Hadrien David",
               "team": "Akkodis ASP Team",
-              "points": 38
+              "points": 39
             },
             {
               "pos": 14,
               "name": "Tom Van Rompuy",
               "team": "Akkodis ASP Team",
-              "points": 38
+              "points": 39
             },
             {
               "pos": 15,
@@ -1078,45 +1090,45 @@
             },
             {
               "pos": 17,
+              "name": "Rui Andrade",
+              "team": "Iron Lynx",
+              "points": 25
+            },
+            {
+              "pos": 17,
+              "name": "Martin Berry",
+              "team": "Iron Lynx",
+              "points": 25
+            },
+            {
+              "pos": 17,
+              "name": "Maxime Martin",
+              "team": "Iron Lynx",
+              "points": 25
+            },
+            {
+              "pos": 18,
               "name": "Blake McDonald",
               "team": "TF Sport",
               "points": 22
             },
             {
-              "pos": 18,
+              "pos": 19,
               "name": "Finn Gehrsitz",
               "team": "Garage 59",
               "points": 22
             },
             {
-              "pos": 18,
+              "pos": 19,
               "name": "Benjamin Goethe",
               "team": "Garage 59",
               "points": 22
             },
             {
-              "pos": 18,
+              "pos": 19,
               "name": "Alexander West",
               "team": "Garage 59",
               "points": 22
-            },
-            {
-              "pos": 19,
-              "name": "Rui Andrade",
-              "team": "Iron Lynx",
-              "points": 17
-            },
-            {
-              "pos": 19,
-              "name": "Martin Berry",
-              "team": "Iron Lynx",
-              "points": 17
-            },
-            {
-              "pos": 19,
-              "name": "Maxime Martin",
-              "team": "Iron Lynx",
-              "points": 17
             },
             {
               "pos": 20,
@@ -1138,39 +1150,57 @@
             },
             {
               "pos": 21,
+              "name": "Francesco Castellacci",
+              "team": "Vista AF Corse",
+              "points": 13
+            },
+            {
+              "pos": 21,
+              "name": "Thomas Flohr",
+              "team": "Vista AF Corse",
+              "points": 13
+            },
+            {
+              "pos": 21,
+              "name": "Davide Rigon",
+              "team": "Vista AF Corse",
+              "points": 13
+            },
+            {
+              "pos": 22,
               "name": "Eric Powell",
               "team": "Proton Competition",
-              "points": 14
+              "points": 13
             },
             {
-              "pos": 21,
+              "pos": 22,
               "name": "Sebastian Priaulx",
               "team": "Proton Competition",
-              "points": 14
+              "points": 13
             },
             {
-              "pos": 21,
+              "pos": 22,
               "name": "Ben Tuck",
               "team": "Proton Competition",
-              "points": 14
+              "points": 13
             },
             {
               "pos": 23,
               "name": "Matteo Cressoni",
               "team": "Iron Lynx",
-              "points": 6
+              "points": 10
             },
             {
               "pos": 23,
               "name": "Lin Hodenius",
               "team": "Iron Lynx",
-              "points": 6
+              "points": 10
             },
             {
               "pos": 23,
               "name": "Johannes Zelger",
               "team": "Iron Lynx",
-              "points": 6
+              "points": 10
             },
             {
               "pos": 24,
@@ -1180,15 +1210,15 @@
             },
             {
               "pos": 25,
-              "name": "Kobe Pauwels",
-              "team": "Heart of Racing Team",
+              "name": "Esteban Masson",
+              "team": "Akkodis ASP Team",
               "points": 3
             },
             {
               "pos": 26,
-              "name": "Esteban Masson",
-              "team": "Akkodis ASP Team",
-              "points": 2
+              "name": "Kobe Pauwels",
+              "team": "Heart of Racing Team",
+              "points": 3
             }
           ]
         },
@@ -1198,57 +1228,57 @@
             {
               "pos": 1,
               "name": "TF Sport 33",
-              "points": 86
+              "points": 92
             },
             {
               "pos": 2,
-              "name": "Heart of Racing Team 27",
-              "points": 62
+              "name": "The Bend Manthey 92",
+              "points": 74
             },
             {
               "pos": 3,
               "name": "Racing Team Turkey by TF 34",
-              "points": 58
+              "points": 70
             },
             {
               "pos": 4,
-              "name": "Manthey DK Engineering 91",
-              "points": 54
+              "name": "Team WRT 69",
+              "points": 66
             },
             {
               "pos": 5,
               "name": "Vista AF Corse 21",
-              "points": 54
+              "points": 64
             },
             {
               "pos": 6,
-              "name": "Team WRT 69",
-              "points": 51
+              "name": "Heart of Racing Team 27",
+              "points": 62
             },
             {
               "pos": 7,
-              "name": "The Bend Manthey 92",
-              "points": 49
+              "name": "Garage 59 10",
+              "points": 57
             },
             {
               "pos": 8,
-              "name": "Heart of Racing Team 23",
-              "points": 49
+              "name": "Manthey DK Engineering 91",
+              "points": 54
             },
             {
               "pos": 9,
+              "name": "Heart of Racing Team 23",
+              "points": 50
+            },
+            {
+              "pos": 10,
               "name": "Team WRT 32",
               "points": 47
             },
             {
-              "pos": 10,
-              "name": "Garage 59 10",
-              "points": 38
-            },
-            {
               "pos": 11,
               "name": "Akkodis ASP Team 78",
-              "points": 38
+              "points": 39
             },
             {
               "pos": 12,
@@ -1257,33 +1287,38 @@
             },
             {
               "pos": 13,
+              "name": "Iron Lynx 61",
+              "points": 25
+            },
+            {
+              "pos": 14,
               "name": "Garage 59 58",
               "points": 22
             },
             {
-              "pos": 14,
-              "name": "Iron Lynx 61",
-              "points": 17
-            },
-            {
               "pos": 15,
               "name": "Proton Competition 88",
-              "points": 16
+              "points": 20
             },
             {
               "pos": 16,
+              "name": "Vista AF Corse 54",
+              "points": 13
+            },
+            {
+              "pos": 17,
               "name": "Proton Competition 77",
-              "points": 14
+              "points": 13
             },
             {
-              "pos": 16,
+              "pos": 18,
               "name": "Iron Lynx 79",
-              "points": 6
+              "points": 8
             }
           ]
         }
       ],
-      "updated": "2026-10-15T02:29:07.167Z"
+      "updated": "2026-10-20T01:35:12.904Z"
     },
     {
       "id": "indycar",
@@ -1463,7 +1498,7 @@
           ]
         }
       ],
-      "updated": "2026-10-15T02:29:07.182Z"
+      "updated": "2026-10-20T01:35:12.960Z"
     }
   ]
 }

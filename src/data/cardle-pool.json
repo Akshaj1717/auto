@@ -1,0 +1,345 @@
+{
+ "updated": null,
+ "note": "Starter list. npm run fetch replaces it with ~1,000+ cars from Wikidata.",
+ "cars": [
+  {
+   "title": "AC Cobra",
+   "maker": "AC Cars",
+   "parents": [],
+   "country": "United Kingdom",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Audi Quattro",
+   "maker": "Audi",
+   "parents": [
+    "Volkswagen Group"
+   ],
+   "country": "Germany",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "BMW M3",
+   "maker": "BMW M",
+   "parents": [
+    "BMW"
+   ],
+   "country": "Germany",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Bugatti Veyron",
+   "maker": "Bugatti Automobiles",
+   "parents": [
+    "Bugatti Rimac"
+   ],
+   "country": "France",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Chevrolet Camaro",
+   "maker": "Chevrolet",
+   "parents": [
+    "General Motors"
+   ],
+   "country": "United States",
+   "continents": [
+    "North America"
+   ]
+  },
+  {
+   "title": "Chevrolet Corvette",
+   "maker": "Chevrolet",
+   "parents": [
+    "General Motors"
+   ],
+   "country": "United States",
+   "continents": [
+    "North America"
+   ]
+  },
+  {
+   "title": "Citroën DS",
+   "maker": "Citroën",
+   "parents": [
+    "Stellantis"
+   ],
+   "country": "France",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Dodge Viper",
+   "maker": "Dodge",
+   "parents": [
+    "Stellantis"
+   ],
+   "country": "United States",
+   "continents": [
+    "North America"
+   ]
+  },
+  {
+   "title": "Ferrari F40",
+   "maker": "Ferrari",
+   "parents": [],
+   "country": "Italy",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Fiat 500",
+   "maker": "Fiat",
+   "parents": [
+    "Stellantis"
+   ],
+   "country": "Italy",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Ford GT40",
+   "maker": "Ford Motor Company",
+   "parents": [],
+   "country": "United States",
+   "continents": [
+    "North America"
+   ]
+  },
+  {
+   "title": "Ford Model T",
+   "maker": "Ford Motor Company",
+   "parents": [],
+   "country": "United States",
+   "continents": [
+    "North America"
+   ]
+  },
+  {
+   "title": "Ford Mustang",
+   "maker": "Ford Motor Company",
+   "parents": [],
+   "country": "United States",
+   "continents": [
+    "North America"
+   ]
+  },
+  {
+   "title": "Honda NSX",
+   "maker": "Honda",
+   "parents": [],
+   "country": "Japan",
+   "continents": [
+    "Asia"
+   ]
+  },
+  {
+   "title": "Jaguar E-Type",
+   "maker": "Jaguar Cars",
+   "parents": [
+    "Jaguar Land Rover"
+   ],
+   "country": "United Kingdom",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Lamborghini Countach",
+   "maker": "Lamborghini",
+   "parents": [
+    "Audi"
+   ],
+   "country": "Italy",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Lamborghini Miura",
+   "maker": "Lamborghini",
+   "parents": [
+    "Audi"
+   ],
+   "country": "Italy",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Lancia Stratos",
+   "maker": "Lancia",
+   "parents": [
+    "Stellantis"
+   ],
+   "country": "Italy",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Mazda MX-5",
+   "maker": "Mazda",
+   "parents": [],
+   "country": "Japan",
+   "continents": [
+    "Asia"
+   ]
+  },
+  {
+   "title": "Mazda RX-7",
+   "maker": "Mazda",
+   "parents": [],
+   "country": "Japan",
+   "continents": [
+    "Asia"
+   ]
+  },
+  {
+   "title": "McLaren F1",
+   "maker": "McLaren Cars",
+   "parents": [
+    "McLaren Group"
+   ],
+   "country": "United Kingdom",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Mercedes-Benz 300 SL",
+   "maker": "Mercedes-Benz",
+   "parents": [
+    "Mercedes-Benz Group"
+   ],
+   "country": "Germany",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Mini (marque)",
+   "maker": "Mini",
+   "parents": [
+    "BMW"
+   ],
+   "country": "United Kingdom",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Mitsubishi Lancer Evolution",
+   "maker": "Mitsubishi Motors",
+   "parents": [],
+   "country": "Japan",
+   "continents": [
+    "Asia"
+   ]
+  },
+  {
+   "title": "Nissan Skyline GT-R",
+   "maker": "Nissan",
+   "parents": [],
+   "country": "Japan",
+   "continents": [
+    "Asia"
+   ]
+  },
+  {
+   "title": "Pontiac GTO",
+   "maker": "Pontiac",
+   "parents": [
+    "General Motors"
+   ],
+   "country": "United States",
+   "continents": [
+    "North America"
+   ]
+  },
+  {
+   "title": "Porsche 911",
+   "maker": "Porsche",
+   "parents": [
+    "Volkswagen Group"
+   ],
+   "country": "Germany",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Porsche 959",
+   "maker": "Porsche",
+   "parents": [
+    "Volkswagen Group"
+   ],
+   "country": "Germany",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Subaru Impreza",
+   "maker": "Subaru",
+   "parents": [],
+   "country": "Japan",
+   "continents": [
+    "Asia"
+   ]
+  },
+  {
+   "title": "Tesla Model S",
+   "maker": "Tesla, Inc.",
+   "parents": [],
+   "country": "United States",
+   "continents": [
+    "North America"
+   ]
+  },
+  {
+   "title": "Toyota Supra",
+   "maker": "Toyota",
+   "parents": [
+    "Toyota Group"
+   ],
+   "country": "Japan",
+   "continents": [
+    "Asia"
+   ]
+  },
+  {
+   "title": "Volkswagen Beetle",
+   "maker": "Volkswagen",
+   "parents": [
+    "Volkswagen Group"
+   ],
+   "country": "Germany",
+   "continents": [
+    "Europe"
+   ]
+  },
+  {
+   "title": "Volkswagen Golf",
+   "maker": "Volkswagen",
+   "parents": [
+    "Volkswagen Group"
+   ],
+   "country": "Germany",
+   "continents": [
+    "Europe"
+   ]
+  }
+ ]
+}
