@@ -1,7 +1,7 @@
 // Talks to Wikipedia from the visitor's browser (Wikipedia allows this with origin=*).
 // Used by the Explore page: search for a car, then load everything about it.
 import { readInfobox, cleanValue } from './infobox.js';
-import { cylindersFrom, yearFrom } from './cardle.js';
+import { cylindersFrom, yearFrom, brandInfo, groupOf, CONTINENTS } from './cardle.js';
 
 const API = 'https://en.wikipedia.org/w/api.php';
 const REST = 'https://en.wikipedia.org/api/rest_v1';
@@ -194,21 +194,28 @@ async function infoboxFacts(title) {
 }
 
 const factsCache = new Map();
-// → { canonical, maker, parents, country, continents, year, cylinders } (unknown values are null)
+// → { canonical, maker, group, parents, country, continents, year, cylinders } (unknown values are null)
+// The brand comes from the car's name when it's a known brand ("SEAT León" → SEAT), and its owner
+// from the BRAND_GROUPS table in cardle.js, so every SEAT is treated the same way. Wikidata only
+// fills in brands the table doesn't know.
 export function getCarFacts(title) {
   if (!factsCache.has(title)) {
     factsCache.set(title, Promise.all([
       wikidataFacts(title).catch(() => ({ canonical: title })),
       infoboxFacts(title).catch(() => ({})),
-    ]).then(([wd, box]) => ({
+    ]).then(([wd, box]) => {
+      const known = brandInfo(wd.canonical ?? title, wd.maker, box.makerText);
+      return {
       canonical: wd.canonical ?? title,
-      maker: wd.maker ?? box.makerText ?? null,
-      parents: wd.parents ?? [],
-      country: wd.country ?? null,
-      continents: wd.continents ?? [],
+      maker: known?.brand ?? wd.maker ?? box.makerText ?? null,
+      group: known ? known.group : groupOf(wd.maker),
+      parents: known ? [] : wd.parents ?? [],
+      country: known?.country ?? wd.country ?? null,
+      continents: known?.country ? CONTINENTS[known.country] ?? wd.continents ?? [] : wd.continents ?? [],
       year: box.year ?? wd.wikidataYear ?? null,
       cylinders: box.cylinders ?? null,
-    })));
+      };
+    }));
   }
   return factsCache.get(title);
 }

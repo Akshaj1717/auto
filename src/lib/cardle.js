@@ -62,24 +62,95 @@ export function yearFrom(...values) {
   return null;
 }
 
-// ---------- Comparing a guess with the answer ----------
-const makerKey = s => (s ?? '').toLowerCase()
-  .replace(/\b(automobiles?|automotive|motor company|motors?|cars|car company|ag|s\.?p\.?a\.?|gmbh|inc\.?|ltd\.?|limited|corporation|co\.?|group|company|n\.?v\.?)\b/g, '')
-  .replace(/[^a-z0-9]+/g, ' ').trim();
+// ---------- Brands and who owns them ----------
+// Wikidata records ownership inconsistently (one SEAT model says "SEAT", another says
+// "Volkswagen Group"), so the game uses this fixed table of today's owners.
+// To add a brand, put it under its group; brands not listed fall back to Wikidata.
+export const BRAND_GROUPS = {
+  'Volkswagen Group': ['Volkswagen', 'Audi', 'SEAT', 'Cupra', 'Škoda', 'Porsche', 'Lamborghini', 'Bentley', 'Scout'],
+  'Stellantis': ['Chrysler', 'Dodge', 'Jeep', 'Ram', 'Plymouth', 'Fiat', 'Abarth', 'Alfa Romeo', 'Lancia', 'Maserati',
+    'Peugeot', 'Citroën', 'DS', 'Opel', 'Vauxhall', 'Imperial', 'DeSoto'],
+  'General Motors': ['Chevrolet', 'Cadillac', 'GMC', 'Buick', 'Pontiac', 'Oldsmobile', 'Saturn', 'Hummer', 'Holden', 'LaSalle'],
+  'Ford Motor Company': ['Ford', 'Lincoln', 'Mercury', 'Edsel'],
+  'BMW Group': ['BMW', 'Mini', 'Rolls-Royce'],
+  'Mercedes-Benz Group': ['Mercedes-Benz', 'Mercedes-AMG', 'Maybach', 'Mercedes-Maybach'],
+  'Toyota Group': ['Toyota', 'Lexus', 'Daihatsu', 'Scion'],
+  'Nissan': ['Nissan', 'Infiniti', 'Datsun'],
+  'Honda': ['Honda', 'Acura'],
+  'Hyundai Motor Group': ['Hyundai', 'Kia', 'Genesis'],
+  'Renault Group': ['Renault', 'Dacia', 'Alpine'],
+  'Geely': ['Geely', 'Volvo', 'Polestar', 'Lotus', 'Lynk & Co', 'Zeekr', 'Proton', 'Smart'],
+  'Tata Motors': ['Tata', 'Jaguar', 'Land Rover', 'Range Rover'],
+  'SAIC Motor': ['MG', 'Roewe', 'Wuling'],
+  'Bugatti Rimac': ['Bugatti', 'Rimac'],
+};
+// Each brand's home country, so every car of a brand gets the same Country hint
+// (Wikidata sometimes gives the parent company's country instead, e.g. SEAT → Germany).
+const COUNTRY_BRANDS = {
+  'Germany': ['Volkswagen', 'Audi', 'Porsche', 'Opel', 'BMW', 'Mercedes-Benz', 'Mercedes-AMG', 'Maybach', 'Mercedes-Maybach', 'Smart', 'Gumpert'],
+  'Spain': ['SEAT', 'Cupra'], 'Czech Republic': ['Škoda'], 'Romania': ['Dacia'], 'Croatia': ['Rimac'], 'Netherlands': ['Spyker'], 'Russia': ['Lada'],
+  'Italy': ['Lamborghini', 'Fiat', 'Abarth', 'Alfa Romeo', 'Lancia', 'Maserati', 'Ferrari', 'Pagani', 'De Tomaso'],
+  'France': ['Peugeot', 'Citroën', 'DS', 'Renault', 'Alpine', 'Bugatti'],
+  'United Kingdom': ['Bentley', 'Vauxhall', 'Mini', 'Rolls-Royce', 'Lotus', 'Jaguar', 'Land Rover', 'Range Rover', 'MG', 'McLaren', 'Aston Martin',
+    'Caterham', 'Morgan', 'TVR', 'Noble', 'AC', 'Austin', 'Triumph'],
+  'Sweden': ['Volvo', 'Polestar', 'Koenigsegg', 'Saab'],
+  'United States': ['Scout', 'Chrysler', 'Dodge', 'Jeep', 'Ram', 'Plymouth', 'Imperial', 'DeSoto', 'Chevrolet', 'Cadillac', 'GMC', 'Buick', 'Pontiac',
+    'Oldsmobile', 'Saturn', 'Hummer', 'LaSalle', 'Ford', 'Lincoln', 'Mercury', 'Edsel', 'Tesla', 'DeLorean', 'Rivian', 'Lucid', 'Studebaker', 'Packard',
+    'AMC', 'Shelby', 'Hennessey', 'SSC'],
+  'Australia': ['Holden'],
+  'Japan': ['Toyota', 'Lexus', 'Daihatsu', 'Scion', 'Nissan', 'Infiniti', 'Datsun', 'Honda', 'Acura', 'Mazda', 'Subaru', 'Mitsubishi', 'Suzuki', 'Isuzu'],
+  'South Korea': ['Hyundai', 'Kia', 'Genesis'],
+  'China': ['Geely', 'Lynk & Co', 'Zeekr', 'Roewe', 'Wuling', 'BYD', 'NIO', 'Xpeng'],
+  'India': ['Tata'], 'Malaysia': ['Proton'],
+};
+export const CONTINENTS = {
+  'Germany': ['Europe'], 'Spain': ['Europe'], 'Czech Republic': ['Europe'], 'Romania': ['Europe'], 'Croatia': ['Europe'], 'Netherlands': ['Europe'],
+  'Italy': ['Europe'], 'France': ['Europe'], 'United Kingdom': ['Europe'], 'Sweden': ['Europe'], 'Russia': ['Europe', 'Asia'],
+  'United States': ['North America'], 'Australia': ['Oceania'], 'Japan': ['Asia'], 'South Korea': ['Asia'], 'China': ['Asia'], 'India': ['Asia'], 'Malaysia': ['Asia'],
+};
+const COUNTRY_OF = Object.fromEntries(Object.entries(COUNTRY_BRANDS).flatMap(([country, brands]) => brands.map(b => [b, country])));
 
-// Each tile: { label, value, state: 'green'|'yellow'|'red'|'unknown', arrow?: '↑'|'↓' }
+const fold2 = s => (s ?? '').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9&]+/g, ' ').trim();
+const BRANDS = Object.entries(BRAND_GROUPS).flatMap(([group, brands]) => brands.map(brand => ({ brand, group, key: fold2(brand) })))
+  .sort((a, b) => b.key.length - a.key.length); // longest first, so "Mercedes-AMG" wins over "Mercedes"
+// Other common brands (no group), so they're still read from the car's name
+const STANDALONE = ['Ferrari', 'McLaren', 'Aston Martin', 'Mazda', 'Subaru', 'Mitsubishi', 'Suzuki', 'Tesla', 'Koenigsegg',
+  'Pagani', 'De Tomaso', 'DeLorean', 'Lada', 'Saab', 'Isuzu', 'Rivian', 'Lucid', 'BYD', 'Caterham', 'Morgan', 'TVR', 'Noble',
+  'AC', 'Austin', 'Triumph', 'Studebaker', 'Packard', 'AMC', 'Shelby', 'Hennessey', 'SSC', 'Gumpert', 'Spyker', 'NIO', 'Xpeng']
+  .map(brand => ({ brand, group: null, key: fold2(brand) })).sort((a, b) => b.key.length - a.key.length);
+
+// "SEAT León" → { brand: 'SEAT', group: 'Volkswagen Group', country: 'Spain' }; also accepts a Wikidata maker label
+export function brandInfo(...names) {
+  for (const name of names) {
+    const n = fold2(name);
+    if (!n) continue;
+    const hit = [...BRANDS, ...STANDALONE].find(b => n === b.key || n.startsWith(b.key + ' '));
+    if (hit) return { brand: hit.brand, group: hit.group, country: COUNTRY_OF[hit.brand] ?? null };
+  }
+  return null;
+}
+// The group that owns a brand, e.g. groupOf('Cupra') → 'Volkswagen Group'
+export const groupOf = brand => BRANDS.find(b => b.key === fold2(brand))?.group ?? null;
+
+// ---------- Comparing a guess with the answer ----------
+const makerKey = s => fold2(s)
+  .replace(/\b(automobiles?|automotive|motor company|motors?|cars|car company|ag|s ?p ?a|gmbh|inc|ltd|limited|corporation|co|group|company|n ?v)\b/g, '')
+  .replace(/\s+/g, ' ').trim();
+
+// Each tile: { label, value, detail?, state: 'green'|'yellow'|'red'|'unknown', arrow?: '↑'|'↓' }
 // Arrows point toward the answer (↑ = the answer is higher/later).
 export function compareCars(guess, answer) {
   const tiles = [];
 
-  // Manufacturer: green = same; yellow = same parent company or same country (e.g. Ford vs Chevrolet)
-  const gm = makerKey(guess.maker), am = makerKey(answer.maker);
-  const gp = (guess.parents ?? []).map(makerKey), ap = (answer.parents ?? []).map(makerKey);
-  const relatedMaker = gp.some(p => p && (ap.includes(p) || p === am)) || ap.includes(gm);
+  // Manufacturer: green = same brand; yellow = same owner group (SEAT vs Volkswagen) or same country (Ford vs Chevrolet)
+  const gb = makerKey(guess.maker), ab = makerKey(answer.maker);
+  const family = c => new Set([c.group, ...(c.parents ?? [])].filter(Boolean).map(makerKey));
+  const gf = family(guess), af = family(answer);
+  const sameGroup = [...gf].some(x => af.has(x)) || af.has(gb) || gf.has(ab);
   tiles.push({
-    label: 'Manufacturer', value: guess.maker || '?',
-    state: !gm || !am ? 'unknown' : gm === am ? 'green'
-      : relatedMaker || (guess.country && guess.country === answer.country) ? 'yellow' : 'red',
+    label: 'Manufacturer', value: guess.maker || '?', detail: guess.group && guess.group !== guess.maker ? guess.group : '',
+    state: !gb || !ab ? 'unknown' : gb === ab ? 'green'
+      : sameGroup || (guess.country && guess.country === answer.country) ? 'yellow' : 'red',
   });
 
   // Country: green = same; yellow = same continent

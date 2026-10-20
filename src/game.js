@@ -96,6 +96,7 @@ const guessHtml = g => `
         <div class="tile ${t.state}">
           <small>${esc(t.label)}</small>
           <strong>${esc(t.value)} ${t.arrow ?? ''}</strong>
+          ${t.detail ? `<small class="tile-detail">${esc(t.detail)}</small>` : ''}
         </div>`).join('')}
     </div>
   </li>`;
@@ -112,7 +113,8 @@ const endHtml = won => `
 
 async function fillHintValues() {
   const facts = await game.answerFacts;
-  el.querySelectorAll('[data-hint]').forEach(s => { s.textContent = facts[s.dataset.hint] ?? 'unknown'; });
+  const value = k => k === 'maker' && facts.group && facts.group !== facts.maker ? `${facts.maker} (${facts.group})` : facts[k];
+  el.querySelectorAll('[data-hint]').forEach(s => { s.textContent = value(s.dataset.hint) ?? 'unknown'; });
 }
 
 async function loadEndPhoto() {
