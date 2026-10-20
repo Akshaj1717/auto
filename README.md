@@ -1,6 +1,7 @@
 # Auto
 
-A car enthusiast site featuring motorsport news, a daily featured car, technical deep dives, and community builds. Built with plain JavaScript and [Vite](https://vitejs.dev).
+A car enthusiast site featuring motorsport news, a daily featured car, technical deep dives, and community builds. Built with plain JavaScript and [Vite](https://vitejs.dev).  
+test site: https://akshaj1717.github.io/auto/
 
 ## Getting started
 

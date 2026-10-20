@@ -13,17 +13,20 @@ const FEEDS = [
   { source: 'Adam Cooper', url: 'https://adamcooperf1.com/feed' },
 ];
 
-// Paste each series' .ics URL into its slot. Empty slots are skipped.
+// Each series tries its sources in order and uses the first that returns sessions.
 const CALENDARS = [
-  { series: 'F1', url: 'https://smartcalendars.ai/cal/0871a229ef25c0974967bee010cee350a01731fc5c70c1243881e8228b2a0321.ics' },
-  { series: 'WEC', url: 'calendars/wec.ics' },
-  { series: 'MotoGP', url: 'calendars/motogp.ics' },
-  { series: 'NASCAR', url: '' },
-].filter(c => c.url);
+  { series: 'F1', urls: [
+    'calendars/f1.ics',
+    'https://smartcalendars.ai/cal/0871a229ef25c0974967bee010cee350a01731fc5c70c1243881e8228b2a0321.ics',
+  ] },
+  { series: 'WEC', urls: ['calendars/wec.ics'] },
+  { series: 'MotoGP', urls: ['calendars/motogp.ics'] },
+  // { series: 'NASCAR', urls: [] },
+];
 
 const MAX_ARTICLES = 40;
 const MAX_PER_SOURCE = 8;
-const MAX_EVENTS_PER_SERIES = 3;
+const MAX_WEEKENDS_PER_SERIES = 2;
 const OUT = new URL('../src/data/live.json', import.meta.url);
 
 async function get(url) {
@@ -61,13 +64,6 @@ function findImage(block) {
   return decode(m[1]).replace(/^http:\/\//, 'https://');
 }
 
-// Short plain-text summary from the feed's description
-function summaryOf(block) {
-  const html = tag(block, 'description') || tag(block, 'summary') || tag(block, 'content:encoded') || tag(block, 'content');
-  const text = decode(html).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').replace(/\s+([.,!?;:])/g, '$1').trim();
-  return text.length > 180 ? text.slice(0, 180).replace(/\s+\S*$/, '') + '…' : text;
-}
-
 // Handles RSS (<item>) and Atom (<entry>)
 function parseFeed(xml, source) {
   const blocks = xml.match(/<(item|entry)[\s>][\s\S]*?<\/\1>/g) || [];
@@ -78,62 +74,13 @@ function parseFeed(xml, source) {
       title: tag(b, 'title'),
       url: decode(url),
       image: findImage(b),
-      summary: summaryOf(b),
       source,
       date: isNaN(d) ? null : d.toISOString(),
     };
   }).filter(n => n.title && /^https?:\/\//.test(n.url));
 }
 
-// ---------- Headlines under Car of the Day: change every 12 hours ----------
-// The site rebuilds every 30 minutes, but these two stories only change at
-// 12:00 AM and 12:00 PM New York time. They are the two newest stories with photos
-// published *before* the current 12-hour window started, so every rebuild in the
-// same window picks the same two.
-export function currentWindowStart(now = new Date()) {
-  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/New_York', hour: 'numeric', minute: 'numeric', second: 'numeric', hourCycle: 'h23',
-  }).formatToParts(now).map(p => [p.type, +p.value]));
-  const sinceStart = ((parts.hour % 12) * 3600 + parts.minute * 60 + parts.second) * 1000;
-  return new Date(Math.floor((now.getTime() - sinceStart) / 1000) * 1000);
-}
-
-// ---------- Spotting the same story in more than one feed ----------
-// The same article can show up in several feeds (e.g. Motorsport.com "all news" and
-// "WEC") with slightly different links. These keys catch that.
-const linkKey = u => {
-  try { const x = new URL(u); return (x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/+$/, '')).toLowerCase(); }
-  catch { return u; }
-};
-const titleKey = t => t.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, ' ').trim();
-const imageKey = u => (u ? linkKey(u) : '');
-// Website the story is from, so "Motorsport.com" and "Motorsport.com WEC" count as one source
-export const siteOf = a => { try { return new URL(a.url).hostname.replace(/^www\./, ''); } catch { return a.source; } };
-
-export function sameStory(a, b) {
-  return linkKey(a.url) === linkKey(b.url)
-    || titleKey(a.title) === titleKey(b.title)
-    || (a.image && imageKey(a.image) === imageKey(b.image));
-}
-
-// Keeps the first (newest) copy of each story
-export function dedupe(list) {
-  const out = [];
-  for (const a of list) if (!out.some(b => sameStory(a, b))) out.push(a);
-  return out;
-}
-
-export function pickFeatured(sortedArticles, windowStart, count = 2) {
-  const withPhoto = dedupe(sortedArticles.filter(a => a.image && a.date));
-  const before = withPhoto.filter(a => new Date(a.date) < windowStart);
-  const pool = before.length >= count ? before : withPhoto; // fallback if feeds are very short
-  // never the same story twice; prefer two different websites
-  const picks = [];
-  for (const a of pool) if (picks.length < count && !picks.some(p => siteOf(p) === siteOf(a))) picks.push(a);
-  for (const a of pool) if (picks.length < count && !picks.some(p => sameStory(p, a))) picks.push(a);
-  return picks;
-}
-
+// ---------- calendars ----------
 function icsDate(v) {
   const m = v.match(/^(\d{4})(\d{2})(\d{2})(?:T(\d{2})(\d{2})(\d{2}))?/);
   if (!m) return null;
@@ -141,18 +88,69 @@ function icsDate(v) {
   return new Date(Date.UTC(+y, +mo - 1, +d, +h, +mi, +s)).toISOString();
 }
 
+const unesc = s => s.replace(/\\n/gi, '\n').replace(/\\([,;\\])/g, '$1');
+const firstLine = (s, max = 80) => unesc(s).split('\n')[0].trim().slice(0, max);
+
 function parseIcs(text, series) {
   const unfolded = text.replace(/\r?\n[ \t]/g, '');
   return (unfolded.match(/BEGIN:VEVENT[\s\S]*?END:VEVENT/g) || []).map(ev => {
     const field = n => (ev.match(new RegExp(`^${n}[^:\\n]*:(.*)$`, 'm')) || [])[1]?.trim() || '';
     const start = icsDate(field('DTSTART'));
     const end = icsDate(field('DTEND')) || start;
-    return { title: field('SUMMARY').replace(/\\,/g, ',').replace(/\\n/g, ' '), series, start, end };
+    const desc = firstLine(field('DESCRIPTION'));
+    return {
+      title: firstLine(field('SUMMARY'), 120).replace(/^fp(\d)$/i, 'FP$1'),
+      location: firstLine(field('LOCATION')),
+      desc: /^https?:/i.test(desc) ? '' : desc,
+      series, start, end,
+    };
   }).filter(e => e.title && e.start);
 }
 
+const SPLIT = /\s[-–:]\s/;
+const mostCommon = arr => {
+  const counts = {};
+  arr.filter(Boolean).forEach(v => (counts[v] = (counts[v] || 0) + 1));
+  return Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0] || '';
+};
+
+// Group sessions into race weekends (a new weekend starts after a 3+ day gap)
+function groupWeekends(sessions, series) {
+  const sorted = [...sessions].sort((a, b) => new Date(a.start) - new Date(b.start));
+  const groups = [];
+  for (const s of sorted) {
+    const last = groups[groups.length - 1];
+    if (last && new Date(s.start) - new Date(last.end) < 3 * 86400000) {
+      last.sessions.push(s);
+      if (new Date(s.end) > new Date(last.end)) last.end = s.end;
+    } else {
+      groups.push({ series, start: s.start, end: s.end, sessions: [s] });
+    }
+  }
+  return groups.map(g => {
+    let name = '';
+    const prefixes = g.sessions.map(s => s.title.split(SPLIT)[0]);
+    // Titles like "United States Grand Prix - Qualifying": use the shared prefix as the name
+    if (g.sessions.length > 1 && g.sessions.every(s => SPLIT.test(s.title)) && prefixes.every(p => p === prefixes[0])) {
+      name = prefixes[0];
+      g.sessions.forEach(s => { s.title = s.title.slice(name.length).replace(SPLIT, '').trim() || s.title; });
+    }
+    if (!name) name = mostCommon(g.sessions.map(s => s.location));
+    if (!name) name = mostCommon(g.sessions.map(s => s.desc));
+    if (!name && g.sessions.length === 1) name = g.sessions[0].title;
+    return {
+      series: g.series,
+      name,
+      start: g.start,
+      end: g.end,
+      sessions: g.sessions.map(s => ({ title: s.title, start: s.start, end: s.end })),
+    };
+  });
+}
+
+// ---------- run ----------
 const articles = [];
-const events = [];
+const weekends = [];
 const okSeries = new Set();
 
 await Promise.all([
@@ -164,47 +162,47 @@ await Promise.all([
     } catch (e) { console.warn(`${f.source} FAILED:`, e.message); }
   }),
   ...CALENDARS.map(async c => {
-    try {
-      const items = parseIcs(await get(c.url), c.series);
-      console.log(`${c.series} calendar: ${items.length} events`);
-      if (items.length) { okSeries.add(c.series); events.push(...items); }
-    } catch (e) { console.warn(`${c.series} calendar FAILED:`, e.message); }
+    for (const url of c.urls) {
+      try {
+        const text = await get(url);
+        const sessions = parseIcs(text, c.series);
+        console.log(`${c.series} calendar (${url.slice(0, 40)}): ${sessions.length} sessions`);
+        if (!sessions.length) continue;
+        console.log('  sample event:', (text.match(/BEGIN:VEVENT[\s\S]*?END:VEVENT/) || [''])[0].replace(/\r?\n/g, ' | ').slice(0, 500));
+        okSeries.add(c.series);
+        weekends.push(...groupWeekends(sessions, c.series));
+        return;
+      } catch (e) { console.warn(`${c.series} calendar FAILED (${url.slice(0, 40)}):`, e.message); }
+    }
   }),
 ]);
 
 const now = Date.now();
 
-// articles: newest first, drop the same story from other feeds, cap per source
+// articles: newest first, drop duplicate links, cap per source
+const seen = new Set();
 const perSource = {};
-const sorted = dedupe(articles.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0)));
+const sorted = articles
+  .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+  .filter(a => !seen.has(a.url) && seen.add(a.url));
 const topArticles = sorted
   .filter(a => (perSource[a.source] = (perSource[a.source] || 0) + 1) <= MAX_PER_SOURCE)
   .slice(0, MAX_ARTICLES);
 
-// events: next few per series; if a series failed this run, keep its previous events
+// events: next few weekends per series; if a series failed this run, keep its previous ones
 let prev = {};
 try { prev = JSON.parse(await readFile(OUT, 'utf8')); } catch {}
 const perSeries = {};
-const fresh = events
-  .filter(e => new Date(e.end) > now)
+const fresh = weekends
+  .filter(w => new Date(w.end) > now)
   .sort((a, b) => new Date(a.start) - new Date(b.start))
-  .filter(e => (perSeries[e.series] = (perSeries[e.series] || 0) + 1) <= MAX_EVENTS_PER_SERIES);
-const carried = (prev.events || []).filter(e => !okSeries.has(e.series) && new Date(e.end) > now);
+  .filter(w => (perSeries[w.series] = (perSeries[w.series] || 0) + 1) <= MAX_WEEKENDS_PER_SERIES);
+const carried = (prev.events || []).filter(e => Array.isArray(e.sessions) && !okSeries.has(e.series) && new Date(e.end) > now);
 const upcoming = [...fresh, ...carried].sort((a, b) => new Date(a.start) - new Date(b.start));
-
-const windowStart = currentWindowStart();
-const featured = pickFeatured(sorted, windowStart);
 
 if (!topArticles.length && !upcoming.length) {
   console.warn('Nothing fetched; leaving live.json untouched.');
 } else {
-  await writeFile(OUT, JSON.stringify({
-    updated: new Date().toISOString(),
-    featuredSince: windowStart.toISOString(),
-    featured,
-    events: upcoming,
-    articles: topArticles,
-  }, null, 2));
-  console.log(`Wrote ${topArticles.length} articles and ${upcoming.length} events.`);
-  console.log(`Headlines since ${windowStart.toISOString()}: ${featured.map(f => `"${f.title}" (${f.source})`).join(', ') || 'none'}`);
+  await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), events: upcoming, articles: topArticles }, null, 2));
+  console.log(`Wrote ${topArticles.length} articles and ${upcoming.length} race weekends.`);
 }
