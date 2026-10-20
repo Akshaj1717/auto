@@ -2,7 +2,7 @@
 import { renderNav } from './components/nav.js';
 import { renderNewsSidebar } from './components/newsSidebar.js';
 import { esc, safeUrl } from './lib/html.js';
-import { getCarFacts } from './lib/wiki.js';
+import { getCarFacts, searchCars } from './lib/wiki.js';
 import { getCarPhoto } from './lib/carOfTheDay.js';
 import { displayName, boxLayout, slotsOf, scoreLetters, compareCars, MAX_GUESSES } from './lib/cardle.js';
 import live from './data/live.json';
@@ -12,7 +12,8 @@ renderNav(document.getElementById('nav'));
 renderNewsSidebar(document.getElementById('news-sidebar'), live.events);
 
 const el = document.getElementById('game');
-const pool = poolData.cars.map(c => ({ ...c, name: displayName(c.title) }));
+// Answers are picked from this list; guesses can be any car article on Wikipedia
+const pool = poolData.cars.map(c => ({ title: c.title, name: displayName(c.title) }));
 const HINT_ORDER = ['year', 'country', 'cylinders', 'maker'];
 const HINT_LABEL = { year: 'Year of production', country: 'Country of origin', cylinders: 'Cylinders', maker: 'Manufacturer' };
 
@@ -24,10 +25,16 @@ function newGame() {
   render();
 }
 
-// A car from the pool plus its year and cylinders (looked up on Wikipedia)
+// A car plus its manufacturer, country, year and cylinders (looked up live)
 async function withFacts(car) {
   return { ...car, ...(await getCarFacts(car.title)) };
 }
+
+// Nicknames people type → the name Wikipedia uses
+const ALIASES = { chevy: 'chevrolet', vw: 'volkswagen', merc: 'mercedes', benz: 'mercedes benz', beemer: 'bmw', bimmer: 'bmw',
+  lambo: 'lamborghini', caddy: 'cadillac', vette: 'corvette', alfa: 'alfa romeo', aston: 'aston martin', rolls: 'rolls royce', range: 'range rover' };
+const norm = s => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+const expand = q => norm(q).split(' ').map(w => ALIASES[w] ?? w).join(' ');
 
 // ---------- Drawing the page ----------
 function render() {
@@ -104,7 +111,7 @@ const endHtml = won => `
   </div>`;
 
 async function fillHintValues() {
-  const facts = { ...game.answer, ...(await game.answerFacts) };
+  const facts = await game.answerFacts;
   el.querySelectorAll('[data-hint]').forEach(s => { s.textContent = facts[s.dataset.hint] ?? 'unknown'; });
 }
 
@@ -117,7 +124,7 @@ async function loadEndPhoto() {
   }
 }
 
-// ---------- Typing a guess (suggestions come from the car list) ----------
+// ---------- Typing a guess: instant matches from the list + live Wikipedia car search ----------
 function wireInput() {
   const input = el.querySelector('#game-input');
   const list = el.querySelector('#game-suggest');
@@ -125,15 +132,38 @@ function wireInput() {
   let matches = [];
   let active = 0;
 
-  const norm = s => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-  const guessed = new Set(game.guesses.map(g => g.car.title));
+  const guessed = new Set(game.guesses.map(g => g.canonical));
+  let searchToken = 0;
+  let debounce;
+
+  const draw = () => {
+    list.innerHTML = matches.map((c, i) => `<li role="option" data-i="${i}" class="${i === active ? 'active' : ''}">${esc(c.name)}${c.description ? `<small>${esc(c.description)}</small>` : ''}</li>`).join('');
+  };
+  // every word typed must appear in the name, e.g. "chevy imp" → Chevrolet Impala
+  const localMatches = q => {
+    const words = q.split(' ');
+    return pool.filter(c => !guessed.has(c.title) && words.every(w => norm(c.name).includes(w)))
+      .sort((a, b) => norm(a.name).indexOf(words[0]) - norm(b.name).indexOf(words[0]) || a.name.length - b.name.length);
+  };
 
   const showMatches = () => {
-    const q = norm(input.value);
-    matches = q ? pool.filter(c => !guessed.has(c.title) && norm(c.name).includes(q))
-      .sort((a, b) => norm(a.name).indexOf(q) - norm(b.name).indexOf(q) || a.name.length - b.name.length).slice(0, 8) : [];
+    const q = expand(input.value);
+    clearTimeout(debounce);
+    matches = q ? localMatches(q).slice(0, 12) : [];
     active = 0;
-    list.innerHTML = matches.map((c, i) => `<li role="option" data-i="${i}" class="${i === active ? 'active' : ''}">${esc(c.name)}</li>`).join('');
+    draw();
+    if (q.length < 2) return;
+    // then add more cars from Wikipedia's search (same search as the Explore page)
+    const token = ++searchToken;
+    debounce = setTimeout(async () => {
+      const found = await searchCars(q, 15).catch(() => []);
+      if (token !== searchToken) return;
+      const seen = new Set(matches.map(m => m.title));
+      const extra = found.filter(f => !seen.has(f.title) && !guessed.has(f.title))
+        .map(f => ({ title: f.title, name: displayName(f.title), description: f.description }));
+      matches = [...matches, ...extra].slice(0, 20);
+      draw();
+    }, 250);
   };
 
   input.addEventListener('input', showMatches);
@@ -159,9 +189,10 @@ function wireInput() {
   async function submit(car) {
     msg.textContent = 'Checking…';
     input.disabled = true;
-    const [guess, answer] = await Promise.all([withFacts(car), withFacts(game.answer).then(a => a)]);
-    game.guesses.push({ car, letters: scoreLetters(car.name, game.answer.name), tiles: compareCars(guess, answer) });
-    game.won = car.title === game.answer.title;
+    const [guess, answer] = await Promise.all([withFacts(car), withFacts(game.answer)]);
+    game.guesses.push({ car, canonical: guess.canonical, letters: scoreLetters(car.name, game.answer.name), tiles: compareCars(guess, answer) });
+    // compare Wikipedia's real titles, so a redirect like "Chevy Camaro" still counts
+    game.won = guess.canonical === answer.canonical;
     game.over = game.won || game.guesses.length >= MAX_GUESSES;
     render();
   }

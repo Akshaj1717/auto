@@ -127,21 +127,88 @@ export async function loadCar(title) {
 }
 
 // ---------- Facts for the "Guess the Car" game ----------
-// Year of production and cylinder count, read from the car's info panel
+// For any car article: year and cylinders from the Wikipedia info panel, and
+// manufacturer, parent company, country and continent from Wikidata.
+const WIKIDATA = 'https://www.wikidata.org/w/api.php';
+
+async function wikidata(ids, props) {
+  const list = [...new Set(ids.filter(Boolean))];
+  if (!list.length) return {};
+  const res = await fetch(`${WIKIDATA}?${new URLSearchParams({
+    action: 'wbgetentities', ids: list.slice(0, 50).join('|'), props, languages: 'en', format: 'json', origin: '*' })}`);
+  if (!res.ok) throw new Error(`Wikidata error ${res.status}`);
+  return (await res.json()).entities ?? {};
+}
+// IDs of the items a property points to, e.g. claimIds(car, 'P176') → ['Q81965']
+const claimIds = (entity, prop) => (entity?.claims?.[prop] ?? [])
+  .filter(c => c.rank !== 'deprecated')
+  .map(c => c.mainsnak?.datavalue?.value?.id).filter(Boolean);
+const claimYear = (entity, prop) => {
+  const t = entity?.claims?.[prop]?.[0]?.mainsnak?.datavalue?.value?.time; // "+1987-00-00T00:00:00Z"
+  return t ? +t.slice(1, 5) : null;
+};
+const labelOf = e => e?.labels?.en?.value ?? null;
+
+async function wikidataFacts(title) {
+  const page = (await api({ action: 'query', titles: title, redirects: '1', prop: 'pageprops', ppprop: 'wikibase_item' }))
+    .query?.pages?.[0];
+  const canonical = page?.title ?? title;
+  const qid = page?.pageprops?.wikibase_item;
+  if (!qid) return { canonical };
+
+  const car = (await wikidata([qid], 'claims'))[qid];
+  const brands = claimIds(car, 'P1716');         // brand, e.g. Chevrolet
+  const makers = claimIds(car, 'P176');          // manufacturer, e.g. General Motors
+  const makerId = brands[0] ?? makers[0];
+  const originId = claimIds(car, 'P495')[0];     // country of origin
+
+  const level1 = await wikidata([makerId, ...makers, originId], 'labels|claims');
+  const maker = level1[makerId];
+  const countryId = originId ?? claimIds(maker, 'P17')[0];
+  const parentIds = [...makers.filter(m => m !== makerId), ...claimIds(maker, 'P749'), ...claimIds(maker, 'P127')];
+
+  const level2 = await wikidata([...parentIds, countryId], 'labels|claims');
+  const country = level1[countryId] ?? level2[countryId];
+  const continentIds = claimIds(country, 'P30');
+  const level3 = await wikidata(continentIds, 'labels');
+
+  return {
+    canonical,
+    maker: labelOf(maker),
+    parents: parentIds.map(id => labelOf(level1[id] ?? level2[id])).filter(Boolean),
+    country: labelOf(country),
+    continents: continentIds.map(id => labelOf(level3[id])).filter(Boolean),
+    wikidataYear: claimYear(car, 'P571') ?? claimYear(car, 'P580'),
+  };
+}
+
+async function infoboxFacts(title) {
+  const d = await api({ action: 'parse', page: title, redirects: '1', prop: 'wikitext', section: '0' });
+  const box = readInfobox(d.parse?.wikitext ?? '');
+  const text = k => cleanValue(box[k] ?? '', 1000);
+  return {
+    year: yearFrom(text('production'), text('model_years')),
+    cylinders: cylindersFrom(text('engine') || text('motor')),
+    makerText: text('manufacturer').split(',')[0] || null,
+  };
+}
 
 const factsCache = new Map();
+// → { canonical, maker, parents, country, continents, year, cylinders } (unknown values are null)
 export function getCarFacts(title) {
   if (!factsCache.has(title)) {
-    factsCache.set(title, api({ action: 'parse', page: title, redirects: '1', prop: 'wikitext', section: '0' })
-      .then(d => {
-        const box = readInfobox(d.parse?.wikitext ?? '');
-        const text = k => cleanValue(box[k] ?? '', 1000);
-        return {
-          year: yearFrom(text('production'), text('model_years')),
-          cylinders: cylindersFrom(text('engine') || text('motor')),
-        };
-      })
-      .catch(() => ({ year: null, cylinders: null })));
+    factsCache.set(title, Promise.all([
+      wikidataFacts(title).catch(() => ({ canonical: title })),
+      infoboxFacts(title).catch(() => ({})),
+    ]).then(([wd, box]) => ({
+      canonical: wd.canonical ?? title,
+      maker: wd.maker ?? box.makerText ?? null,
+      parents: wd.parents ?? [],
+      country: wd.country ?? null,
+      continents: wd.continents ?? [],
+      year: box.year ?? wd.wikidataYear ?? null,
+      cylinders: box.cylinders ?? null,
+    })));
   }
   return factsCache.get(title);
 }

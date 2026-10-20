@@ -1,29 +1,25 @@
-// Builds the car list for the "Guess the Car" game: src/data/cardle-pool.json.
-// Source: Wikidata (the database behind Wikipedia). Only car models with an English
-// Wikipedia article that are well known (many language editions) are included.
-// Year and cylinders are read live from each car's Wikipedia info panel during the game.
+// Builds the list of possible answers for the "Guess the Car" game: src/data/cardle-pool.json.
+// Source: Wikidata (the database behind Wikipedia): car models that have an English
+// Wikipedia article and a photo. Players can guess ANY car on Wikipedia; this list only
+// decides which cars can be the mystery answer. The hints are looked up live in the game.
 //
-// If Wikidata is unreachable, the existing list is kept.
+// If Wikidata is unreachable, the existing list (or the starter list) is kept.
 
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 
 const OUT = new URL('../src/data/cardle-pool.json', import.meta.url);
 const UA = 'auto-site-cardle/1.0 (https://github.com/Akshaj1717/auto)';
-const MIN_SITELINKS = 15; // lower = more (and more obscure) cars
+// How well known a car must be: the number of Wikipedia language editions with an article.
+// Lower = more cars (and more obscure ones). 6 gives several thousand.
+const MIN_SITELINKS = 6;
 
 const SPARQL = `
-SELECT ?item ?title ?makerLabel ?parentLabel ?countryLabel ?continentLabel WHERE {
-  ?item wdt:P31 wd:Q3231690 ;            # automobile model
-        wikibase:sitelinks ?links ;
-        wdt:P176 ?maker .                 # manufacturer
+SELECT DISTINCT ?title WHERE {
+  ?item wdt:P31 wd:Q3231690 ;          # automobile model
+        wdt:P18 ?image ;               # has a photo
+        wikibase:sitelinks ?links .
   FILTER(?links >= ${MIN_SITELINKS})
   ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> ; schema:name ?title .
-  OPTIONAL { ?maker wdt:P749 ?parent }    # parent company
-  OPTIONAL { ?item wdt:P495 ?origin }     # country of origin
-  OPTIONAL { ?maker wdt:P17 ?makerCountry }
-  BIND(COALESCE(?origin, ?makerCountry) AS ?country)
-  OPTIONAL { ?country wdt:P30 ?continent }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }`;
 
 try {
@@ -31,27 +27,17 @@ try {
     headers: { 'User-Agent': UA, Accept: 'application/sparql-results+json' }, signal: AbortSignal.timeout(90000),
   });
   if (!res.ok) throw new Error(`Wikidata ${res.status}`);
-  const rows = (await res.json()).results.bindings;
+  const fetched = (await res.json()).results.bindings.map(b => b.title.value)
+    .filter(t => !/^(List of|Template:)/i.test(t));
+  if (fetched.length < 100) throw new Error(`only ${fetched.length} cars returned`);
 
-  // One row per combination of parent/continent; merge them into one entry per car
-  const cars = new Map();
-  for (const r of rows) {
-    const id = r.item.value.split('/').pop();
-    const label = k => r[k]?.value && !/^Q\d+$/.test(r[k].value) ? r[k].value : null; // skip unlabeled IDs
-    const car = cars.get(id) ?? { title: r.title.value, maker: label('makerLabel'), parents: [], country: label('countryLabel'), continents: [] };
-    for (const [key, list] of [['parentLabel', car.parents], ['continentLabel', car.continents]]) {
-      const v = label(key);
-      if (v && !list.includes(v)) list.push(v);
-    }
-    cars.set(id, car);
-  }
-  const pool = [...cars.values()]
-    .filter(c => c.maker && !/^List of/i.test(c.title))
-    .sort((a, b) => a.title.localeCompare(b.title));
-  if (pool.length < 20) throw new Error(`only ${pool.length} cars returned`);
+  // keep the hand-picked starter cars too, so famous cars are always possible answers
+  let starter = [];
+  try { starter = JSON.parse(await readFile(new URL('../src/data/cardle-starter.json', import.meta.url), 'utf8')); } catch {}
+  const titles = [...new Set([...starter, ...fetched])].sort((a, b) => a.localeCompare(b));
 
-  await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), cars: pool }, null, 1) + '\n');
-  console.log(`Guess the Car: saved ${pool.length} cars.`);
+  await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), cars: titles.map(title => ({ title })) }) + '\n');
+  console.log(`Guess the Car: saved ${titles.length} possible answers.`);
 } catch (e) {
-  console.warn(`Guess the Car pool fetch failed (${e.message}); keeping the existing list.`);
+  console.warn(`Guess the Car list fetch failed (${e.message}); keeping the existing list.`);
 }

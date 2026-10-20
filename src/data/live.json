@@ -1,42 +1,31 @@
 {
-  "updated": "2026-10-20T01:35:04.955Z",
-  "featuredSince": "2026-10-19T16:00:00.000Z",
-  "featured": [
-    {
-      "title": "Toyota answers critics who doubted it could win in WEC’s competitive Hypercar era",
-      "url": "https://www.motorsport.com/wec/news/toyota-answers-critics-who-doubted-it-could-win-in-wecs-competitive-hypercar-era/10866272/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
-      "image": "https://cdn-5.motorsport.com/images/amp/2y7Qw1e6/s6/8-toyota-gazoo-racing-toyota-t.jpg",
-      "summary": "Kamui Kobayashi says Toyota’s dominant run in the 2026 World Endurance Championship has answered those who doubted its ability to win against strong manufacturer competition. The…",
-      "source": "Motorsport.com",
-      "date": "2026-10-19T15:00:15.000Z"
-    },
-    {
-      "title": "McLaren retains Fornaroli as F1 reserve and hands him WEC programme for 2027",
-      "url": "https://www.autosport.com/f1/news/mclaren-retains-fornaroli-as-f1-reserve-and-hands-him-wec-programme-for-2027/10866226/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
-      "image": "https://cdn-7.motorsport.com/images/amp/25dL7gx0/s6/leonardo-fornaroli-mclaren.jpg",
-      "summary": "McLaren has reaffirmed its faith in Leonardo Fornaroli – and is taking its commitment to the Italian driver a step further. Fornaroli has been confirmed as the Formula 1 team's…",
-      "source": "Autosport",
-      "date": "2026-10-19T11:01:36.000Z"
-    }
-  ],
+  "updated": "2026-10-20T01:48:18.401Z",
   "events": [
     {
-      "title": "United States Grand Prix",
       "series": "F1",
+      "name": "Circuit of the Americas, Austin",
       "start": "2026-10-25T19:00:00.000Z",
-      "end": "2026-10-25T21:00:00.000Z"
+      "end": "2026-10-25T21:00:00.000Z",
+      "sessions": [
+        {
+          "title": "United States Grand Prix",
+          "start": "2026-10-25T19:00:00.000Z",
+          "end": "2026-10-25T21:00:00.000Z"
+        }
+      ]
     },
     {
-      "title": "Mexico City Grand Prix",
       "series": "F1",
+      "name": "Autódromo Hermanos Rodríguez, Mexico City",
       "start": "2026-11-01T20:00:00.000Z",
-      "end": "2026-11-01T22:00:00.000Z"
-    },
-    {
-      "title": "São Paulo Grand Prix",
-      "series": "F1",
-      "start": "2026-11-08T17:00:00.000Z",
-      "end": "2026-11-08T19:00:00.000Z"
+      "end": "2026-11-01T22:00:00.000Z",
+      "sessions": [
+        {
+          "title": "Mexico City Grand Prix",
+          "start": "2026-11-01T20:00:00.000Z",
+          "end": "2026-11-01T22:00:00.000Z"
+        }
+      ]
     }
   ],
   "articles": [
@@ -44,95 +33,111 @@
       "title": "On This Day: Ralf Schumacher wins Formula Nippon title despite spinning out | Brief",
       "url": "https://www.racefans.net/2026/10/20/on-this-day-ralf-schumacher-wins-formula-nippon-title/",
       "image": "",
-      "summary": "Ralf Schumacher grabs dramatic Formula Nippon title win in deluge",
       "source": "RaceFans",
       "date": "2026-10-19T23:01:00.000Z"
     },
     {
       "title": "Christian Horner: Building Red Bull’s F1 engine was “scary as hell”",
       "url": "https://www.motorsport.com/f1/news/christian-horner-receives-unexpected-call-from-red-bull-after-breakthrough/10866228/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
-      "image": "https://cdn-5.motorsport.com/images/amp/6VyKwqdY/s6/72945935-4-2.jpg",
-      "summary": "Former Red Bull team principal Christian Horner has admitted that building the team’s in-house power unit from scratch was “scary as hell”, after the engine claimed its first race…",
+      "image": "https://cdn-3.motorsport.com/images/amp/6VyKwqdY/s6/72945935-4-2.jpg",
       "source": "Motorsport.com",
       "date": "2026-10-19T21:13:42.000Z"
     },
     {
       "title": "How soon can Mercedes win the 2026 F1 constructors' championship?",
       "url": "https://www.motorsport.com/f1/news/how-soon-can-mercedes-win-the-2026-f1-constructors-championship/10866296/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
-      "image": "https://cdn-7.motorsport.com/images/amp/0mXyo5M6/s6/72945935-6.jpg",
-      "summary": "Mercedes has had a dominant start to the new regulations in 2026, but while its driver Kimi Antonelli could technically seal his Formula 1 championship win this coming Sunday at…",
+      "image": "https://cdn-3.motorsport.com/images/amp/0mXyo5M6/s6/72945935-6.jpg",
       "source": "Motorsport.com",
       "date": "2026-10-19T21:03:36.000Z"
     },
     {
-      "title": "Honda says late F1 restart cost almost two years of development",
-      "url": "http://www.grandprix.com/news/honda-says-late-f1-restart-cost-almost-two-years-of-development.html",
-      "image": "",
-      "summary": "Honda Racing president Koji Watanabe says a delayed return decision and the time needed to rebuild the company's Formula 1 operation left its new power unit short of development…",
-      "source": "Grandprix.com",
-      "date": "2026-10-19T20:23:00.000Z"
+      "title": "Barcelona set to host IndyCar race in 2027 under multi-year deal",
+      "url": "https://www.motorsport.com/indycar/news/barcelona-set-to-host-indycar-race-in-2027-under-multi-year-deal/10866370/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
+      "image": "https://cdn-6.motorsport.com/images/amp/63QmJxb2/s6/alex-palou-chip-ganassi-racing.jpg",
+      "source": "Motorsport.com",
+      "date": "2026-10-19T18:42:44.000Z"
     },
     {
       "title": "Barcelona set to host IndyCar race in 2027 under multi-year deal",
-      "url": "https://www.motorsport.com/indycar/news/barcelona-set-to-host-indycar-race-in-2027-under-multi-year-deal/10866370/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
-      "image": "https://cdn-7.motorsport.com/images/amp/63QmJxb2/s6/alex-palou-chip-ganassi-racing.jpg",
-      "summary": "Circuit de Barcelona-Catalunya has reached an agreement to host an IndyCar round from the summer of 2027, bringing North America's premier single-seater championship to the home…",
-      "source": "Motorsport.com",
+      "url": "https://www.motorsport.com/indycar/news/barcelona-set-to-host-indycar-race-in-2027-under-multi-year-deal/10866370/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-INDYCAR&utm_term=News&utm_content=www",
+      "image": "https://cdn-2.motorsport.com/images/amp/63QmJxb2/s6/alex-palou-chip-ganassi-racing.jpg",
+      "source": "Motorsport.com IndyCar",
       "date": "2026-10-19T18:42:44.000Z"
     },
     {
       "title": "Valtteri Bottas raises almost €50,000 for rhino charity with F1 helmet fundraiser",
       "url": "https://www.motorsport.com/f1/news/valtteri-bottas-raises-almost-50000-for-rhino-charity-with-f1-helmet-fundraiser/10866360/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
-      "image": "https://cdn-6.motorsport.com/images/amp/0R7BqaB2/s6/72945935-4.jpg",
-      "summary": "Valtteri Bottas has revealed the winner of the race-worn rhino helmet he used at the Azerbaijan Grand Prix after a fundraising drive for a South African rhino charity. The…",
+      "image": "https://cdn-9.motorsport.com/images/amp/0R7BqaB2/s6/72945935-4.jpg",
       "source": "Motorsport.com",
       "date": "2026-10-19T17:15:06.000Z"
     },
     {
       "title": "Winners and losers from a Chase-altering NASCAR Cup race at Phoenix",
       "url": "https://www.motorsport.com/nascar-cup/news/winners-and-losers-from-a-chase-altering-nascar-cup-race-at-phoenix/10866162/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
-      "image": "https://cdn-5.motorsport.com/images/amp/6x7LqORY/s6/kyle-larson-hendrick-motorspor.jpg",
-      "summary": "With the championship leader crashing into the wall, his closest pursuer suffering a tire failure, and some of the biggest point scorers of the day sitting 5th-7th in the…",
+      "image": "https://cdn-7.motorsport.com/images/amp/6x7LqORY/s6/kyle-larson-hendrick-motorspor.jpg",
       "source": "Motorsport.com",
       "date": "2026-10-19T16:56:58.000Z"
     },
     {
       "title": "Heart of Racing rules Valkyrie GTP step next year ‘too soon’ for IMSA standout Barrichello",
       "url": "https://www.motorsport.com/imsa/news/heart-of-racing-rules-valkyrie-gtp-step-next-year-too-soon-for-imsa-standout-barrichello/10866357/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
-      "image": "https://cdn-6.motorsport.com/images/amp/6DGgo9JY/s6/dudu-barrichello-tirerack-com-.jpg",
-      "summary": "Heart of Racing team principal Ian James wants to see Dudu Barrichello drive the Aston Martin Valkyrie in top-tier prototype racing, but next year will come too soon for the…",
+      "image": "https://cdn-5.motorsport.com/images/amp/6DGgo9JY/s6/dudu-barrichello-tirerack-com-.jpg",
       "source": "Motorsport.com",
+      "date": "2026-10-19T16:53:05.000Z"
+    },
+    {
+      "title": "Heart of Racing rules Valkyrie GTP step next year ‘too soon’ for IMSA standout Barrichello",
+      "url": "https://www.motorsport.com/imsa/news/heart-of-racing-rules-valkyrie-gtp-step-next-year-too-soon-for-imsa-standout-barrichello/10866357/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-WEC&utm_term=News&utm_content=www",
+      "image": "https://cdn-7.motorsport.com/images/amp/6DGgo9JY/s6/dudu-barrichello-tirerack-com-.jpg",
+      "source": "Motorsport.com WEC",
       "date": "2026-10-19T16:53:05.000Z"
     },
     {
       "title": "Sergio Perez: Debut Cadillac season \"without a doubt one of my best years\"",
       "url": "https://www.motorsport.com/f1/news/sergio-perez-debut-cadillac-season-without-a-doubt-one-of-my-best-years/10866353/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
-      "image": "https://cdn-6.motorsport.com/images/amp/2y7QlAg6/s6/sergio-perez-cadillac-racing.jpg",
-      "summary": "If one looks at Sergio Perez's numbers in the 2026 Formula 1 season, the campaign could be classified as disastrous. So far, Cadillac has not scored a point, although the Mexican…",
+      "image": "https://cdn-4.motorsport.com/images/amp/2y7QlAg6/s6/sergio-perez-cadillac-racing.jpg",
       "source": "Motorsport.com",
       "date": "2026-10-19T16:42:07.000Z"
     },
     {
       "title": "Lewis Hamilton grandstand returns to Las Vegas GP with expanded access for fans",
       "url": "https://www.motorsport.com/f1/news/lewis-hamilton-grandstand-returns-to-las-vegas-gp-with-expanded-access-for-fans/10866351/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-ALL&utm_term=News&utm_content=www",
-      "image": "https://cdn-3.motorsport.com/images/amp/68Vwdll2/s6/72945935-3.jpg",
-      "summary": "Lewis Hamilton's own grandstand is returning for the 2026 Las Vegas Grand Prix, with the package offering exclusive merchandise and wider access to the event's fan zones. Lewis…",
+      "image": "https://cdn-2.motorsport.com/images/amp/68Vwdll2/s6/72945935-3.jpg",
       "source": "Motorsport.com",
       "date": "2026-10-19T16:40:09.000Z"
     },
     {
-      "title": "McLaren offers five historic Formula 1 cars from its own collection",
-      "url": "http://www.grandprix.com/news/mclaren-offers-five-historic-formula-1-cars-from-its-own-collection.html",
-      "image": "",
-      "summary": "Two Honda V12 cars from the Senna era join McLarens raced by Jenson Button and Lando Norris in an unusual factory-backed sale.",
-      "source": "Grandprix.com",
-      "date": "2026-10-19T12:36:00.000Z"
+      "title": "Toyota answers critics who doubted it could win in WEC’s competitive Hypercar era",
+      "url": "https://www.motorsport.com/wec/news/toyota-answers-critics-who-doubted-it-could-win-in-wecs-competitive-hypercar-era/10866272/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-WEC&utm_term=News&utm_content=www",
+      "image": "https://cdn-2.motorsport.com/images/amp/2y7Qw1e6/s6/8-toyota-gazoo-racing-toyota-t.jpg",
+      "source": "Motorsport.com WEC",
+      "date": "2026-10-19T15:00:15.000Z"
+    },
+    {
+      "title": "Why Alex Marquez hasn't been able to replicate his 2025 MotoGP form",
+      "url": "https://www.motorsport.com/motogp/news/why-alex-marquez-hasnt-been-able-to-replicate-his-2025-motogp-form/10866172/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "image": "https://cdn-9.motorsport.com/images/amp/6b8Zovv2/s6/alex-marquez-gresini-racing.jpg",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-19T13:16:03.000Z"
+    },
+    {
+      "title": "Daniel Juncadella says he “f***ed” up as Genesis goes from first to last in Barcelona WEC",
+      "url": "https://www.motorsport.com/wec/news/daniel-juncadella-says-he-fked-as-genesis-goes-from-first-to-last-in-barcelona-wec/10866239/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-WEC&utm_term=News&utm_content=www",
+      "image": "https://cdn-9.motorsport.com/images/amp/25dL7Jl0/s6/19-genesis-magma-racing-genesi.jpg",
+      "source": "Motorsport.com WEC",
+      "date": "2026-10-19T11:40:45.000Z"
+    },
+    {
+      "title": "McLaren retains Leonardo Fornaroli in F1 as Italian adds WEC programme for 2027",
+      "url": "https://www.motorsport.com/f1/news/mclaren-retains-fornaroli-in-f1-as-italian-adds-wec-programme-for-2027/10866224/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-WEC&utm_term=News&utm_content=www",
+      "image": "https://cdn-3.motorsport.com/images/amp/25dL7gx0/s6/leonardo-fornaroli-mclaren.jpg",
+      "source": "Motorsport.com WEC",
+      "date": "2026-10-19T11:01:59.000Z"
     },
     {
       "title": "McLaren retains Fornaroli as F1 reserve and hands him WEC programme for 2027",
       "url": "https://www.autosport.com/f1/news/mclaren-retains-fornaroli-as-f1-reserve-and-hands-him-wec-programme-for-2027/10866226/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
       "image": "https://cdn-7.motorsport.com/images/amp/25dL7gx0/s6/leonardo-fornaroli-mclaren.jpg",
-      "summary": "McLaren has reaffirmed its faith in Leonardo Fornaroli – and is taking its commitment to the Italian driver a step further. Fornaroli has been confirmed as the Formula 1 team's…",
       "source": "Autosport",
       "date": "2026-10-19T11:01:36.000Z"
     },
@@ -140,7 +145,6 @@
       "title": "JSBM – 19/10/2026 – Issue 26-39 headlines",
       "url": "https://joesaward.wordpress.com/2026/10/19/jsbm-19-10-2026-issue-26-39-headlines/",
       "image": "https://1.gravatar.com/avatar/1980f7a0e90230088de268a89e992a415026c973a946ab6768f32e8210d13d6b?s=96&d=https%3A%2F%2Fs0.wp.com%2Fi%2Fmu.gif&r=G",
-      "summary": "If you wish to read the content, you can subscribe here 🔹Pros and cons in Rwanda 🔹A new deal for Mekies 🔹Câmara confirmed 🔹Toyota and the WRC 🔹Alpine WEC hopes fading 🔹F1…",
       "source": "Joe Saward",
       "date": "2026-10-19T10:41:31.000Z"
     },
@@ -148,55 +152,13 @@
       "title": "Video: WEC teams title decided in relocated finale in Spain | Formula 1",
       "url": "https://www.racefans.net/2026/10/19/video-wec-teams-title-decided-in-relocated-finale-in-spain/",
       "image": "",
-      "summary": "WEC teams title decided in relocated finale in Spain",
       "source": "RaceFans",
       "date": "2026-10-19T10:26:30.000Z"
-    },
-    {
-      "title": "Mercedes reunites upgraded cars for Austin after Singapore test",
-      "url": "http://www.grandprix.com/news/mercedes-reunites-upgraded-cars-for-austin-after-singapore-test.html",
-      "image": "",
-      "summary": "Mercedes plans to give both drivers its latest aerodynamic package and new front wing in Austin after using Singapore practice to understand the upgrade.",
-      "source": "Grandprix.com",
-      "date": "2026-10-19T10:26:00.000Z"
-    },
-    {
-      "title": "Verstappen recovers to ninth at Portimao as Spa ambition grows",
-      "url": "http://www.grandprix.com/news/verstappen-recovers-to-ninth-at-portimao-as-spa-ambition-grows.html",
-      "image": "",
-      "summary": "Max Verstappen recovered 15 positions in the closing stint at Portimao, finishing ninth with Ben Barnicoat and Chris Lulham as he looks toward a possible Spa 24 Hours entry.",
-      "source": "Grandprix.com",
-      "date": "2026-10-19T10:25:00.000Z"
-    },
-    {
-      "title": "F2 boss says Herta's IndyCar transition was underestimated",
-      "url": "http://www.grandprix.com/news/f2-boss-says-hertas-indycar-transition-was-underestimated.html",
-      "image": "",
-      "summary": "Bruno Michel says Colton Herta's difficult Formula 2 season reflects an underestimated change of working environment and the demands of qualifying, rather than a lack of speed.",
-      "source": "Grandprix.com",
-      "date": "2026-10-19T10:24:00.000Z"
-    },
-    {
-      "title": "Komatsu rejects Ferrari influence over Haas driver choices",
-      "url": "http://www.grandprix.com/news/komatsu-rejects-ferrari-influence-over-haas-driver-choices.html",
-      "image": "",
-      "summary": "Ayao Komatsu says he and Gene Haas control the team's driver decisions, rejecting suggestions that Rafael Camara's arrival makes Haas a Ferrari B-team.",
-      "source": "Grandprix.com",
-      "date": "2026-10-19T10:23:00.000Z"
-    },
-    {
-      "title": "Horner says contact with Marko ended after Red Bull departure",
-      "url": "http://www.grandprix.com/news/horner-says-contact-with-marko-ended-after-red-bull-departure.html",
-      "image": "",
-      "summary": "Christian Horner says he has had no contact with Helmut Marko since his last day at Red Bull, describing the breakdown of a partnership that began in 2005.",
-      "source": "Grandprix.com",
-      "date": "2026-10-19T10:22:00.000Z"
     },
     {
       "title": "Inside the competition building F1’s future engineering talent",
       "url": "https://www.autosport.com/f1/news/inside-the-competition-building-f1s-future-engineering-talent/10866194/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
       "image": "https://cdn-9.motorsport.com/images/amp/68VwdPX2/s6/stem-racing-world-final-2026-s.jpg",
-      "summary": "Six Saudi Arabian high school students, four boys and two girls, are excitedly pacing around the Singapore Formula 1 paddock. They are known as Team Lynx Racing, the recently…",
       "source": "Autosport",
       "date": "2026-10-19T08:37:56.000Z"
     },
@@ -204,39 +166,48 @@
       "title": "How to watch the 2026 United States Grand Prix live this weekend | TV Times",
       "url": "https://www.racefans.net/2026/10/19/how-to-watch-the-2026-united-states-grand-prix-live-this-weekend/",
       "image": "",
-      "summary": "It's race week - and it could be a title-decider. Here's how to watch the United States Grand Prix at the Circuit of the Americas.",
       "source": "RaceFans",
       "date": "2026-10-19T06:15:54.000Z"
-    },
-    {
-      "title": "Mercedes F1 revenue reaches $844 million as owners receive $167 million",
-      "url": "http://www.grandprix.com/news/mercedes-f1-revenue-reaches-844-million-as-owners-receive-167-million.html",
-      "image": "",
-      "summary": "Mercedes' Formula 1 operation reported $844 million in 2025 revenue and $168 million in after-tax profit, while paying shareholders a $167 million dividend.",
-      "source": "Grandprix.com",
-      "date": "2026-10-19T00:02:00.000Z"
     },
     {
       "title": "Spotlight: Fornaroli tests for McLaren again alongside Hughes at Paul Ricard | Spotlight",
       "url": "https://www.racefans.net/2026/10/18/spotlight-fornaroli-tests-for-mclaren-again-alongside-hughes-at-paul-ricard/",
       "image": "",
-      "summary": "Fornaroli and Hughes test for McLaren at Paul Ricard",
       "source": "RaceFans",
       "date": "2026-10-18T19:36:53.000Z"
+    },
+    {
+      "title": "WEC Barcelona: Toyota scores dominant 1-2 to seal manufacturers’ title",
+      "url": "https://www.motorsport.com/wec/news/wec-barcelona-toyota-scores-dominant-1-2-to-seal-manufacturers-title/10866105/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-WEC&utm_term=News&utm_content=www",
+      "image": "https://cdn-6.motorsport.com/images/amp/6x7Lq35Y/s6/8-toyota-gazoo-racing-toyota-t-2.jpg",
+      "source": "Motorsport.com WEC",
+      "date": "2026-10-18T16:10:22.000Z"
+    },
+    {
+      "title": "Yamaha boss on MotoGP changes under Liberty: 'We must be careful not to lose our fans'",
+      "url": "https://www.motorsport.com/motogp/news/stashyamaha-boss-on-motogp-changes-under-liberty-we-must-be-careful-not-to-lose-our-fans/10860516/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "image": "https://cdn-1.motorsport.com/images/amp/YE9w1M5Y/s6/paolo-pavesio-yamaha-racing-md.jpg",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-18T13:00:03.000Z"
     },
     {
       "title": "Mercedes explains why its upgrade made its F1 car harder to drive",
       "url": "https://www.autosport.com/f1/news/mercedes-explains-why-its-upgrade-made-its-f1-car-harder-to-drive/10866035/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
       "image": "https://cdn-9.motorsport.com/images/amp/2jEAGLp0/s6/andrea-kimi-antonelli-mercedes.jpg",
-      "summary": "If Mercedes left Sepang with more questions than answers, the Singapore Grand Prix weekend finally provided the engineering team with the first real clues to unlocking their new…",
       "source": "Autosport",
       "date": "2026-10-18T11:00:03.000Z"
+    },
+    {
+      "title": "The closest finish in MotoGP history: Toni Elias over Valentino Rossi 20 years ago",
+      "url": "https://www.motorsport.com/motogp/news/motogp-closest-finish-history-rossi-elias-portuguese-gp-2006/10865817/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
+      "image": "https://cdn-7.motorsport.com/images/amp/YXRnK1K0/s6/valentino-rossi-camel-yamaha-t.jpg",
+      "source": "Motorsport.com MotoGP",
+      "date": "2026-10-18T08:41:37.000Z"
     },
     {
       "title": "The maths behind when Mercedes could become F1 world champions in 2026",
       "url": "https://www.autosport.com/f1/news/the-maths-behind-when-mercedes-could-become-f1-world-champions-in-2026/10866008/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
       "image": "https://cdn-6.motorsport.com/images/amp/0Ld53Zj0/s6/george-russell-mercedes-andrea-2.jpg",
-      "summary": "The 2026 Formula 1 season has seen Mercedes return to its dominant past as it is on course to claim its first double championship victory since the COVID-struck 2020 campaign.…",
       "source": "Autosport",
       "date": "2026-10-18T08:13:32.000Z"
     },
@@ -244,7 +215,6 @@
       "title": "Poll: Does F1 needs its cost cap – or is it just holding back the smaller teams? | Debates and Polls",
       "url": "https://www.racefans.net/2026/10/18/poll-does-f1-needs-its-cost-cap-or-is-it-just-holding-back-the-smaller-teams/",
       "image": "",
-      "summary": "Teams are unhappy with it. Ben Sulayem \"doesn't see the point\" of it. Does Formula 1 really need a budget cap?",
       "source": "RaceFans",
       "date": "2026-10-18T07:30:07.000Z"
     },
@@ -252,7 +222,6 @@
       "title": "Colton Herta “maybe underestimated the difference” from IndyCar – F2 boss",
       "url": "https://www.motorsport.com/fia-f2/news/colton-herta-maybe-underestimated-the-difference-from-indycar-f2-boss/10865706/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-INDYCAR&utm_term=News&utm_content=www",
       "image": "https://cdn-5.motorsport.com/images/amp/2y7QPOK6/s6/colton-herta-hitech.jpg",
-      "summary": "Formula 2 CEO Bruno Michel says Colton Herta “maybe underestimated the difference” between Formula 1’s feeder series and IndyCar, with the 26-year-old’s bold career move so far…",
       "source": "Motorsport.com IndyCar",
       "date": "2026-10-17T16:00:04.000Z"
     },
@@ -260,7 +229,6 @@
       "title": "WEC Barcelona: Genesis secures maiden series pole from Toyota",
       "url": "https://www.motorsport.com/wec/news/wec-barcelona-qualifying-report/10865914/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-WEC&utm_term=News&utm_content=www",
       "image": "https://cdn-3.motorsport.com/images/amp/0kZXoLo6/s6/17-genesis-gmr-001-hypercar-an-3.jpg",
-      "summary": "World Endurance Championship newcomer Genesis claimed a first pole position at Barcelona with Mathys Jaubert. The Frenchman set two laps good enough to take Hypercar pole for…",
       "source": "Motorsport.com WEC",
       "date": "2026-10-17T14:55:08.000Z"
     },
@@ -268,7 +236,6 @@
       "title": "Five-time IndyCar champion, first-time Indy NXT driver: Alex Palou tops IMS road course test",
       "url": "https://www.motorsport.com/indylights/news/five-time-indycar-champion-first-time-indy-nxt-driver-alex-palou-tops-ims-road-course-test/10865874/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-INDYCAR&utm_term=News&utm_content=www",
       "image": "https://cdn-7.motorsport.com/images/amp/0Zq83GM6/s6/chris-griffis-memorial-test-fr.jpg",
-      "summary": "Five-time IndyCar Series champion Alex Palou stepped into unfamiliar territory on Friday, but the end result looked remarkably familiar. Climbing into an Indy NXT car for the very…",
       "source": "Motorsport.com IndyCar",
       "date": "2026-10-17T14:05:33.000Z"
     },
@@ -276,7 +243,6 @@
       "title": "What drives Bortoleto as his junior rivals hit new heights in F1",
       "url": "https://www.autosport.com/f1/news/what-drives-bortoleto-as-his-junior-rivals-hit-new-heights-in-f1/10865865/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
       "image": "https://cdn-1.motorsport.com/images/amp/24vPom46/s6/gabriel-bortoleto-invicta-raci.jpg",
-      "summary": "Gabriel Bortoleto has watched Kimi Antonelli and Isack Hadjar celebrate their first Formula 1 podiums. Both are from his generation of drivers, having competed against him…",
       "source": "Autosport",
       "date": "2026-10-17T13:15:36.000Z"
     },
@@ -284,7 +250,6 @@
       "title": "MotoGP riders say 850cc bikes will be less physical and more fun to ride",
       "url": "https://www.motorsport.com/motogp/news/motogp-riders-say-850cc-bikes-will-be-less-physical-and-more-fun-to-ride/10865771/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
       "image": "https://cdn-8.motorsport.com/images/amp/6b8jeD32/s6/michele-pirro-ducati-gp27-850c.jpg",
-      "summary": "MotoGP riders say the next-generation 850cc bikes are lighter and less physically demanding than the current 1000cc prototypes, making for a more enjoyable experience on track.…",
       "source": "Motorsport.com MotoGP",
       "date": "2026-10-17T12:31:57.000Z"
     },
@@ -292,7 +257,6 @@
       "title": "Phillip Island to remain in use despite MotoGP and WorldSBK departures",
       "url": "https://www.motorsport.com/motogp/news/phillip-island-future-beyond-motogp-wsbk-supercars/10865777/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
       "image": "https://cdn-3.motorsport.com/images/amp/YP3kxvj2/s6/phillip-island-circuit-2.jpg",
-      "summary": "Although the Phillip Island circuit will lose MotoGP and the World Superbike Championship over the next few months, it will become a major fixture on the Supercars calendar from…",
       "source": "Motorsport.com MotoGP",
       "date": "2026-10-17T09:16:31.000Z"
     },
@@ -300,7 +264,6 @@
       "title": "What Verstappen knew about Red Bull’s big upgrade when he signed his new F1 deal",
       "url": "https://www.autosport.com/f1/news/did-max-verstappen-already-know-the-impact-of-red-bulls-big-upgrade-when-he-signed-his-new-deal/10865791/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
       "image": "https://cdn-1.motorsport.com/images/amp/2GdKNQ1Y/s6/max-verstappen-red-bull-racing-2.jpg",
-      "summary": "While Max Verstappen was still seriously considering the possibility of ending this Formula 1 season without winning a single race at Monza, things now look considerably…",
       "source": "Autosport",
       "date": "2026-10-17T08:17:38.000Z"
     },
@@ -308,7 +271,6 @@
       "title": "Russell and Leclerc are the joint ‘sprint race champions’ of 2026 | Formula 1",
       "url": "https://www.racefans.net/2026/10/17/russell-and-leclerc-are-the-joint-sprint-race-champions-of-2026/",
       "image": "",
-      "summary": "If Formula 1 had a 'sprint race championship', it would have enjoyed an exciting conclusion in Singapore.",
       "source": "RaceFans",
       "date": "2026-10-17T07:15:52.000Z"
     },
@@ -316,7 +278,6 @@
       "title": "WEC: Barcelona 6 Hours schedule and TV times",
       "url": "https://www.motorsport.com/wec/news/wec-barcelona-6-hours-schedule-and-tv-times/10864979/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-WEC&utm_term=News&utm_content=www",
       "image": "https://cdn-9.motorsport.com/images/amp/0R7Bq3A2/s6/8-toyota-gazoo-racing-toyota-t-2.jpg",
-      "summary": "Three weeks after Fuji, the World Endurance Championship returns to action for the inaugural 6 Hours of Barcelona, the penultimate round of the 2026 season. The field will resume…",
       "source": "Motorsport.com WEC",
       "date": "2026-10-17T06:52:12.000Z"
     },
@@ -324,7 +285,6 @@
       "title": "On this day: Wheldon killed in IndyCar horror crash at Las Vegas finale | Briefs",
       "url": "https://www.racefans.net/2026/10/16/on-this-day-wheldon-killed-in-indycar-horror-crash-at-las-vegas-finale/",
       "image": "",
-      "summary": "Horror crash in Las Vegas claims IndyCar champion Wheldon",
       "source": "RaceFans",
       "date": "2026-10-16T20:59:06.000Z"
     },
@@ -332,7 +292,6 @@
       "title": "Colapinto urges fans to stop online abuse: “You’re not helping me or my future”",
       "url": "https://www.autosport.com/f1/news/colapinto-urges-fans-to-stop-the-abuse-youre-not-helping-me-or-my-future/10865685/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
       "image": "https://cdn-7.motorsport.com/images/amp/2jEAoKq0/s6/franco-colapinto-alpine-2.jpg",
-      "summary": "Franco Colapinto has vocally asked Argentinian fans to stop online abuse after several incidents in the last couple of months. Following the Zandvoort, Madrid and Baku races,…",
       "source": "Autosport",
       "date": "2026-10-16T15:32:39.000Z"
     },
@@ -340,7 +299,6 @@
       "title": "Gresini: New MotoGP rules won't increase gap between factory and satellite teams",
       "url": "https://www.motorsport.com/motogp/news/gresini-new-motogp-rules-wont-increase-gap-between-factory-and-satellite-teams-/10864961/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-MOTOGP&utm_term=News&utm_content=www",
       "image": "https://cdn-2.motorsport.com/images/amp/Y9lNw472/s6/fermin-aldeguer-gresini-racing.jpg",
-      "summary": "Gresini is confident that the competitive order between factory and satellite teams will remain “more or less” unchanged in 2027, when MotoGP enters its new 850cc era. The…",
       "source": "Motorsport.com MotoGP",
       "date": "2026-10-16T15:14:51.000Z"
     },
@@ -348,17 +306,8 @@
       "title": "Colton Herta eyes potential Indy 500 return and IMSA enduros as 2027 plans remain in flux",
       "url": "https://www.motorsport.com/fia-f2/news/colton-herta-eyes-potential-indy-500-return-and-imsa-enduros-as-2027-plans-remain-in-flux/10865671/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-INDYCAR&utm_term=News&utm_content=www",
       "image": "https://cdn-8.motorsport.com/images/amp/2eZgPdKY/s6/colton-herta-hitech-gp.jpg",
-      "summary": "Colton Herta’s 2027 racing plans remain undecided, but the Cadillac Formula 1 test driver is eager to return to both the Indianapolis 500 and IMSA endurance races if his schedule…",
       "source": "Motorsport.com IndyCar",
       "date": "2026-10-16T14:56:52.000Z"
-    },
-    {
-      "title": "Who will win this year’s ultimate F1 dream ticket? You decide…",
-      "url": "https://www.autosport.com/general/news/who-will-win-this-years-ultimate-f1-dream-ticket-you-decide-/10865598/?utm_source=RSS&utm_medium=referral&utm_campaign=RSS-F1&utm_term=News&utm_content=uk",
-      "image": "https://cdn-4.motorsport.com/images/amp/YE9EqVPY/s6/heineken-season-ticket-2027.jpg",
-      "summary": "After hundreds of applications for the ultimate prize in grand prix racing, the Heineken x F1 Season Ticket is down to six finalists – and F1 fans can now vote to decide who wins.…",
-      "source": "Autosport",
-      "date": "2026-10-16T11:00:05.000Z"
     }
   ]
 }
