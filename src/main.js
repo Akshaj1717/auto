@@ -1,9 +1,10 @@
 // Entry point: loads data and renders each section of the home page.
 import { renderNav } from './components/nav.js';
-import { renderNewsSidebar } from './components/newsSidebar.js';
 import { renderCarOfTheDay } from './components/carOfTheDay.js';
+import { renderSpecStats } from './components/specStats.js';
 import { renderHeadlines } from './components/headlines.js';
 import { renderUnderTheHood } from './components/underTheHood.js';
+import { renderEventsStrip } from './components/eventsStrip.js';
 import { renderBuilds } from './components/builds.js';
 import { pickCarOfTheDay } from './lib/carOfTheDay.js';
 import { todayET, normalizeCurated } from './lib/cars.js';
@@ -24,8 +25,9 @@ const fromFeeds = live.featured?.length ? live.featured : (live.articles ?? []).
 const featured = fromFeeds.length ? fromFeeds : news.filter(n => n.featured).slice(0, 2);
 
 renderNav(document.getElementById('nav'));
-renderNewsSidebar(document.getElementById('news-sidebar'), live.events);
 renderCarOfTheDay(document.getElementById('car-of-the-day'), car);
-renderHeadlines(document.getElementById('headlines'), featured);
+renderSpecStats(document.getElementById('stats'), car);
 renderUnderTheHood(document.getElementById('under-the-hood'), car);
+renderHeadlines(document.getElementById('headlines'), featured);
+renderEventsStrip(document.getElementById('events'), live.events);
 renderBuilds(document.getElementById('builds'), builds);

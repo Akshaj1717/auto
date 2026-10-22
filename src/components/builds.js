@@ -1,13 +1,15 @@
+import { esc } from '../lib/html.js';
+
 export function renderBuilds(el, builds) {
   el.innerHTML = `
-    <h2>Builds</h2>
-    <div class="grid">
+    <div class="section-head"><h2>Builds</h2></div>
+    <div class="builds">
       ${builds.map(b => `
-        <article class="cell">
-          <img src="${b.image}" alt="${b.car} build by ${b.builder}" />
-          <h3>${b.car}</h3>
-          <p><em>by ${b.builder}</em></p>
-          <p>${b.description}</p>
+        <article class="build">
+          <img src="${esc(b.image)}" alt="${esc(b.car)} build by ${esc(b.builder)}" loading="lazy" />
+          <h3>${esc(b.car)}</h3>
+          <p class="build-by">by ${esc(b.builder)}</p>
+          <p>${esc(b.description)}</p>
         </article>`).join('')}
     </div>`;
 }

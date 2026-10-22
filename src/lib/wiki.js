@@ -219,3 +219,22 @@ export function getCarFacts(title) {
   }
   return factsCache.get(title);
 }
+
+// ---------- Brand logo for a car (home page hero) ----------
+// The car's brand (or manufacturer) on Wikidata → its logo file on Wikimedia Commons.
+// Commons only hosts freely usable files. Returns a URL or null.
+export async function getBrandLogo(title) {
+  const page = (await api({ action: 'query', titles: title, redirects: '1', prop: 'pageprops', ppprop: 'wikibase_item' }))
+    .query?.pages?.[0];
+  const qid = page?.pageprops?.wikibase_item;
+  if (!qid) return null;
+  const car = (await wikidata([qid], 'claims'))[qid];
+  const makerIds = [...claimIds(car, 'P1716'), ...claimIds(car, 'P176')];
+  if (!makerIds.length) return null;
+  const makers = await wikidata(makerIds, 'labels|claims');
+  for (const id of makerIds) {
+    const file = makers[id]?.claims?.P154?.[0]?.mainsnak?.datavalue?.value; // "logo image"
+    if (file) return { src: `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=240`, name: labelOf(makers[id]) };
+  }
+  return null;
+}

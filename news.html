@@ -4,6 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>News · Auto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" />
+  <script>
+    // Apply the saved Night/Day mode and paint accent before the page draws (full logic in src/lib/theme.js)
+    (function () {
+      var P = { 'rr-black': '#000000', 'am-green': '#00352C', 'rosso-corsa': '#D40000', 'giallo-modena': '#F6C700', 'papaya': '#FF8000',
+        'miami-blue': '#00A0D6', 'verde-mantis': '#74C043', 'soul-red': '#9E1B32', 'bayside-blue': '#1B4F9C', 'wr-blue': '#003DA5',
+        'gulf-blue': '#8AC6E8', 'french-blue': '#1F4E9C', 'silver-arrow': '#A7A9AC', 'alpine-white': '#EDEDED' };
+      var t = { paint: 'rosso-corsa', level: 100 };
+      try { var s = JSON.parse(localStorage.getItem('auto-theme') || '{}'); if (s.paint) t.paint = s.paint; if (s.level != null) t.level = s.level; } catch (e) {}
+      var night = t.level < 50, r = document.documentElement;
+      r.style.setProperty('--bg', night ? '#1C1A17' : '#EEE8DD');
+      r.style.setProperty('--ink', night ? '#EEE8DD' : '#1C1A17');
+      r.style.setProperty('--paint', P[t.paint] || '#D40000');
+      r.dataset.mode = night ? 'night' : 'day';
+      r.dataset.lights = night ? 'on' : 'off';
+    })();
+  </script>
   <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
 <body>

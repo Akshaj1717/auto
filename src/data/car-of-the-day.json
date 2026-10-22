@@ -1,30 +1,46 @@
 {
-  "date": "2026-10-19",
-  "name": "Opel GT",
-  "blurb": "The Opel GT is a front-engine, rear-drive two-seat sports car manufactured and marketed by Opel in two generations separated by a 34-year hiatus.",
-  "url": "https://en.wikipedia.org/wiki/Opel_GT",
+  "date": "2026-10-22",
+  "name": "Renault Caravelle",
+  "blurb": "The Renault Caravelle is a sports car manufactured and marketed by Renault from 1958 to 1968 in a single generation — as a rear-engine, rear-drive, two/four-seater coupe or convertible designed by Pietro Frua of Carrozzeria Ghia, sharing its floorpan and engine with the Renault Dauphine.",
+  "url": "https://en.wikipedia.org/wiki/Renault_Caravelle",
   "photo": {
-    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Opel_GT%2C_Bj._1973_am_16.07.2006.jpg/1280px-Opel_GT%2C_Bj._1973_am_16.07.2006.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "credit": "Lothar Spurzem (Spurzem at de.wikipedia)",
-    "license": "CC BY-SA 2.0 de",
-    "page": "https://commons.wikimedia.org/wiki/File:Opel_GT,_Bj._1973_am_16.07.2006.jpg"
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/4d/1967_Renault_Caravelle_cnv_-_fvl-1_%284637729040%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "credit": "Rex Gray from Southern California",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:1967_Renault_Caravelle_cnv_-_fvl-1_(4637729040).jpg"
   },
   "specs": [
     [
       "Manufacturer",
-      "Opel"
+      "Renault"
     ],
     [
       "Production",
-      "1968–1973, 2007–2009"
+      "1958–1968, 117,000 produced"
+    ],
+    [
+      "Designer",
+      "Pietro Frua at Carrozzeria Ghia"
     ],
     [
       "Class",
-      "Coupe (1968-1973), Roadster (2007-2009)"
+      "Sports car (S), Roadster"
     ],
     [
       "Layout",
-      "Front mid-engined, rear-wheel drive"
+      "RR layout"
+    ],
+    [
+      "Engine",
+      "845 cc 670 I4, 956 cc 689 I4, 1108 cc 688 I4"
+    ],
+    [
+      "Transmission",
+      "4-speed manual all-synchromesh"
+    ],
+    [
+      "Curb weight",
+      "822 kg (approx)"
     ]
   ],
   "source": "Wikipedia"
